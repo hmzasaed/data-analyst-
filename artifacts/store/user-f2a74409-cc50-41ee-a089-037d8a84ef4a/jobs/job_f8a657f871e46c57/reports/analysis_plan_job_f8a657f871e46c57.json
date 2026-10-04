@@ -1,0 +1,173 @@
+{
+  "objective": "Exploratory analysis of the uploaded dataset",
+  "assumptions": [
+    "Time grain of 'monthly' was chosen from the date column's own coverage."
+  ],
+  "steps": [
+    {
+      "step_id": "overview_measures",
+      "analysis_type": "descriptive",
+      "tool_name": "describe_measures",
+      "parameters": {
+        "columns": [
+          "changes_in_inventories",
+          "agriculture_hunting_forestry_fishing_isic_a_b",
+          "general_government_final_consumption_expenditure",
+          "gross_capital_formation",
+          "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables",
+          "household_consumption_expenditure_including_non_profit_institutions_serving_households"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "data_quality",
+      "analysis_type": "descriptive",
+      "tool_name": "missingness_profile",
+      "parameters": {},
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "time_series",
+      "analysis_type": "trend",
+      "tool_name": "time_series_aggregate",
+      "parameters": {
+        "date_column": "year",
+        "grain": "monthly",
+        "measures": [
+          "changes_in_inventories",
+          "agriculture_hunting_forestry_fishing_isic_a_b",
+          "general_government_final_consumption_expenditure"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "growth",
+      "analysis_type": "trend",
+      "tool_name": "growth_rates",
+      "parameters": {
+        "date_column": "year",
+        "column": "changes_in_inventories"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "correlations",
+      "analysis_type": "relationship",
+      "tool_name": "correlation_matrix",
+      "parameters": {
+        "columns": [
+          "changes_in_inventories",
+          "agriculture_hunting_forestry_fishing_isic_a_b",
+          "general_government_final_consumption_expenditure",
+          "gross_capital_formation",
+          "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables",
+          "household_consumption_expenditure_including_non_profit_institutions_serving_households"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "primary_distribution",
+      "analysis_type": "distribution",
+      "tool_name": "value_distribution",
+      "parameters": {
+        "column": "changes_in_inventories"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "anomalies",
+      "analysis_type": "anomaly",
+      "tool_name": "detect_outliers",
+      "parameters": {
+        "column": "changes_in_inventories",
+        "method": "auto"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "anomalies_over_time",
+      "analysis_type": "anomaly",
+      "tool_name": "detect_outliers",
+      "parameters": {
+        "column": "changes_in_inventories",
+        "method": "rolling_mad",
+        "method_options": {
+          "window": 7
+        }
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    }
+  ],
+  "not_supported_questions": [],
+  "clarifying_questions": [],
+  "is_exploratory": true,
+  "planner_model": null,
+  "planner_version": "1"
+}

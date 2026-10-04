@@ -1,0 +1,642 @@
+{
+  "dataset_id": "ds_bd7d63297da395d0",
+  "source_file_hash": "f074d50b1769f8bb34d7af5f8b183e295184e0e14484bf738385a0a83ffd551e",
+  "sheet_name": null,
+  "row_count": 1000000,
+  "column_count": 9,
+  "estimated_memory_bytes": 76042246,
+  "columns": [
+    {
+      "name": "tconst",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 1000000,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "tt10898414",
+        "tt11611290",
+        "tt10685466",
+        "tt0230073",
+        "tt8695028",
+        "tt12924394",
+        "tt4763372",
+        "tt8346796",
+        "tt13484672",
+        "tt15814376"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 1000000,
+        "null_count": 0,
+        "mean": 15452339.012046,
+        "std": 12980237.364673415,
+        "min": 13.0,
+        "p05": 659371.5500000002,
+        "p25": 4525353.0,
+        "median": 11711801.0,
+        "p75": 27072774.5,
+        "p95": 39305326.45,
+        "max": 47661711.0,
+        "sum": 15452339012046.0,
+        "skewness": 0.7025886808877035,
+        "kurtosis": -0.7718227038734948,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 9560912,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "title_type",
+      "original_name": null,
+      "inferred_type": "category",
+      "semantic_role": "category",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 10,
+      "distinct_fraction": 0.0,
+      "sample_values": [
+        "tvEpisode",
+        "movie",
+        "tvSeries",
+        "tvShort",
+        "tvMovie",
+        "short",
+        "video",
+        "tvSpecial"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "tvEpisode",
+            772220
+          ],
+          [
+            "short",
+            90915
+          ],
+          [
+            "movie",
+            59481
+          ],
+          [
+            "video",
+            26032
+          ],
+          [
+            "tvSeries",
+            23956
+          ],
+          [
+            "tvMovie",
+            12148
+          ],
+          [
+            "tvMiniSeries",
+            5703
+          ],
+          [
+            "tvSpecial",
+            4790
+          ],
+          [
+            "videoGame",
+            3909
+          ],
+          [
+            "tvShort",
+            846
+          ]
+        ],
+        "distinct_count": 10,
+        "normalised_forms": 10,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 8261453,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "primary_title",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 9,
+      "null_fraction": 0.0,
+      "unique_count": 560663,
+      "distinct_fraction": 0.5607,
+      "sample_values": [
+        "TADA TV: TADA family visit Julian, CA to learn about mining & its famous pies!",
+        "Episode #1.63",
+        "The Herricanes",
+        "Chanwa Ke Take Chakor",
+        "Oops",
+        "Episode #1.35",
+        "Odisseya sischika Gurova",
+        "Episode dated 12 May 2018",
+        "FC Groningen vs. Vitesse (11/21)",
+        "25. oktober 2018"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "Episode #1.1",
+            4677
+          ],
+          [
+            "Episode #1.2",
+            4232
+          ],
+          [
+            "Episode #1.3",
+            3920
+          ],
+          [
+            "Episode #1.4",
+            3830
+          ],
+          [
+            "Episode #1.5",
+            3542
+          ],
+          [
+            "Episode #1.6",
+            3235
+          ],
+          [
+            "Episode #1.7",
+            2965
+          ],
+          [
+            "Episode #1.8",
+            2753
+          ],
+          [
+            "Episode #1.9",
+            2422
+          ],
+          [
+            "Episode #1.10",
+            2353
+          ]
+        ],
+        "distinct_count": 560662,
+        "normalised_forms": 558866,
+        "case_variants": 0,
+        "whitespace_variants": 1796
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 20101738,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "original_title",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 9,
+      "null_fraction": 0.0,
+      "unique_count": 562406,
+      "distinct_fraction": 0.5624,
+      "sample_values": [
+        "TADA TV: TADA family visit Julian, CA to learn about mining & its famous pies!",
+        "Episode #1.63",
+        "The Herricanes",
+        "Chanwa Ke Take Chakor",
+        "Oops",
+        "Episode #1.35",
+        "Odisseya sischika Gurova",
+        "Episode dated 12 May 2018",
+        "FC Groningen vs. Vitesse (11/21)",
+        "25. oktober 2018"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "Episode #1.1",
+            4677
+          ],
+          [
+            "Episode #1.2",
+            4232
+          ],
+          [
+            "Episode #1.3",
+            3920
+          ],
+          [
+            "Episode #1.4",
+            3830
+          ],
+          [
+            "Episode #1.5",
+            3542
+          ],
+          [
+            "Episode #1.6",
+            3235
+          ],
+          [
+            "Episode #1.7",
+            2965
+          ],
+          [
+            "Episode #1.8",
+            2753
+          ],
+          [
+            "Episode #1.9",
+            2422
+          ],
+          [
+            "Episode #1.10",
+            2353
+          ]
+        ],
+        "distinct_count": 562405,
+        "normalised_forms": 560608,
+        "case_variants": 0,
+        "whitespace_variants": 1797
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 20104327,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "is_adult",
+      "original_name": null,
+      "inferred_type": "boolean",
+      "semantic_role": "flag",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 5,
+      "distinct_fraction": 0.0,
+      "sample_values": [
+        "0",
+        "1"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 1000009,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "start_year",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 115785,
+      "null_fraction": 0.1158,
+      "unique_count": 145,
+      "distinct_fraction": 0.0001,
+      "sample_values": [
+        "2015.0",
+        "2019.0",
+        "2023.0",
+        "1981.0",
+        "2018.0",
+        "2012.0",
+        "2020.0",
+        "2022.0",
+        "1990.0",
+        "2026.0"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 884215,
+        "null_count": 115785,
+        "mean": 2006.9996505374825,
+        "std": 20.152560664797274,
+        "min": 1878.0,
+        "p05": 1965.0,
+        "p25": 2002.0,
+        "median": 2014.0,
+        "p75": 2020.0,
+        "p95": 2025.0,
+        "max": 2032.0,
+        "sum": 1774619196.0,
+        "skewness": -2.108153678600694,
+        "kurtosis": 5.348217289582413,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 5305290,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "end_year",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 987299,
+      "null_fraction": 0.9873,
+      "unique_count": 87,
+      "distinct_fraction": 0.0001,
+      "sample_values": [
+        "1988.0",
+        "2010.0",
+        "1995.0",
+        "1984.0",
+        "2011.0",
+        "2008.0",
+        "2022.0",
+        "2021.0",
+        "1960.0",
+        "2019.0"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 12701,
+        "null_count": 987299,
+        "mean": 2008.4395716872687,
+        "std": 24.234164195887313,
+        "min": 16.0,
+        "p05": 1972.0,
+        "p25": 2002.0,
+        "median": 2015.0,
+        "p75": 2020.0,
+        "p95": 2025.0,
+        "max": 2028.0,
+        "sum": 25509191.0,
+        "skewness": -44.2025963170171,
+        "kurtosis": 3595.9347239781046,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 76204,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "runtime_minutes",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 624436,
+      "null_fraction": 0.6244,
+      "unique_count": 523,
+      "distinct_fraction": 0.0005,
+      "sample_values": [
+        "87",
+        "240",
+        "4",
+        "22",
+        "60",
+        "44",
+        "25",
+        "52",
+        "43",
+        "114"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 375561,
+        "null_count": 624436,
+        "mean": 53.441619337471145,
+        "std": 6025.311096836428,
+        "min": 1.0,
+        "p05": 5.0,
+        "p25": 21.0,
+        "median": 30.0,
+        "p75": 60.0,
+        "p95": 113.0,
+        "max": 3692080.0,
+        "sum": 20070588.0,
+        "skewness": 612.6015904020727,
+        "kurtosis": 375370.1453513745,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 3
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 735276,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "genres",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 42268,
+      "null_fraction": 0.0423,
+      "unique_count": 1794,
+      "distinct_fraction": 0.0018,
+      "sample_values": [
+        "Adventure,Family,History",
+        "Drama,Romance",
+        "Documentary",
+        "Comedy,Drama",
+        "Family",
+        "News,Talk-Show",
+        "Sport",
+        "News",
+        "Comedy,Short",
+        "Drama"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "Drama",
+            109956
+          ],
+          [
+            "Comedy",
+            63197
+          ],
+          [
+            "Talk-Show",
+            61860
+          ],
+          [
+            "News",
+            60751
+          ],
+          [
+            "Documentary",
+            47944
+          ],
+          [
+            "Drama,Romance",
+            44025
+          ],
+          [
+            "Reality-TV",
+            30990
+          ],
+          [
+            "Adult",
+            27336
+          ],
+          [
+            "News,Talk-Show",
+            22978
+          ],
+          [
+            "Short",
+            19357
+          ]
+        ],
+        "distinct_count": 1793,
+        "normalised_forms": 1793,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 10897037,
+      "parse_failure_fraction": 0.0
+    }
+  ],
+  "quality_issues": [
+    {
+      "kind": "inconsistent_categories",
+      "severity": "medium",
+      "column": "primary_title",
+      "description": "558866 normalised forms cover 560663 raw values: casing and whitespace differ between otherwise identical labels.",
+      "affected_rows": 439337,
+      "affected_fraction": 0.4393,
+      "evidence": {
+        "case_variants": 0,
+        "whitespace_variants": 1796
+      },
+      "recommended_action": "Trim and case-normalise, keeping the original column for reference."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "primary_title",
+      "description": "560,662 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 1000000,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "inconsistent_categories",
+      "severity": "medium",
+      "column": "original_title",
+      "description": "560608 normalised forms cover 562406 raw values: casing and whitespace differ between otherwise identical labels.",
+      "affected_rows": 437594,
+      "affected_fraction": 0.4376,
+      "evidence": {
+        "case_variants": 0,
+        "whitespace_variants": 1797
+      },
+      "recommended_action": "Trim and case-normalise, keeping the original column for reference."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "original_title",
+      "description": "562,405 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 1000000,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "medium",
+      "column": "start_year",
+      "description": "115,785 of 1,000,000 rows (11.6%) have no value.",
+      "affected_rows": 115785,
+      "affected_fraction": 0.1158,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "high",
+      "column": "end_year",
+      "description": "987,299 of 1,000,000 rows (98.7%) have no value.",
+      "affected_rows": 987299,
+      "affected_fraction": 0.9873,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "high",
+      "column": "runtime_minutes",
+      "description": "624,436 of 1,000,000 rows (62.4%) have no value.",
+      "affected_rows": 624436,
+      "affected_fraction": 0.6244,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "non_finite_numbers",
+      "severity": "medium",
+      "column": "runtime_minutes",
+      "description": "3 values are infinite or not a number and will break arithmetic.",
+      "affected_rows": 3,
+      "affected_fraction": 0.0,
+      "evidence": {},
+      "recommended_action": "Replace with null and count them separately in the report."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "medium",
+      "column": "genres",
+      "description": "42,268 of 1,000,000 rows (4.2%) have no value.",
+      "affected_rows": 42268,
+      "affected_fraction": 0.0423,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    }
+  ],
+  "duplicate_row_count": 0,
+  "time_coverage": null,
+  "warnings": [],
+  "is_exploratory": true,
+  "profiler_version": "1"
+}

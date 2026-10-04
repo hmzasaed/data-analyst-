@@ -1,0 +1,29 @@
+[project]
+name = "insightflow-features"
+version = "0.1.0"
+description = "Feature engineering and feature selection: validated transforms, ranking and cross-validation"
+requires-python = ">=3.11"
+dependencies = [
+    "insightflow-contracts",
+    "insightflow-preprocessing",
+    "insightflow-visualization",
+    "polars>=1.17",
+    "pyarrow>=17",
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "seaborn>=0.13",
+    "matplotlib>=3.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/insightflow_features"]
+
+[tool.uv.sources]
+insightflow-contracts = { workspace = true }
+insightflow-preprocessing = { workspace = true }
+insightflow-visualization = { workspace = true }

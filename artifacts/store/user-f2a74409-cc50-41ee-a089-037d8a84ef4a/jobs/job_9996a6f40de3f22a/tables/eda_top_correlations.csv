@@ -1,0 +1,7 @@
+column_a,column_b,pearson_r,rows
+birth_year,death_year,0.8493019767232575,15531
+nconst,birth_year,0.38485540559352877,43471
+birth_year,known_for_titles,0.18588041768820393,41636
+nconst,death_year,0.12095358396236912,16669
+nconst,known_for_titles,0.11037943980806399,879705
+death_year,known_for_titles,0.030758151211925544,15582

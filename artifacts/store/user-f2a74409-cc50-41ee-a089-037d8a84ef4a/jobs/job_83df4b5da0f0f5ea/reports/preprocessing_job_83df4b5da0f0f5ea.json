@@ -1,0 +1,105 @@
+{
+  "options": {
+    "missing_numeric": "none",
+    "missing_categorical": "none",
+    "outliers": "none",
+    "drop_columns_missing_above": 0.5,
+    "scaling": "standard",
+    "encode_categoricals": true,
+    "date_features": true,
+    "max_encoding_levels": 20
+  },
+  "analysis_changed": false,
+  "rows_before": 2716,
+  "rows_after": 2716,
+  "columns_before": 12,
+  "columns_after": 12,
+  "steps": [
+    {
+      "step_id": "export_drop_columns",
+      "scope": "export",
+      "action": "drop_columns",
+      "column": null,
+      "detail": "Dropped 6 column(s) a model cannot use: primary_title (free text); directors (free text); writers (free text); genres (free text); imdb_link (free text); title_imdb_link (free text)",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": [
+        "primary_title",
+        "directors",
+        "writers",
+        "genres",
+        "imdb_link",
+        "title_imdb_link"
+      ]
+    },
+    {
+      "step_id": "export_impute_median_end_year",
+      "scope": "export",
+      "action": "impute_median",
+      "column": "end_year",
+      "detail": "Filled 399 missing value(s) with the median (2,018).",
+      "rows_affected": 399,
+      "columns_added": [],
+      "columns_removed": []
+    },
+    {
+      "step_id": "export_scale_standard",
+      "scope": "export",
+      "action": "scale_standard",
+      "column": null,
+      "detail": "6 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler).",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": []
+    }
+  ],
+  "missing_before": {
+    "end_year": 399
+  },
+  "missing_after": {
+    "end_year": 399
+  },
+  "export": {
+    "artifact_id": "model_ready_dataset",
+    "rows": 2716,
+    "columns": 6,
+    "column_names": [
+      "tconst",
+      "start_year",
+      "end_year",
+      "rank",
+      "average_rating",
+      "num_votes"
+    ],
+    "scaling": "standard",
+    "encoded_columns": [],
+    "date_feature_columns": [],
+    "dropped_columns": [
+      {
+        "column": "primary_title",
+        "reason": "free text"
+      },
+      {
+        "column": "directors",
+        "reason": "free text"
+      },
+      {
+        "column": "writers",
+        "reason": "free text"
+      },
+      {
+        "column": "genres",
+        "reason": "free text"
+      },
+      {
+        "column": "imdb_link",
+        "reason": "free text"
+      },
+      {
+        "column": "title_imdb_link",
+        "reason": "free text"
+      }
+    ]
+  },
+  "warnings": []
+}

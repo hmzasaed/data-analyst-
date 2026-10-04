@@ -1,0 +1,8 @@
+[
+  "3177 period(s) had a missing or zero previous value and are excluded from growth statistics.",
+  "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.",
+  "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+  "Requires reliable time ordering and enough history; results change with the window size and are unstable for short series.",
+  "The first 7 point(s) have no trailing history and cannot be scored.",
+  "11 point(s) followed a perfectly flat window. With no variation to compare against, any departure from that level is flagged, so expect these flags to be easy to explain and easy to dismiss."
+]

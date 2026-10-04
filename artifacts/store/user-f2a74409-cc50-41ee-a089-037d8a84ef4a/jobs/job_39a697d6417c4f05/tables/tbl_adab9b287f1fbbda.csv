@@ -1,0 +1,3 @@
+group_a,n_a,mean_a,median_a,group_b,n_b,mean_b,median_b,test,p_value,cohens_d
+tvMiniSeries,3297,2013.351228389445,2018.0,,,,,mann_whitney_u,3.2534458823892094e-127,0.4106438388761004
+,,,,tvSeries,9403,2006.929277890035,2013.0,mann_whitney_u,3.2534458823892094e-127,0.4106438388761004

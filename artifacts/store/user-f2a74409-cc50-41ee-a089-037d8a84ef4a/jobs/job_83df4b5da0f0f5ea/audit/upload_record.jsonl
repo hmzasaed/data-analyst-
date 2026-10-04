@@ -1,0 +1,16 @@
+{
+  "artifact_id": "raw_f66ef36ecf49147f",
+  "owner_id": "user-f2a74409-cc50-41ee-a089-037d8a84ef4a",
+  "filename": "imdb_top_5000_tv_shows.csv",
+  "declared_media_type": null,
+  "detected_format": "csv",
+  "byte_size": 1780168,
+  "sha256": "126888d4a5e8063fa935a95eb8ac09fe3f6bfdfaed19f535ef5d24566ed38381",
+  "sha256_verified": true,
+  "uploaded_at": "2026-10-01T11:24:58.712080Z",
+  "retention_until": null,
+  "encrypted": false,
+  "quarantined": false,
+  "scan_status": "passed",
+  "notes": []
+}

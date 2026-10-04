@@ -1,0 +1,896 @@
+[
+  {
+    "step_id": "overview_measures",
+    "tool_name": "describe_measures",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "changes_in_inventories__count",
+        "value": 8671,
+        "unit": "rows",
+        "definition": "Non-null rows in 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "changes_in_inventories__mean",
+        "value": 1626543202.9493716,
+        "unit": null,
+        "definition": "Arithmetic mean of 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "changes_in_inventories__median",
+        "value": 68296349.0,
+        "unit": null,
+        "definition": "Median of 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "changes_in_inventories__total",
+        "value": 14103756112774.0,
+        "unit": null,
+        "definition": "Sum of 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "changes_in_inventories__skewness",
+        "value": 10.119369345176363,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "agriculture_hunting_forestry_fishing_isic_a_b__count",
+        "value": 10391,
+        "unit": "rows",
+        "definition": "Non-null rows in 'agriculture_hunting_forestry_fishing_isic_a_b'.",
+        "n": 10391,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "agriculture_hunting_forestry_fishing_isic_a_b__mean",
+        "value": 7793212164.361178,
+        "unit": null,
+        "definition": "Arithmetic mean of 'agriculture_hunting_forestry_fishing_isic_a_b'.",
+        "n": 10391,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "agriculture_hunting_forestry_fishing_isic_a_b__median",
+        "value": 931367444.0,
+        "unit": null,
+        "definition": "Median of 'agriculture_hunting_forestry_fishing_isic_a_b'.",
+        "n": 10391,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "agriculture_hunting_forestry_fishing_isic_a_b__total",
+        "value": 80979267599877.0,
+        "unit": null,
+        "definition": "Sum of 'agriculture_hunting_forestry_fishing_isic_a_b'.",
+        "n": 10391,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "agriculture_hunting_forestry_fishing_isic_a_b__skewness",
+        "value": 18.90525520466264,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 10391,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "general_government_final_consumption_expenditure__count",
+        "value": 10460,
+        "unit": "rows",
+        "definition": "Non-null rows in 'general_government_final_consumption_expenditure'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "general_government_final_consumption_expenditure__mean",
+        "value": 30853786134.32113,
+        "unit": null,
+        "definition": "Arithmetic mean of 'general_government_final_consumption_expenditure'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "general_government_final_consumption_expenditure__median",
+        "value": 1122262119.5,
+        "unit": null,
+        "definition": "Median of 'general_government_final_consumption_expenditure'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "general_government_final_consumption_expenditure__total",
+        "value": 322730602964999.0,
+        "unit": null,
+        "definition": "Sum of 'general_government_final_consumption_expenditure'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "general_government_final_consumption_expenditure__skewness",
+        "value": 11.616086947582724,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_capital_formation__count",
+        "value": 10460,
+        "unit": "rows",
+        "definition": "Non-null rows in 'gross_capital_formation'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_capital_formation__mean",
+        "value": 46537415280.18327,
+        "unit": null,
+        "definition": "Arithmetic mean of 'gross_capital_formation'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_capital_formation__median",
+        "value": 1766391185.5,
+        "unit": null,
+        "definition": "Median of 'gross_capital_formation'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_capital_formation__total",
+        "value": 486781363830717.0,
+        "unit": null,
+        "definition": "Sum of 'gross_capital_formation'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_capital_formation__skewness",
+        "value": 14.526447546304858,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__count",
+        "value": 10460,
+        "unit": "rows",
+        "definition": "Non-null rows in 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__mean",
+        "value": 45189202119.86826,
+        "unit": null,
+        "definition": "Arithmetic mean of 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__median",
+        "value": 1631733278.5,
+        "unit": null,
+        "definition": "Median of 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__total",
+        "value": 472679054173822.0,
+        "unit": null,
+        "definition": "Sum of 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__skewness",
+        "value": 14.532273412367058,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "household_consumption_expenditure_including_non_profit_institutions_serving_households__count",
+        "value": 10460,
+        "unit": "rows",
+        "definition": "Non-null rows in 'household_consumption_expenditure_including_non_profit_institutions_serving_households'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "household_consumption_expenditure_including_non_profit_institutions_serving_households__mean",
+        "value": 105504146606.43336,
+        "unit": null,
+        "definition": "Arithmetic mean of 'household_consumption_expenditure_including_non_profit_institutions_serving_households'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "household_consumption_expenditure_including_non_profit_institutions_serving_households__median",
+        "value": 5154424420.0,
+        "unit": null,
+        "definition": "Median of 'household_consumption_expenditure_including_non_profit_institutions_serving_households'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "household_consumption_expenditure_including_non_profit_institutions_serving_households__total",
+        "value": 1103573373503293.0,
+        "unit": null,
+        "definition": "Sum of 'household_consumption_expenditure_including_non_profit_institutions_serving_households'.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "household_consumption_expenditure_including_non_profit_institutions_serving_households__skewness",
+        "value": 15.03837811371943,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 10460,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\overview_measures_measure_summary.csv",
+        "row_count": 6,
+        "byte_size": 1460,
+        "sha256": "656fa819d73a92aed54d3c331ad6321e7f4a9104bd4b92cf16de82904ea2e3ee",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0207,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "a74e4b1d252e4fcfb452e643"
+  },
+  {
+    "step_id": "data_quality",
+    "tool_name": "missingness_profile",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "worst_missing_column",
+        "value": "changes_in_inventories",
+        "unit": null,
+        "definition": "Column with the highest share of missing values.",
+        "n": 26,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      },
+      {
+        "name": "worst_missing_share",
+        "value": 17.51,
+        "unit": "%",
+        "definition": "Share of rows missing in the least complete column.",
+        "n": 26,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_54e2cb8e2178ad5c",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\data_quality_missingness.csv",
+        "row_count": 26,
+        "byte_size": 1476,
+        "sha256": "ae568fc3bdab5f6098f0ae6bd4468fb4bfdec3d0c4c887ef7aa91d1eb686f76d",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0182,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "3d809eaa42868a7fa33e360c"
+  },
+  {
+    "step_id": "time_series",
+    "tool_name": "time_series_aggregate",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "period_count",
+        "value": 52,
+        "unit": "periods",
+        "definition": "Number of yearly periods present in the data.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "time_series",
+        "table": "trend_yearly"
+      },
+      {
+        "name": "changes_in_inventories__first_period_total",
+        "value": 46553060712.0,
+        "unit": null,
+        "definition": "First non-null yearly total of 'changes_in_inventories'.",
+        "n": 52,
+        "precision": 4,
+        "source_step": "time_series",
+        "table": "trend_yearly"
+      },
+      {
+        "name": "changes_in_inventories__last_period_total",
+        "value": 669720069370.0,
+        "unit": null,
+        "definition": "Most recent non-null yearly total of 'changes_in_inventories'.",
+        "n": 52,
+        "precision": 4,
+        "source_step": "time_series",
+        "table": "trend_yearly"
+      },
+      {
+        "name": "changes_in_inventories__overall_change_pct",
+        "value": 1338.6166218226033,
+        "unit": "%",
+        "definition": "Change in 'changes_in_inventories' total between the first and last non-null yearly period.",
+        "n": 52,
+        "precision": 4,
+        "source_step": "time_series",
+        "table": "trend_yearly"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_ee62fa5cc411fb04",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\time_series_trend_yearly.csv",
+        "row_count": 52,
+        "byte_size": 10716,
+        "sha256": "a96506dbf576a60700c42c61cbbddaf90ff81c376fc2d75e9ce09063a2270db5",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.013,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "4c81470fcc91c38f74a19b30"
+  },
+  {
+    "step_id": "growth",
+    "tool_name": "growth_rates",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "growth_periods_computed",
+        "value": 7334,
+        "unit": "periods",
+        "definition": "Periods where 'changes_in_inventories' changed against a non-zero previous value.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "growth",
+        "table": "growth_rates"
+      },
+      {
+        "name": "growth_periods_undefined",
+        "value": 3177,
+        "unit": "periods",
+        "definition": "Periods excluded from the growth calculation because the previous value was missing or zero.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "growth",
+        "table": "growth_rates"
+      },
+      {
+        "name": "mean_growth_pct",
+        "value": -516816.6623465306,
+        "unit": "%",
+        "definition": "Mean period-over-period growth of 'changes_in_inventories'.",
+        "n": 7334,
+        "precision": 4,
+        "source_step": "growth",
+        "table": "growth_rates"
+      },
+      {
+        "name": "growth_volatility_sd_pct",
+        "value": 33818562.98027866,
+        "unit": "%",
+        "definition": "Standard deviation of period-over-period growth.",
+        "n": 7334,
+        "precision": 4,
+        "source_step": "growth",
+        "table": "growth_rates"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_4a7d9d2092212272",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\growth_growth_rates.csv",
+        "row_count": 10512,
+        "byte_size": 463488,
+        "sha256": "e4f88614892995249bba58da1928927b5842a18ca93cb3f017ae8feca5563ad4",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "3177 period(s) had a missing or zero previous value and are excluded from growth statistics."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0175,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "c4cf82b3b10dd38ad50152f8"
+  },
+  {
+    "step_id": "correlations",
+    "tool_name": "correlation_matrix",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "correlation__gross_capital_formation__gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables",
+        "value": 0.9997212691925037,
+        "unit": null,
+        "definition": "Pearson correlation between 'gross_capital_formation' and 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__general_government_final_consumption_expenditure__household_consumption_expenditure_including_non_profit_institutions_serving_households",
+        "value": 0.9647764677491255,
+        "unit": null,
+        "definition": "Pearson correlation between 'general_government_final_consumption_expenditure' and 'household_consumption_expenditure_including_non_profit_institutions_serving_households', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__general_government_final_consumption_expenditure__gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables",
+        "value": 0.9420107288266777,
+        "unit": null,
+        "definition": "Pearson correlation between 'general_government_final_consumption_expenditure' and 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__general_government_final_consumption_expenditure__gross_capital_formation",
+        "value": 0.9389668166923238,
+        "unit": null,
+        "definition": "Pearson correlation between 'general_government_final_consumption_expenditure' and 'gross_capital_formation', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__household_consumption_expenditure_including_non_profit_institutions_serving_households",
+        "value": 0.8763636174709468,
+        "unit": null,
+        "definition": "Pearson correlation between 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables' and 'household_consumption_expenditure_including_non_profit_institutions_serving_households', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__gross_capital_formation__household_consumption_expenditure_including_non_profit_institutions_serving_households",
+        "value": 0.8720216301551744,
+        "unit": null,
+        "definition": "Pearson correlation between 'gross_capital_formation' and 'household_consumption_expenditure_including_non_profit_institutions_serving_households', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__agriculture_hunting_forestry_fishing_isic_a_b__gross_capital_formation",
+        "value": 0.8001188660807113,
+        "unit": null,
+        "definition": "Pearson correlation between 'agriculture_hunting_forestry_fishing_isic_a_b' and 'gross_capital_formation', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__agriculture_hunting_forestry_fishing_isic_a_b__gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables",
+        "value": 0.7936163529300545,
+        "unit": null,
+        "definition": "Pearson correlation between 'agriculture_hunting_forestry_fishing_isic_a_b' and 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__changes_in_inventories__agriculture_hunting_forestry_fishing_isic_a_b",
+        "value": 0.7274731428988824,
+        "unit": null,
+        "definition": "Pearson correlation between 'changes_in_inventories' and 'agriculture_hunting_forestry_fishing_isic_a_b', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__changes_in_inventories__gross_capital_formation",
+        "value": 0.6560074173212975,
+        "unit": null,
+        "definition": "Pearson correlation between 'changes_in_inventories' and 'gross_capital_formation', on complete rows only.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "strongest_correlation",
+        "value": 0.9997212691925037,
+        "unit": null,
+        "definition": "Largest absolute correlation found: 'gross_capital_formation' and 'gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables'.",
+        "n": 8567,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_d53845341dae98a6",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\correlations_correlation_matrix.csv",
+        "row_count": 6,
+        "byte_size": 1221,
+        "sha256": "8c9385a68ce9f4cdeadf08963707d881d09fd3f2b70d3153e565f8a9cab2f224",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.019,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "4647d2667032628df2cf2c72"
+  },
+  {
+    "step_id": "primary_distribution",
+    "tool_name": "value_distribution",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "changes_in_inventories__min",
+        "value": -151000000000.0,
+        "unit": null,
+        "definition": "Smallest observed value of 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__max",
+        "value": 211000000000.0,
+        "unit": null,
+        "definition": "Largest observed value of 'changes_in_inventories'.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__skewness",
+        "value": 10.119369345176363,
+        "unit": null,
+        "definition": "Sample skewness; large values mean a long right tail.",
+        "n": 8671,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_changes_in_inventories"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_3a84c421ea92e453",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\primary_distribution_distribution_changes_in_inventories.csv",
+        "row_count": 24,
+        "byte_size": 2218,
+        "sha256": "71b10c4966af277010c3c3b8688c16dcfbd705c149c6e192e09cd67fae7035d9",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0129,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "4e7dd8c325124ffec8f7102e"
+  },
+  {
+    "step_id": "anomalies",
+    "tool_name": "detect_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "changes_in_inventories__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "definition": "Records flagged as unusual by iqr_fence, compared against the baseline stated in each record's explanation.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by iqr_fence in 'changes_in_inventories'.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomaly_method",
+        "value": "iqr_fence",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomalies_evaluated",
+        "value": 10512,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_changes_in_inventories"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_ca718ae5dfc11d8c",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\anomalies_anomalies_changes_in_inventories.csv",
+        "row_count": 500,
+        "byte_size": 224941,
+        "sha256": "b7fd84b66b5b8f5735de0683741e2d2862464bc94ccaf229f0af688791d9a02d",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0377,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "840edeb0fd2c4d149020e92b"
+  },
+  {
+    "step_id": "anomalies_over_time",
+    "tool_name": "detect_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "changes_in_inventories__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "definition": "Records flagged as unusual by rolling_mad, compared against the baseline stated in each record's explanation.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies_over_time",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by rolling_mad in 'changes_in_inventories'.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies_over_time",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomaly_method",
+        "value": "rolling_mad",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies_over_time",
+        "table": "anomalies_changes_in_inventories"
+      },
+      {
+        "name": "changes_in_inventories__anomalies_evaluated",
+        "value": 10512,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 10512,
+        "precision": 4,
+        "source_step": "anomalies_over_time",
+        "table": "anomalies_changes_in_inventories"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_158199e92f307952",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_80b012a7c08b596f\\tables\\anomalies_over_time_anomalies_changes_in_inventories.csv",
+        "row_count": 500,
+        "byte_size": 236710,
+        "sha256": "23997026be0f9872b8f2e39eeb7fb7280832484ac0b47515228255e79345ee5a",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Requires reliable time ordering and enough history; results change with the window size and are unstable for short series.",
+      "The first 7 point(s) have no trailing history and cannot be scored.",
+      "11 point(s) followed a perfectly flat window. With no variation to compare against, any departure from that level is flagged, so expect these flags to be easy to explain and easy to dismiss."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.7571,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "ae463da6431ca2fb95a613bb"
+  }
+]

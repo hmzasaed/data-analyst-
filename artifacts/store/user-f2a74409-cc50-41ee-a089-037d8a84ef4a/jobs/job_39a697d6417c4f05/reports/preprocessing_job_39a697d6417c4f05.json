@@ -1,0 +1,149 @@
+{
+  "options": {
+    "missing_numeric": "none",
+    "missing_categorical": "none",
+    "outliers": "none",
+    "drop_columns_missing_above": 0.5,
+    "scaling": "standard",
+    "encode_categoricals": true,
+    "date_features": true,
+    "max_encoding_levels": 20
+  },
+  "analysis_changed": false,
+  "rows_before": 1000000,
+  "rows_after": 1000000,
+  "columns_before": 9,
+  "columns_after": 9,
+  "steps": [
+    {
+      "step_id": "export_drop_columns",
+      "scope": "export",
+      "action": "drop_columns",
+      "column": null,
+      "detail": "Dropped 5 column(s) a model cannot use: primary_title (free text); original_title (free text); end_year (99% missing, above the 50% limit); runtime_minutes (62% missing, above the 50% limit); genres (free text)",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": [
+        "primary_title",
+        "original_title",
+        "end_year",
+        "runtime_minutes",
+        "genres"
+      ]
+    },
+    {
+      "step_id": "export_impute_median_start_year",
+      "scope": "export",
+      "action": "impute_median",
+      "column": "start_year",
+      "detail": "Filled 115,785 missing value(s) with the median (2,014).",
+      "rows_affected": 115785,
+      "columns_added": [],
+      "columns_removed": []
+    },
+    {
+      "step_id": "export_one_hot",
+      "scope": "export",
+      "action": "one_hot_encode",
+      "column": null,
+      "detail": "One-hot encoded 2 categorical column(s) into 15 indicator column(s).",
+      "rows_affected": 0,
+      "columns_added": [
+        "title_type=movie",
+        "title_type=short",
+        "title_type=tvEpisode",
+        "title_type=tvMiniSeries",
+        "title_type=tvMovie",
+        "title_type=tvSeries",
+        "title_type=tvShort",
+        "title_type=tvSpecial",
+        "title_type=video",
+        "title_type=videoGame",
+        "is_adult=0",
+        "is_adult=1",
+        "is_adult=2022",
+        "is_adult=2023",
+        "is_adult=2025"
+      ],
+      "columns_removed": [
+        "title_type",
+        "is_adult"
+      ]
+    },
+    {
+      "step_id": "export_scale_standard",
+      "scope": "export",
+      "action": "scale_standard",
+      "column": null,
+      "detail": "2 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler).",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": []
+    }
+  ],
+  "missing_before": {
+    "start_year": 115785,
+    "end_year": 987299,
+    "runtime_minutes": 624439,
+    "genres": 42268
+  },
+  "missing_after": {
+    "start_year": 115785,
+    "end_year": 987299,
+    "runtime_minutes": 624439,
+    "genres": 42268
+  },
+  "export": {
+    "artifact_id": "model_ready_dataset",
+    "rows": 1000000,
+    "columns": 17,
+    "column_names": [
+      "tconst",
+      "start_year",
+      "title_type=movie",
+      "title_type=short",
+      "title_type=tvEpisode",
+      "title_type=tvMiniSeries",
+      "title_type=tvMovie",
+      "title_type=tvSeries",
+      "title_type=tvShort",
+      "title_type=tvSpecial",
+      "title_type=video",
+      "title_type=videoGame",
+      "is_adult=0",
+      "is_adult=1",
+      "is_adult=2022",
+      "is_adult=2023",
+      "is_adult=2025"
+    ],
+    "scaling": "standard",
+    "encoded_columns": [
+      "title_type",
+      "is_adult"
+    ],
+    "date_feature_columns": [],
+    "dropped_columns": [
+      {
+        "column": "primary_title",
+        "reason": "free text"
+      },
+      {
+        "column": "original_title",
+        "reason": "free text"
+      },
+      {
+        "column": "end_year",
+        "reason": "99% missing, above the 50% limit"
+      },
+      {
+        "column": "runtime_minutes",
+        "reason": "62% missing, above the 50% limit"
+      },
+      {
+        "column": "genres",
+        "reason": "free text"
+      }
+    ]
+  },
+  "warnings": []
+}

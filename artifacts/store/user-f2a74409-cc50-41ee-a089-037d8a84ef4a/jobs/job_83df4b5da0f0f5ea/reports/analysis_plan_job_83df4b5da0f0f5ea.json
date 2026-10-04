@@ -1,0 +1,115 @@
+{
+  "objective": "Exploratory analysis of the uploaded dataset",
+  "assumptions": [
+    "Questions about change over time: no date column was identified in this dataset.",
+    "Questions comparing segments: no categorical dimension column was identified."
+  ],
+  "steps": [
+    {
+      "step_id": "overview_measures",
+      "analysis_type": "descriptive",
+      "tool_name": "describe_measures",
+      "parameters": {
+        "columns": [
+          "tconst",
+          "start_year",
+          "end_year",
+          "rank",
+          "average_rating",
+          "num_votes"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "data_quality",
+      "analysis_type": "descriptive",
+      "tool_name": "missingness_profile",
+      "parameters": {},
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "correlations",
+      "analysis_type": "relationship",
+      "tool_name": "correlation_matrix",
+      "parameters": {
+        "columns": [
+          "tconst",
+          "start_year",
+          "end_year",
+          "rank",
+          "average_rating",
+          "num_votes"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "primary_distribution",
+      "analysis_type": "distribution",
+      "tool_name": "value_distribution",
+      "parameters": {
+        "column": "tconst"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "anomalies",
+      "analysis_type": "anomaly",
+      "tool_name": "detect_outliers",
+      "parameters": {
+        "column": "tconst",
+        "method": "auto"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    }
+  ],
+  "not_supported_questions": [
+    "Questions about change over time: no date column was identified in this dataset.",
+    "Questions comparing segments: no categorical dimension column was identified."
+  ],
+  "clarifying_questions": [],
+  "is_exploratory": true,
+  "planner_model": null,
+  "planner_version": "1"
+}

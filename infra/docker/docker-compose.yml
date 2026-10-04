@@ -1,0 +1,71 @@
+# Local development stack.
+#
+#   docker compose up --build
+#   curl -H 'X-Owner-Id: alice' -F file=@sales.csv \
+#        'http://localhost:8000/api/v1/jobs'
+#
+# The sandbox service builds the restricted image that the worker uses for
+# generated-code execution. Set INSIGHTFLOW_SANDBOX_CONTAINER_RUNTIME=docker to
+# enable it; without that variable the worker falls back to local_process mode,
+# which is not an isolation boundary and is only appropriate for development.
+
+name: insightflow
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: infra/docker/app.Dockerfile
+    command: python -m insightflow_api
+    environment:
+      INSIGHTFLOW_ENVIRONMENT: docker
+      INSIGHTFLOW_ARTIFACT_ROOT: /app/artifacts
+      # Supabase/Postgres: set INSIGHTFLOW_STATE_DATABASE_URL in your shell or a .env file.
+      INSIGHTFLOW_STATE_DATABASE_URL: ${INSIGHTFLOW_STATE_DATABASE_URL:-sqlite:////app/artifacts/insightflow.db}
+      INSIGHTFLOW_INLINE_EXECUTION: "false"
+      # Jobs are queued for the worker service below.
+      INSIGHTFLOW_EXECUTION_MODE: worker
+      INSIGHTFLOW_SANDBOX_CONTAINER_RUNTIME: docker
+      # Third-party LLM calls stay off unless explicitly configured.
+      INSIGHTFLOW_LLM_ENABLED: ${INSIGHTFLOW_LLM_ENABLED:-false}
+    ports:
+      - "8000:8000"
+    volumes:
+      - artifacts:/app/artifacts
+      # Read-only so the API process cannot modify the image's code.
+      - ./policies:/app/artifacts/policies:ro
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: infra/docker/app.Dockerfile
+    command: python -m insightflow_worker
+    environment:
+      INSIGHTFLOW_ENVIRONMENT: docker
+      INSIGHTFLOW_ARTIFACT_ROOT: /app/artifacts
+      INSIGHTFLOW_STATE_DATABASE_URL: ${INSIGHTFLOW_STATE_DATABASE_URL:-sqlite:////app/artifacts/insightflow.db}
+      INSIGHTFLOW_LLM_ENABLED: ${INSIGHTFLOW_LLM_ENABLED:-false}
+      INSIGHTFLOW_LLM_API_KEY: ${INSIGHTFLOW_LLM_API_KEY:-}
+      INSIGHTFLOW_LLM_BASE_URL: ${INSIGHTFLOW_LLM_BASE_URL:-https://api.openai.com/v1}
+      INSIGHTFLOW_SANDBOX_CONTAINER_RUNTIME: docker
+      INSIGHTFLOW_SANDBOX_TIMEOUT_SECONDS: "300"
+      INSIGHTFLOW_SANDBOX_MEMORY_LIMIT_BYTES: "2147483648"
+      INSIGHTFLOW_POLL_SECONDS: "2"
+    volumes:
+      - artifacts:/app/artifacts
+      - ./policies:/app/artifacts/policies:ro
+      # The worker needs the container socket to launch disposable sandboxes.
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  artifacts:

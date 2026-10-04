@@ -1,0 +1,664 @@
+{
+  "job_id": "job_9996a6f40de3f22a",
+  "dataset_id": "ds_0d956819221a3004",
+  "title": "Analysis of name.basics",
+  "objective": "",
+  "sections": [
+    {
+      "kind": "executive_summary",
+      "heading": "Executive summary",
+      "body_markdown": "This report covers 1,000,000 rows and 6 columns. It was produced in response to this exploratory overview. 23 finding(s) were verified against computed values, 5 of them at medium or high importance. Each finding below links to the artifact it came from.\n\n### Key findings\n- **worst missing column (missingness_profile)** — The least complete column in this dataset is death_year. (confidence: high)\n- **worst missing share (missingness_profile)** — That column has no usable values in 98.3% of rows. (confidence: high)\n- **death_year: anomaly rate pct (detect_outliers)** — 0.0% of evaluated rows were flagged as unusual. (confidence: medium)\n- **388 of 1,000,000 rows flagged by iqr_fence** — iqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review. (confidence: medium)\n- **Most extreme iqr_fence flag: row 1287** — 'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s). (confidence: low)\n\n**Most important data-quality caveat:** `death_year` is missing in 98.3% of rows, so any figure involving it is calculated on partial data.",
+      "finding_ids": [
+        "find_5bdec78581e4",
+        "find_17319ad4e054",
+        "find_dd7d8185d102",
+        "find_eb019d99efcd",
+        "find_2206bfa2930d"
+      ],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 0,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "dataset_overview",
+      "heading": "Dataset overview",
+      "body_markdown": "**Source file:** name.basics.csv\n**Dimensions:** 1,000,000 rows x 6 columns\n**Column types:** nconst (integer), primary_name (text), birth_year (integer), death_year (integer), primary_profession (text), known_for_titles (integer)\n**Key measures:** nconst, birth_year, death_year, known_for_titles",
+      "finding_ids": [],
+      "artifact_ids": [
+        "eda_column_overview"
+      ],
+      "warnings": [],
+      "order": 1,
+      "tables": [
+        {
+          "title": "Column overview",
+          "columns": [
+            "Column",
+            "Type",
+            "Role",
+            "Missing",
+            "Missing %",
+            "Unique values",
+            "PII risk"
+          ],
+          "rows": [
+            [
+              "nconst",
+              "integer",
+              "measure",
+              "0",
+              "0.0%",
+              "1,000,000",
+              "none"
+            ],
+            [
+              "primary_name",
+              "text",
+              "free text",
+              "8",
+              "0.0%",
+              "927,763",
+              "none"
+            ],
+            [
+              "birth_year",
+              "integer",
+              "measure",
+              "956,529",
+              "95.7%",
+              "257",
+              "none"
+            ],
+            [
+              "death_year",
+              "integer",
+              "measure",
+              "983,331",
+              "98.3%",
+              "194",
+              "none"
+            ],
+            [
+              "primary_profession",
+              "text",
+              "free text",
+              "201,474",
+              "20.2%",
+              "11,611",
+              "none"
+            ],
+            [
+              "known_for_titles",
+              "integer",
+              "measure",
+              "120,295",
+              "12.0%",
+              "666,574",
+              "none"
+            ]
+          ],
+          "note": "Types and roles are inferred from values and column names.",
+          "source_artifact_id": "eda_column_overview",
+          "numeric_columns": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "data_quality",
+      "heading": "Data-quality assessment",
+      "body_markdown": "**Missing values**\n- `death_year`: 98.3% of rows\n- `birth_year`: 95.7% of rows\n- `primary_profession`: 20.2% of rows\n- `known_for_titles`: 12.0% of rows\n\n**Other issues detected**\n- [medium] `primary_name` 927517 normalised forms cover 927763 raw values: casing and whitespace differ between otherwise identical labels.\n- [medium] `primary_name` 927,762 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.\n- [high] `birth_year` 956,529 of 1,000,000 rows (95.7%) have no value.\n- [high] `death_year` 983,331 of 1,000,000 rows (98.3%) have no value.\n- [medium] `primary_profession` 201,474 of 1,000,000 rows (20.2%) have no value.\n- [medium] `known_for_titles` 120,295 of 1,000,000 rows (12.0%) have no value.\n\n**Cleaning applied**\n\n| Change | Rows affected | Reason | Reversible |\n| --- | --- | --- | --- |\n| parse_number on `nconst` | 1,000,000 | Parsed 'nconst' to a number with no loss of values. | no (restore from raw) |\n| trim_whitespace on `primary_name` | 0 | Trimmed leading and trailing whitespace in 'primary_name'. | yes |\n| normalise_categories on `primary_name` | 247 | 'primary_name' has 927762 raw labels for 927517 distinct values once case and whitespace are normalised. | yes |\n| parse_number on `birth_year` | 43,471 | Parsed 'birth_year' to a number with no loss of values. | no (restore from raw) |\n| parse_number on `death_year` | 16,669 | Parsed 'death_year' to a number with no loss of values. | no (restore from raw) |\n| parse_number on `known_for_titles` | 879,705 | Parsed 'known_for_titles' to a number with no loss of values. | no (restore from raw) |\n\n4 proposed change(s) were **not** applied because they were not approved.",
+      "finding_ids": [],
+      "artifact_ids": [
+        "eda_missing_values",
+        "eda_missing_values"
+      ],
+      "warnings": [],
+      "order": 2,
+      "tables": [
+        {
+          "title": "Missing values by column",
+          "columns": [
+            "Column",
+            "Missing",
+            "Missing %"
+          ],
+          "rows": [
+            [
+              "death_year",
+              "983,331",
+              "98.3%"
+            ],
+            [
+              "birth_year",
+              "956,529",
+              "95.7%"
+            ],
+            [
+              "primary_profession",
+              "201,474",
+              "20.2%"
+            ],
+            [
+              "known_for_titles",
+              "120,295",
+              "12.0%"
+            ],
+            [
+              "primary_name",
+              "8",
+              "0.0%"
+            ]
+          ],
+          "note": null,
+          "source_artifact_id": "eda_missing_values",
+          "numeric_columns": [
+            1,
+            2
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "artifact_id": "eda_missing_values",
+          "title": "Missing values by column",
+          "caption": "Share of rows with no value, per column. Computed on the uploaded data before cleaning.",
+          "wide": false
+        }
+      ],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "key_findings",
+      "heading": "Key findings",
+      "body_markdown": "#### worst missing column (missingness_profile)\n\nThe least complete column in this dataset is death_year.\n\n**Evidence** (tbl_d14ebbef982da579)\n  - `worst_missing_column` = death_year\n\n**Confidence:** high  \n**Severity:** medium\n\n#### worst missing share (missingness_profile)\n\nThat column has no usable values in 98.3% of rows.\n\n**Evidence** (tbl_d14ebbef982da579)\n  - `worst_missing_share` = 98.33 %\n\n**Confidence:** high  \n**Severity:** medium\n\n#### death_year: anomaly rate pct (detect_outliers)\n\n0.0% of evaluated rows were flagged as unusual.\n\n**Evidence** (tbl_31690be4163ebd77)\n  - `death_year__anomaly_rate_pct` = 0.0388 %\n\n**Confidence:** medium  \n**Severity:** medium\n\n**Limitations**\n- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.\n\n#### 388 of 1,000,000 rows flagged by iqr_fence\n\niqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review.\n\n**Evidence** (anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a)\n  - `death_year__anomalies_flagged` = 388 records\n  - `death_year__anomaly_rate_pct` = 0.0388 %\n\n**Confidence:** medium  \n**Severity:** medium\n\n**Limitations**\n- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.\n\n#### Most extreme iqr_fence flag: row 1287\n\n'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s).\n\n**Evidence** (anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a)\n  - `death_year__observed_value` = 1,918 death_year\n\n**Confidence:** low  \n**Severity:** medium\n\n**Limitations**\n- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.\n- Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.\n\n#### death_year: skewness (describe_measures, overview_measures)\n\nThe distribution is skewed (-5.32), so averages understate the spread.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `death_year__skewness` = -5.32\n\n**Confidence:** high  \n**Severity:** low\n\n#### birth_year: skewness (describe_measures)\n\nThe distribution is skewed (-1.99), so averages understate the spread.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `birth_year__skewness` = -1.989\n\n**Confidence:** high  \n**Severity:** low\n\n#### known_for_titles: skewness (describe_measures)\n\nThe distribution is skewed (7.05), so averages understate the spread.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `known_for_titles__skewness` = 7.047\n\n**Confidence:** high  \n**Severity:** low\n\n#### nconst: skewness (describe_measures)\n\nThe distribution is skewed (0.03), so averages understate the spread.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `nconst__skewness` = 0.03288\n\n**Confidence:** high  \n**Severity:** low\n\n#### death_year: skewness (value_distribution, primary_distribution)\n\nThe distribution is skewed (-5.32), so averages understate the spread.\n\n**Evidence** (tbl_0335384693f4885c)\n  - `death_year__skewness` = -5.32\n\n**Confidence:** high  \n**Severity:** low\n\n#### strongest correlation (correlation_matrix)\n\nThe strongest measured association in the data is 0.86.\n\n**Evidence** (tbl_be1ba0aa58e6231d)\n  - `strongest_correlation` = 0.8585\n\n**Confidence:** medium  \n**Severity:** low\n\n**Limitations**\n- Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.\n\n#### death_year: mean (describe_measures)\n\nThe 1,996 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `death_year__mean` = 1,996\n\n**Confidence:** high  \n**Severity:** info\n\n#### death_year: median (describe_measures)\n\nThe 2,004 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `death_year__median` = 2,004\n\n**Confidence:** high  \n**Severity:** info\n\n#### death_year: total (describe_measures)\n\nThe 33,266,759 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `death_year__total` = 3.327e+07\n\n**Confidence:** high  \n**Severity:** info\n\n#### birth_year: mean (describe_measures)\n\nThe 1,955 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `birth_year__mean` = 1,955\n\n**Confidence:** high  \n**Severity:** info\n\n#### birth_year: median (describe_measures)\n\nThe 1,961 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `birth_year__median` = 1,961\n\n**Confidence:** high  \n**Severity:** info\n\n#### birth_year: total (describe_measures)\n\nThe 84,987,514 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `birth_year__total` = 8.499e+07\n\n**Confidence:** high  \n**Severity:** info\n\n#### known_for_titles: mean (describe_measures)\n\nThe 726,508,973,871,049,703,890,893,144,064 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `known_for_titles__mean` = 7.265e+29\n\n**Confidence:** high  \n**Severity:** info\n\n#### known_for_titles: median (describe_measures)\n\nThe 25,244,380 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `known_for_titles__median` = 2.524e+07\n\n**Confidence:** high  \n**Severity:** info\n\n#### known_for_titles: total (describe_measures)\n\nThe 639,113,576,859,231,752,766,199,036,886,646,784 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `known_for_titles__total` = 6.391e+35\n\n**Confidence:** high  \n**Severity:** info\n\n#### nconst: mean (describe_measures)\n\nThe 9,289,369 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `nconst__mean` = 9.289e+06\n\n**Confidence:** high  \n**Severity:** info\n\n#### nconst: median (describe_measures)\n\nThe 9,320,211 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `nconst__median` = 9.32e+06\n\n**Confidence:** high  \n**Severity:** info\n\n#### nconst: total (describe_measures)\n\nThe 9,289,369,275,770 value of this measure was computed.\n\n**Evidence** (tbl_4eb03f08965e3847)\n  - `nconst__total` = 9.289e+12\n\n**Confidence:** high  \n**Severity:** info",
+      "finding_ids": [
+        "find_12a8d028232f",
+        "find_7e6fdd81000c",
+        "find_597c66b1ecc2",
+        "find_274238e7279b",
+        "find_501594e4bcbf",
+        "find_4a709edd8559",
+        "find_24dec1fcb7d1",
+        "find_acc5fa9200ba",
+        "find_77fa57c22da9",
+        "find_f2f7a89c6994",
+        "find_54bc55f57244",
+        "find_6ef1812a743f",
+        "find_3fb7d974bfd0",
+        "find_d4709f0aa731",
+        "find_68ec278e14da",
+        "find_18f3094fc595",
+        "find_5bdec78581e4",
+        "find_17319ad4e054",
+        "find_a53153d45442",
+        "find_e317dcb9d4ac",
+        "find_dd7d8185d102",
+        "find_eb019d99efcd",
+        "find_2206bfa2930d"
+      ],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 8,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "anomalies",
+      "heading": "Anomalies",
+      "body_markdown": "**A flagged record is unusual relative to a stated baseline. It is not evidence of an error, mistake or wrongdoing, and it may be entirely legitimate.**\n\n### `death_year` - iqr_fence\n\n- Flagged: **388** of 1,000,000 evaluated rows (0.0%)\n- Baseline: First and third quartiles of 'death_year', extended by 1.5 times the interquartile range on each side.\n- Limitation: Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.\n\n| Flagged value | Compared against | Severity | Why flagged |\n| --- | --- | --- | --- |\n| 1,918 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,929 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,929 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,928 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,928 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,653 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,653 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,888 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,888 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,923 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,923 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,917 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,917 against 1,930 to 2,070, derived from 16,669 valu |\n| 1,913 | 1,930 to 2,070 | medium | 'death_year' is below the expected range for interquartile fence: 1,913 against 1,930 to 2,070, derived from 16,669 valu |\n\n**Suggested review order:** start with high-severity flags, then check whether the surrounding periods and groups corroborate them.",
+      "finding_ids": [],
+      "artifact_ids": [
+        "chart_c13b05452eccd546"
+      ],
+      "warnings": [],
+      "order": 9,
+      "tables": [],
+      "charts": [
+        {
+          "artifact_id": "chart_c13b05452eccd546",
+          "title": "Values flagged by iqr_fence",
+          "caption": "388 flagged record(s) from death_year. Shown: 15. Detected by iqr_fence. A flagged record is unusual relative to the stated baseline. It is not evidence of an error, and it may be entirely legitimate.",
+          "wide": false
+        }
+      ],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "methodology",
+      "heading": "Methodology",
+      "body_markdown": "Every figure in this report was computed by a registered analysis tool and stored as an artifact before the report was written. No number was produced by a language model.\n\n**Tools used**\n\n- `describe_measures` v1 on dataset version 2 - 20 metric(s), 1 table(s)\n- `missingness_profile` v1 on dataset version 2 - 2 metric(s), 1 table(s)\n- `correlation_matrix` v1 on dataset version 2 - 7 metric(s), 1 table(s)\n- `value_distribution` v1 on dataset version 2 - 3 metric(s), 1 table(s)\n- `detect_outliers` v1 on dataset version 2 - 4 metric(s), 1 table(s)\n\n**Exploratory analysis:** descriptive statistics, distributions, correlations, segment and trend views were computed with pandas and NumPy and drawn with seaborn and matplotlib. Charts over many rows use a fixed random sample, stated in each caption; tables use every row.\n\nThis report includes **8 chart(s)** and **9 evidence table(s)**. Each table cites the stored CSV that holds its unrounded values; the full list is in the appendix.",
+      "finding_ids": [],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 10,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "limitations",
+      "heading": "Limitations",
+      "body_markdown": "**Missing fields:** `birth_year` (96%), `death_year` (98%), `primary_profession` (20%). Aggregates over these columns exclude missing rows, which can bias totals downward.\n**No causal claims:** where this report describes relationships, they are associations observed in the data. Establishing cause would require a different study design.\n\n**Questions this dataset cannot answer**\n\n- Questions about change over time: no date column was identified in this dataset.\n- Questions comparing segments: no categorical dimension column was identified.",
+      "finding_ids": [],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 11,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "reproducibility",
+      "heading": "Reproducibility",
+      "body_markdown": "- **Job:** `job_9996a6f40de3f22a`\n- **Dataset:** `ds_0d956819221a3004`\n- **Source file hash:** `6fd1f702a187bbeb757f4fb574da08423d7a770f670e907f4e92231e8bc03950`\n- **Rows x columns:** 1,000,000 x 6\n- **Profiler version:** 1\n- **Report generated:** 2026-10-01T11:32:23.709965+00:00\n\nRe-running the same file produces the same profile and the same computed metrics. Every table and chart in this report is stored as an artifact and can be downloaded alongside it.",
+      "finding_ids": [],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 13,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "next_steps",
+      "heading": "Suggested next questions",
+      "body_markdown": "Suggested next questions, based on what this dataset can answer:\n1. Drill into the flagged periods and check whether an operational event (campaign, outage, pricing change) lines up with them.\n2. Establish whether the missing values in `birth_year` are random or systematic, because that changes how the results should be read.\n3. Add a target or prior-period column so the numbers can be judged against a goal rather than only against each other.",
+      "finding_ids": [],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 12,
+      "tables": [],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "preprocessing",
+      "heading": "Data preprocessing",
+      "body_markdown": "Preprocessing runs after cleaning and has two separate scopes:\n\n- **Analysed data** - optional changes to the data every figure in this report is computed from. **No changes were applied**, so the figures reflect the cleaned data.\n- **Model-ready export** - a separate copy prepared for machine learning (scaled, encoded, with date features). It is offered as a download and does not feed any figure in this report.\n\n**Settings:** missing numbers = `none`, missing categories = `none`, outliers = `none`, scaling = `standard`, one-hot encoding = `on`, date features = `on`.",
+      "finding_ids": [],
+      "artifact_ids": [],
+      "warnings": [],
+      "order": 3,
+      "tables": [
+        {
+          "title": "Model-ready export",
+          "columns": [
+            "Step",
+            "Column",
+            "What was done"
+          ],
+          "rows": [
+            [
+              "drop columns",
+              "-",
+              "Dropped 4 column(s) a model cannot use: primary_name (free text); birth_year (96% missing, above the 50% limit); death_year (98% missing, above the 50% limit); primary_profession (free text)"
+            ],
+            [
+              "impute median",
+              "known_for_titles",
+              "Filled 120,295 missing value(s) with the median (2.524e+07)."
+            ],
+            [
+              "scale standard",
+              "-",
+              "2 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler)."
+            ]
+          ],
+          "note": "Result: 1,000,000 rows x 2 columns, downloadable from the job's Preprocessing tab.",
+          "source_artifact_id": null,
+          "numeric_columns": []
+        },
+        {
+          "title": "Columns left out of the model-ready export",
+          "columns": [
+            "Column",
+            "Reason"
+          ],
+          "rows": [
+            [
+              "primary_name",
+              "free text"
+            ],
+            [
+              "birth_year",
+              "96% missing, above the 50% limit"
+            ],
+            [
+              "death_year",
+              "98% missing, above the 50% limit"
+            ],
+            [
+              "primary_profession",
+              "free text"
+            ]
+          ],
+          "note": null,
+          "source_artifact_id": null,
+          "numeric_columns": []
+        }
+      ],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "descriptive_statistics",
+      "heading": "Descriptive statistics",
+      "body_markdown": "Summary statistics for every numeric measure and grouping column, computed on every analysed row.",
+      "finding_ids": [],
+      "artifact_ids": [
+        "eda_numeric_summary"
+      ],
+      "warnings": [],
+      "order": 4,
+      "tables": [
+        {
+          "title": "Numeric columns",
+          "columns": [
+            "Column",
+            "Count",
+            "Mean",
+            "Std dev",
+            "Min",
+            "25%",
+            "Median",
+            "75%",
+            "Max",
+            "Skew",
+            "Kurtosis"
+          ],
+          "rows": [
+            [
+              "nconst",
+              "1,000,000",
+              "9,289,369",
+              "5,524,575",
+              "7",
+              "4,407,448",
+              "9,320,211",
+              "13,993,858",
+              "18,963,961",
+              "0.03",
+              "-1.21"
+            ],
+            [
+              "birth_year",
+              "43,471",
+              "1,955.0",
+              "33.96",
+              "1,150",
+              "1,934",
+              "1,961",
+              "1,981",
+              "2,025",
+              "-1.99",
+              "21.99"
+            ],
+            [
+              "death_year",
+              "16,669",
+              "1,995.7",
+              "31.20",
+              "1,220",
+              "1,982",
+              "2,004",
+              "2,017",
+              "2,026",
+              "-5.32",
+              "78.37"
+            ],
+            [
+              "known_for_titles",
+              "879,705",
+              "726,508,973,871,049,703,890,893,144,064",
+              "4,393,250,270,748,034,954,753,357,119,488",
+              "32",
+              "3,458,542",
+              "25,244,380",
+              "33,245,203,654,850,318,336",
+              "47,656,666,374,299,974,273,745,029,169,152",
+              "7.05",
+              "51.52"
+            ]
+          ],
+          "note": "Count excludes missing values. Skew above 1 or below -1 indicates a strongly lopsided distribution.",
+          "source_artifact_id": "eda_numeric_summary",
+          "numeric_columns": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ],
+      "charts": [],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "distributions",
+      "heading": "Distributions",
+      "body_markdown": "How the values of each column are spread: shape, centre, outliers and the most frequent categories.",
+      "finding_ids": [],
+      "artifact_ids": [
+        "eda_histograms",
+        "eda_box_plots",
+        "chart_5079cfa7ef1bd921"
+      ],
+      "warnings": [],
+      "order": 5,
+      "tables": [],
+      "charts": [
+        {
+          "artifact_id": "eda_histograms",
+          "title": "Distribution of numeric columns",
+          "caption": "Histograms with a smoothed density curve; solid line = mean, dashed = median. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.",
+          "wide": true
+        },
+        {
+          "artifact_id": "eda_box_plots",
+          "title": "Spread and outliers",
+          "caption": "Box = middle 50% of values, line = median, whiskers = 1.5 x IQR; points beyond are unusual relative to the column, not necessarily errors. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.",
+          "wide": true
+        },
+        {
+          "artifact_id": "chart_5079cfa7ef1bd921",
+          "title": "Distribution of death_year",
+          "caption": "16,669 non-null values across 30 equal-width bins. Bins are equal width; a skewed measure is easier to read as a log scale, which is not shown.",
+          "wide": false
+        }
+      ],
+      "footer_markdown": ""
+    },
+    {
+      "kind": "relationships",
+      "heading": "Relationships between measures",
+      "body_markdown": "Pairwise correlations between numeric measures. A correlation describes how two columns move together; it is an association, not evidence that one affects the other.",
+      "finding_ids": [],
+      "artifact_ids": [
+        "eda_top_correlations",
+        "eda_correlation_heatmap",
+        "eda_top_pair_scatter"
+      ],
+      "warnings": [],
+      "order": 6,
+      "tables": [
+        {
+          "title": "Strongest correlations",
+          "columns": [
+            "Column A",
+            "Column B",
+            "Pearson r",
+            "Strength",
+            "Rows used"
+          ],
+          "rows": [
+            [
+              "birth_year",
+              "death_year",
+              "+0.849",
+              "strong positive",
+              "15,531"
+            ],
+            [
+              "nconst",
+              "birth_year",
+              "+0.385",
+              "weak positive",
+              "43,471"
+            ],
+            [
+              "birth_year",
+              "known_for_titles",
+              "+0.186",
+              "negligible",
+              "41,636"
+            ],
+            [
+              "nconst",
+              "death_year",
+              "+0.121",
+              "negligible",
+              "16,669"
+            ],
+            [
+              "nconst",
+              "known_for_titles",
+              "+0.110",
+              "negligible",
+              "879,705"
+            ],
+            [
+              "death_year",
+              "known_for_titles",
+              "+0.031",
+              "negligible",
+              "15,582"
+            ]
+          ],
+          "note": null,
+          "source_artifact_id": "eda_top_correlations",
+          "numeric_columns": [
+            2,
+            4
+          ]
+        }
+      ],
+      "charts": [
+        {
+          "artifact_id": "eda_correlation_heatmap",
+          "title": "Correlation matrix",
+          "caption": "Pearson correlation on rows where both values are present. Correlation measures association only; it does not show that one column affects another.",
+          "wide": true
+        },
+        {
+          "artifact_id": "eda_top_pair_scatter",
+          "title": "birth_year vs death_year",
+          "caption": "The most strongly correlated pair (r = +0.85), with a least-squares line. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.",
+          "wide": false
+        }
+      ],
+      "footer_markdown": ""
+    }
+  ],
+  "finding_ids": [
+    "find_12a8d028232f",
+    "find_7e6fdd81000c",
+    "find_597c66b1ecc2",
+    "find_274238e7279b",
+    "find_501594e4bcbf",
+    "find_4a709edd8559",
+    "find_24dec1fcb7d1",
+    "find_acc5fa9200ba",
+    "find_77fa57c22da9",
+    "find_f2f7a89c6994",
+    "find_54bc55f57244",
+    "find_6ef1812a743f",
+    "find_3fb7d974bfd0",
+    "find_d4709f0aa731",
+    "find_68ec278e14da",
+    "find_18f3094fc595",
+    "find_5bdec78581e4",
+    "find_17319ad4e054",
+    "find_a53153d45442",
+    "find_e317dcb9d4ac",
+    "find_dd7d8185d102",
+    "find_eb019d99efcd",
+    "find_2206bfa2930d"
+  ],
+  "artifact_ids": [
+    "chart_5ef5fcd3c223b5cc",
+    "chart_5079cfa7ef1bd921",
+    "chart_c13b05452eccd546",
+    "eda_missing_values",
+    "eda_histograms",
+    "eda_box_plots",
+    "eda_correlation_heatmap",
+    "eda_top_pair_scatter",
+    "tbl_4eb03f08965e3847",
+    "tbl_d14ebbef982da579",
+    "tbl_be1ba0aa58e6231d",
+    "tbl_0335384693f4885c",
+    "tbl_31690be4163ebd77",
+    "eda_column_overview",
+    "eda_missing_values",
+    "eda_numeric_summary",
+    "eda_top_correlations"
+  ],
+  "is_exploratory": true,
+  "generated_at": "2026-10-01T11:32:23.710966+00:00",
+  "composer_model": "deterministic",
+  "report_version": "2",
+  "source_filename": "name.basics.csv",
+  "kpis": [
+    {
+      "label": "Rows",
+      "value": "1,000,000",
+      "note": null
+    },
+    {
+      "label": "Columns",
+      "value": "6",
+      "note": null
+    },
+    {
+      "label": "Missing cells",
+      "value": "37.7%",
+      "note": "2,261,637 of 6,000,000"
+    },
+    {
+      "label": "Duplicate rows",
+      "value": "0",
+      "note": null
+    },
+    {
+      "label": "Preprocessing",
+      "value": "export only",
+      "note": "3 logged step(s)"
+    },
+    {
+      "label": "Verified findings",
+      "value": "23",
+      "note": null
+    },
+    {
+      "label": "Charts",
+      "value": "8",
+      "note": null
+    }
+  ]
+}

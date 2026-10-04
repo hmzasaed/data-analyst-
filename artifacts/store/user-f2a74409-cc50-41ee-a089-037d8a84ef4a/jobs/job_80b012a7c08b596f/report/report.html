@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Analysis of Global Economy Indicators</title>
+<style>
+:root {
+  --ink: #1f2933; --muted: #6b7684; --line: #d9dee3; --accent: #3b6ea5;
+  --warn-bg: #fff8e6; --warn-line: #e0b95c; --caveat-bg: #f2f6fa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 2.5rem 1.25rem 4rem; color: var(--ink); background: #fff;
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 52rem; margin: 0 auto; }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .35rem; }
+h2 { font-size: 1.3rem; margin: 2.75rem 0 .75rem; padding-bottom: .4rem; border-bottom: 2px solid var(--line); }
+h3 { font-size: 1.08rem; margin: 1.75rem 0 .5rem; }
+h4 { font-size: .98rem; margin: 1.4rem 0 .4rem; }
+p, li { margin: .5rem 0; }
+code { background: #f2f4f6; padding: .1rem .32rem; border-radius: 3px; font-size: .87em; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .92rem; }
+th, td { border: 1px solid var(--line); padding: .42rem .6rem; text-align: left; vertical-align: top; }
+th { background: #f7f9fa; font-weight: 600; }
+blockquote {
+  margin: 1rem 0; padding: .75rem 1rem; background: var(--caveat-bg);
+  border-left: 4px solid var(--accent);
+}
+.meta { color: var(--muted); font-size: .88rem; margin-bottom: 1.5rem; }
+.callout {
+  margin: 1.25rem 0; padding: .85rem 1rem; background: var(--warn-bg);
+  border: 1px solid var(--warn-line); border-radius: 6px; font-size: .93rem;
+}
+.callout strong { display: block; margin-bottom: .25rem; }
+.evidence {
+  background: #fafbfc; border-left: 3px solid var(--line); padding: .55rem .8rem;
+  margin: .6rem 0; font-size: .88rem;
+}
+.evidence ul { margin: .3rem 0; padding-left: 1.1rem; }
+.limits { font-size: .9rem; color: var(--muted); }
+.chart { margin: 1.5rem 0; }
+.chart img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+.chart figcaption { color: var(--muted); font-size: .85rem; margin-top: .4rem; }
+footer {
+  margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .85rem;
+}
+@media print {
+  body { padding: 0; font-size: 11pt; }
+  h2 { page-break-after: avoid; }
+  .chart, table { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Analysis of Global Economy Indicators</h1>
+  <p class="meta">
+    Dataset <code>ds_0d06f3cc69889acb</code> &middot;
+    Job <code>job_80b012a7c08b596f</code>
+&middot; generated 2026-10-01T09:40:38.278715+00:00  </p>
+
+
+  <div class="callout">
+    <strong>Exploratory report</strong>
+    No specific question was asked, so this is a general overview of the dataset rather
+    than an answer to a targeted business question.
+  </div>
+
+  <section id="executive_summary">
+    <h2>Executive summary</h2>
+    <div class="section-body">This report covers 10,512 rows and 26 columns. It was produced in response to this exploratory overview. 38 finding(s) were verified against computed values, 9 of them at medium or high importance. Each finding below links to the artifact it came from.
+
+### Key findings
+- <strong>worst missing column (missingness_profile)</strong> — The least complete column in this dataset is changes_in_inventories. (confidence: high)
+- <strong>worst missing share (missingness_profile)</strong> — That column has no usable values in 17.5% of rows. (confidence: high)
+- <strong>changes_in_inventories: overall change pct (time_series_aggregate)</strong> — The measure changed by 1338.6% between the first and last period. (confidence: medium)
+- <strong>changes_in_inventories: anomaly rate pct (detect_outliers, anomalies)</strong> — 4.8% of evaluated rows were flagged as unusual. (confidence: medium)
+- <strong>changes_in_inventories: anomaly rate pct (detect_outliers, anomalies_over_time)</strong> — 4.8% of evaluated rows were flagged as unusual. (confidence: medium)
+
+<strong>Most important data-quality caveat:</strong> <code>changes_in_inventories</code> is missing in 17.5% of rows, so any figure involving it is calculated on partial data.</div>
+
+
+  </section>
+  <section id="dataset_overview">
+    <h2>Dataset overview</h2>
+    <div class="section-body"><strong>Source file:</strong> Global Economy Indicators.csv
+<strong>Dimensions:</strong> 10,512 rows x 26 columns
+<strong>Column types:</strong> country_id (integer), country (text), year (integer), ama_exchange_rate (number), imf_based_exchange_rate (number), population (integer), currency (text), per_capita_gni (integer), agriculture_hunting_forestry_fishing_isic_a_b (integer), changes_in_inventories (integer), construction_isic_f (integer), exports_of_goods_and_services (integer)
+<strong>Key measures:</strong> ama_exchange_rate, imf_based_exchange_rate, population, per_capita_gni, agriculture_hunting_forestry_fishing_isic_a_b, changes_in_inventories, construction_isic_f, exports_of_goods_and_services
+<strong>Grouping fields:</strong> country_id, country
+<strong>Personal data detected:</strong> agriculture_hunting_forestry_fishing_isic_a_b (medium risk), changes_in_inventories (medium risk), construction_isic_f (medium risk), exports_of_goods_and_services (medium risk), final_consumption_expenditure (medium risk), general_government_final_consumption_expenditure (medium risk), gross_capital_formation (medium risk), gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables (medium risk), household_consumption_expenditure_including_non_profit_institutions_serving_households (medium risk), imports_of_goods_and_services (medium risk), manufacturing_isic_d (medium risk), mining_manufacturing_utilities_isic_c_e (medium risk), other_activities_isic_j_p (medium risk), total_value_added (medium risk), transport_storage_and_communication_isic_i (medium risk), wholesale_retail_trade_restaurants_and_hotels_isic_g_h (medium risk), gross_national_income_gni_in_usd (medium risk), gross_domestic_product_gdp (medium risk). Values from these columns are not reproduced in this report.</div>
+
+
+  </section>
+  <section id="data_quality">
+    <h2>Data-quality assessment</h2>
+    <div class="section-body"><strong>Missing values</strong>
+- <code>changes_in_inventories</code>: 17.5% of rows
+- <code>agriculture_hunting_forestry_fishing_isic_a_b</code>: 1.1% of rows
+- <code>general_government_final_consumption_expenditure</code>: 0.5% of rows
+- <code>gross_capital_formation</code>: 0.5% of rows
+- <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables</code>: 0.5% of rows
+- <code>household_consumption_expenditure_including_non_profit_institutions_serving_households</code>: 0.5% of rows
+- <code>transport_storage_and_communication_isic_i</code>: 0.5% of rows
+- <code>wholesale_retail_trade_restaurants_and_hotels_isic_g_h</code>: 0.5% of rows
+
+<strong>Other issues detected</strong>
+- [medium] <code>agriculture_hunting_forestry_fishing_isic_a_b</code> 121 of 10,512 rows (1.1%) have no value.
+- [medium] <code>changes_in_inventories</code> 1,841 of 10,512 rows (17.5%) have no value.
+- [medium] <code>exports_of_goods_and_services</code> 21 of 10,512 rows (0.2%) have no value.
+- [medium] <code>general_government_final_consumption_expenditure</code> 52 of 10,512 rows (0.5%) have no value.
+- [medium] <code>gross_capital_formation</code> 52 of 10,512 rows (0.5%) have no value.
+- [medium] <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables</code> 52 of 10,512 rows (0.5%) have no value.
+- [medium] <code>household_consumption_expenditure_including_non_profit_institutions_serving_households</code> 52 of 10,512 rows (0.5%) have no value.
+- [medium] <code>imports_of_goods_and_services</code> 42 of 10,512 rows (0.4%) have no value.
+
+<strong>Cleaning applied</strong>
+
+| Change | Rows affected | Reason | Reversible |
+| --- | --- | --- | --- |
+| parse_number on <code>country_id</code> | 10,512 | Parsed 'country_id' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>year</code> | 10,512 | Parsed 'year' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>ama_exchange_rate</code> | 10,512 | Parsed 'ama_exchange_rate' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>imf_based_exchange_rate</code> | 10,512 | Parsed 'imf_based_exchange_rate' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>population</code> | 10,512 | Parsed 'population' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>per_capita_gni</code> | 10,512 | Parsed 'per_capita_gni' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>agriculture_hunting_forestry_fishing_isic_a_b</code> | 10,391 | Parsed 'agriculture_hunting_forestry_fishing_isic_a_b' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>changes_in_inventories</code> | 8,671 | Parsed 'changes_in_inventories' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>construction_isic_f</code> | 10,512 | Parsed 'construction_isic_f' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>exports_of_goods_and_services</code> | 10,491 | Parsed 'exports_of_goods_and_services' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>final_consumption_expenditure</code> | 10,512 | Parsed 'final_consumption_expenditure' to a number with no loss of values. | no (restore from raw) |
+| parse_number on <code>general_government_final_consumption_expenditure</code> | 10,460 | Parsed 'general_government_final_consumption_expenditure' to a number with no loss of values. | no (restore from raw) |
+
+29 proposed change(s) were <strong>not</strong> applied because they were not approved.
+
+Personal data was detected. Values from those columns are excluded from this report.</div>
+
+
+  </section>
+  <section id="key_findings">
+    <h2>Key findings</h2>
+    <div class="section-body">#### worst missing column (missingness_profile)
+
+The least complete column in this dataset is changes_in_inventories.
+
+<strong>Evidence</strong> (tbl_54e2cb8e2178ad5c)
+  - <code>worst_missing_column</code> = changes_in_inventories
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> medium
+
+#### worst missing share (missingness_profile)
+
+That column has no usable values in 17.5% of rows.
+
+<strong>Evidence</strong> (tbl_54e2cb8e2178ad5c)
+  - <code>worst_missing_share</code> = 17.51 %
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> medium
+
+#### changes_in_inventories: overall change pct (time_series_aggregate)
+
+The measure changed by 1338.6% between the first and last period.
+
+<strong>Evidence</strong> (tbl_ee62fa5cc411fb04)
+  - <code>changes_in_inventories__overall_change_pct</code> = 1,339 %
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> medium
+
+#### changes_in_inventories: anomaly rate pct (detect_outliers, anomalies)
+
+4.8% of evaluated rows were flagged as unusual.
+
+<strong>Evidence</strong> (tbl_ca718ae5dfc11d8c)
+  - <code>changes_in_inventories__anomaly_rate_pct</code> = 4.756 %
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+#### changes_in_inventories: anomaly rate pct (detect_outliers, anomalies_over_time)
+
+4.8% of evaluated rows were flagged as unusual.
+
+<strong>Evidence</strong> (tbl_158199e92f307952)
+  - <code>changes_in_inventories__anomaly_rate_pct</code> = 4.756 %
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Requires reliable time ordering and enough history; results change with the window size and are unstable for short series.
+- The first 7 point(s) have no trailing history and cannot be scored.
+- 11 point(s) followed a perfectly flat window. With no variation to compare against, any departure from that level is flagged, so expect these flags to be easy to explain and easy to dismiss.
+
+#### 500 of 10,512 rows flagged by iqr_fence
+
+iqr_fence flagged 500 of 10,512 evaluated rows in 'changes_in_inventories' as unusual relative to the stated baseline. 4.8% of the evaluated rows, flagged for review.
+
+<strong>Evidence</strong> (anomaly:42db9cc1e64a6646422fe11aa719effe)
+  - <code>changes_in_inventories__anomalies_flagged</code> = 500 records
+  - <code>changes_in_inventories__anomaly_rate_pct</code> = 4.756 %
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+#### 500 of 10,512 rows flagged by iqr_fence
+
+iqr_fence flagged 500 of 10,512 evaluated rows in 'changes_in_inventories' as unusual relative to the stated baseline. 4.8% of the evaluated rows, flagged for review.
+
+<strong>Evidence</strong> (anomaly:8a570a3c83b85e14f1fbe7275d345fd1)
+  - <code>changes_in_inventories__anomalies_flagged</code> = 500 records
+  - <code>changes_in_inventories__anomaly_rate_pct</code> = 4.756 %
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+#### Most extreme iqr_fence flag: row 114
+
+'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1,726,986,548, derived from 8,671 value(s).
+
+<strong>Evidence</strong> (anomaly:42db9cc1e64a6646422fe11aa719effe)
+  - <code>changes_in_inventories__observed_value</code> = 2.193e+09 changes_in_inventories
+
+<strong>Confidence:</strong> low  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+- Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+#### Most extreme iqr_fence flag: row 114
+
+'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1,726,986,548, derived from 8,671 value(s).
+
+<strong>Evidence</strong> (anomaly:8a570a3c83b85e14f1fbe7275d345fd1)
+  - <code>changes_in_inventories__observed_value</code> = 2.193e+09 changes_in_inventories
+
+<strong>Confidence:</strong> low  
+<strong>Severity:</strong> medium
+
+<strong>Limitations</strong>
+- Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+- Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+#### changes_in_inventories: skewness (describe_measures, overview_measures)
+
+The distribution is skewed (10.12), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>changes_in_inventories__skewness</code> = 10.12
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### agriculture_hunting_forestry_fishing_isic_a_b: skewness (describe_measures)
+
+The distribution is skewed (18.91), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>agriculture_hunting_forestry_fishing_isic_a_b__skewness</code> = 18.91
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### general_government_final_consumption_expenditure: skewness (describe_measures)
+
+The distribution is skewed (11.62), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>general_government_final_consumption_expenditure__skewness</code> = 11.62
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### gross_capital_formation: skewness (describe_measures)
+
+The distribution is skewed (14.53), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_capital_formation__skewness</code> = 14.53
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: skewness (describe_measures)
+
+The distribution is skewed (14.53), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__skewness</code> = 14.53
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### household_consumption_expenditure_including_non_profit_institutions_serving_households: skewness (describe_measures)
+
+The distribution is skewed (15.04), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>household_consumption_expenditure_including_non_profit_institutions_serving_households__skewness</code> = 15.04
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### changes_in_inventories: skewness (value_distribution, primary_distribution)
+
+The distribution is skewed (10.12), so averages understate the spread.
+
+<strong>Evidence</strong> (tbl_3a84c421ea92e453)
+  - <code>changes_in_inventories__skewness</code> = 10.12
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> low
+
+#### strongest correlation (correlation_matrix)
+
+The strongest measured association in the data is 1.00.
+
+<strong>Evidence</strong> (tbl_d53845341dae98a6)
+  - <code>strongest_correlation</code> = 0.9997
+
+<strong>Confidence:</strong> medium  
+<strong>Severity:</strong> low
+
+<strong>Limitations</strong>
+- Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.
+
+#### changes_in_inventories: mean (describe_measures)
+
+The 1,626,543,203 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>changes_in_inventories__mean</code> = 1.627e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### changes_in_inventories: median (describe_measures)
+
+The 68,296,349 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>changes_in_inventories__median</code> = 6.83e+07
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### changes_in_inventories: total (describe_measures)
+
+The 14,103,756,112,774 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>changes_in_inventories__total</code> = 1.41e+13
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### agriculture_hunting_forestry_fishing_isic_a_b: mean (describe_measures)
+
+The 7,793,212,164 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>agriculture_hunting_forestry_fishing_isic_a_b__mean</code> = 7.793e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### agriculture_hunting_forestry_fishing_isic_a_b: median (describe_measures)
+
+The 931,367,444 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>agriculture_hunting_forestry_fishing_isic_a_b__median</code> = 9.314e+08
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### agriculture_hunting_forestry_fishing_isic_a_b: total (describe_measures)
+
+The 80,979,267,599,877 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>agriculture_hunting_forestry_fishing_isic_a_b__total</code> = 8.098e+13
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### general_government_final_consumption_expenditure: mean (describe_measures)
+
+The 30,853,786,134 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>general_government_final_consumption_expenditure__mean</code> = 3.085e+10
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### general_government_final_consumption_expenditure: median (describe_measures)
+
+The 1,122,262,120 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>general_government_final_consumption_expenditure__median</code> = 1.122e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### general_government_final_consumption_expenditure: total (describe_measures)
+
+The 322,730,602,964,999 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>general_government_final_consumption_expenditure__total</code> = 3.227e+14
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_capital_formation: mean (describe_measures)
+
+The 46,537,415,280 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_capital_formation__mean</code> = 4.654e+10
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_capital_formation: median (describe_measures)
+
+The 1,766,391,186 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_capital_formation__median</code> = 1.766e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_capital_formation: total (describe_measures)
+
+The 486,781,363,830,717 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_capital_formation__total</code> = 4.868e+14
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: mean (describe_measures)
+
+The 45,189,202,120 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__mean</code> = 4.519e+10
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: median (describe_measures)
+
+The 1,631,733,278 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__median</code> = 1.632e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: total (describe_measures)
+
+The 472,679,054,173,822 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__total</code> = 4.727e+14
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### household_consumption_expenditure_including_non_profit_institutions_serving_households: mean (describe_measures)
+
+The 105,504,146,606 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>household_consumption_expenditure_including_non_profit_institutions_serving_households__mean</code> = 1.055e+11
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### household_consumption_expenditure_including_non_profit_institutions_serving_households: median (describe_measures)
+
+The 5,154,424,420 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>household_consumption_expenditure_including_non_profit_institutions_serving_households__median</code> = 5.154e+09
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### household_consumption_expenditure_including_non_profit_institutions_serving_households: total (describe_measures)
+
+The 1,103,573,373,503,293 value of this measure was computed.
+
+<strong>Evidence</strong> (tbl_f4f17d0bd9e118aa)
+  - <code>household_consumption_expenditure_including_non_profit_institutions_serving_households__total</code> = 1.104e+15
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### period count (time_series_aggregate)
+
+The series covers 52 periods periods.
+
+<strong>Evidence</strong> (tbl_ee62fa5cc411fb04)
+  - <code>period_count</code> = 52 periods
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### changes_in_inventories: first period total (time_series_aggregate)
+
+The period total was 46,553,060,712.
+
+<strong>Evidence</strong> (tbl_ee62fa5cc411fb04)
+  - <code>changes_in_inventories__first_period_total</code> = 4.655e+10
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info
+
+#### changes_in_inventories: last period total (time_series_aggregate)
+
+The period total was 669,720,069,370.
+
+<strong>Evidence</strong> (tbl_ee62fa5cc411fb04)
+  - <code>changes_in_inventories__last_period_total</code> = 6.697e+11
+
+<strong>Confidence:</strong> high  
+<strong>Severity:</strong> info</div>
+
+
+  </section>
+  <section id="anomalies">
+    <h2>Anomalies</h2>
+    <div class="section-body"><strong>A flagged record is unusual relative to a stated baseline. It is not evidence of an error, mistake or wrongdoing, and it may be entirely legitimate.</strong>
+
+### <code>changes_in_inventories</code> - iqr_fence
+
+- Flagged: <strong>500</strong> of 10,512 evaluated rows (4.8%)
+- Baseline: First and third quartiles of 'changes_in_inventories', extended by 1.5 times the interquartile range on each side.
+- Limitation: Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+| Flagged value | Compared against | Severity | Why flagged |
+| --- | --- | --- | --- |
+| 2,193,385,763 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1, |
+| 1,749,922,955 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,749,922,955 against -1,035,444,162 to 1, |
+| 1,987,224,514 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,987,224,514 against -1,035,444,162 to 1, |
+| 2,709,734,364 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,709,734,364 against -1,035,444,162 to 1, |
+| 1,866,610,977 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,866,610,977 against -1,035,444,162 to 1, |
+| 1,868,800,310 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,868,800,310 against -1,035,444,162 to 1, |
+| 2,575,931,627 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,575,931,627 against -1,035,444,162 to 1, |
+| 3,597,477,745 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 3,597,477,745 against -1,035,444,162 to 1, |
+
+### <code>changes_in_inventories</code> - iqr_fence
+
+- Flagged: <strong>500</strong> of 10,512 evaluated rows (4.8%)
+- Baseline: First and third quartiles of 'changes_in_inventories', extended by 1.5 times the interquartile range on each side.
+- Limitation: Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.
+
+| Flagged value | Compared against | Severity | Why flagged |
+| --- | --- | --- | --- |
+| 2,193,385,763 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1, |
+| 1,749,922,955 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,749,922,955 against -1,035,444,162 to 1, |
+| 1,987,224,514 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,987,224,514 against -1,035,444,162 to 1, |
+| 2,709,734,364 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,709,734,364 against -1,035,444,162 to 1, |
+| 1,866,610,977 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,866,610,977 against -1,035,444,162 to 1, |
+| 1,868,800,310 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 1,868,800,310 against -1,035,444,162 to 1, |
+| 2,575,931,627 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 2,575,931,627 against -1,035,444,162 to 1, |
+| 3,597,477,745 | -1,035,444,162 to 1,726,986,548 | medium | 'changes_in_inventories' is above the expected range for interquartile fence: 3,597,477,745 against -1,035,444,162 to 1, |
+
+<strong>Suggested review order:</strong> start with high-severity flags, then check whether the surrounding periods and groups corroborate them.</div>
+
+    <div class="callout">
+      <strong>Read this before acting on anything below</strong>
+      A flagged record is unusual relative to a stated baseline. It is not evidence of an
+      error or of wrongdoing, and it may be entirely legitimate.
+    </div>
+
+  </section>
+  <section id="methodology">
+    <h2>Methodology</h2>
+    <div class="section-body">Every figure in this report was computed by a registered analysis tool and stored as an artifact before the report was written. No number was produced by a language model.
+
+<strong>Tools used</strong>
+
+- <code>describe_measures</code> v1 on dataset version 2 - 30 metric(s), 1 table(s)
+- <code>missingness_profile</code> v1 on dataset version 2 - 2 metric(s), 1 table(s)
+- <code>time_series_aggregate</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)
+- <code>growth_rates</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)
+- <code>correlation_matrix</code> v1 on dataset version 2 - 11 metric(s), 1 table(s)
+- <code>value_distribution</code> v1 on dataset version 2 - 3 metric(s), 1 table(s)
+- <code>detect_outliers</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)
+- <code>detect_outliers</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)
+
+<strong>Charts</strong>
+
+- <code>chart_df117ea85bbe9c33</code> (image/png)
+- <code>chart_3f53808c2b054c55</code> (image/png)
+- <code>chart_9cecf88af38e15a5</code> (image/png)
+- <code>chart_adc7e876b59355ef</code> (image/png)
+- <code>chart_f29b96c927ebc7f6</code> (image/png)
+
+<strong>Evidence tables</strong>
+
+- <code>tbl_f4f17d0bd9e118aa</code> - 6 rows
+- <code>tbl_54e2cb8e2178ad5c</code> - 26 rows
+- <code>tbl_ee62fa5cc411fb04</code> - 52 rows
+- <code>tbl_4a7d9d2092212272</code> - 10,512 rows
+- <code>tbl_d53845341dae98a6</code> - 6 rows
+- <code>tbl_3a84c421ea92e453</code> - 24 rows
+- <code>tbl_ca718ae5dfc11d8c</code> - 500 rows
+- <code>tbl_158199e92f307952</code> - 500 rows</div>
+
+
+  </section>
+  <section id="limitations">
+    <h2>Limitations</h2>
+    <div class="section-body"><strong>No causal claims:</strong> where this report describes relationships, they are associations observed in the data. Establishing cause would require a different study design.</div>
+
+
+  </section>
+  <section id="reproducibility">
+    <h2>Reproducibility</h2>
+    <div class="section-body">- <strong>Job:</strong> <code>job_80b012a7c08b596f</code>
+- <strong>Dataset:</strong> <code>ds_0d06f3cc69889acb</code>
+- <strong>Source file hash:</strong> <code>858e69c3d62a9272513e9d49ed69fa4cf9a141e7bc6dd3d0a45330d235ef8d9a</code>
+- <strong>Rows x columns:</strong> 10,512 x 26
+- <strong>Profiler version:</strong> 1
+- <strong>Report generated:</strong> 2026-10-01T09:40:38.278715+00:00
+
+Re-running the same file produces the same profile and the same computed metrics. Every table and chart in this report is stored as an artifact and can be downloaded alongside it.</div>
+
+
+  </section>
+  <section id="next_steps">
+    <h2>Suggested next questions</h2>
+    <div class="section-body">Suggested next questions, based on what this dataset can answer:
+1. Compare <code>country_id</code> across time rather than in total, to separate mix shift from volume change.
+2. Drill into the flagged periods and check whether an operational event (campaign, outage, pricing change) lines up with them.
+3. Establish whether the missing values in <code>changes_in_inventories</code> are random or systematic, because that changes how the results should be read.
+4. Add a target or prior-period column so the numbers can be judged against a goal rather than only against each other.</div>
+
+
+  </section>
+
+  <section id="charts">
+    <h2>Charts</h2>
+    <figure class="chart">
+      <img src="/artifacts/chart_df117ea85bbe9c33.png" alt="Chart chart_df117ea85bbe9c33" loading="lazy">
+      <figcaption><code>chart_df117ea85bbe9c33</code> &mdash; image/png</figcaption>
+    </figure>
+    <figure class="chart">
+      <img src="/artifacts/chart_3f53808c2b054c55.png" alt="Chart chart_3f53808c2b054c55" loading="lazy">
+      <figcaption><code>chart_3f53808c2b054c55</code> &mdash; image/png</figcaption>
+    </figure>
+    <figure class="chart">
+      <img src="/artifacts/chart_9cecf88af38e15a5.png" alt="Chart chart_9cecf88af38e15a5" loading="lazy">
+      <figcaption><code>chart_9cecf88af38e15a5</code> &mdash; image/png</figcaption>
+    </figure>
+    <figure class="chart">
+      <img src="/artifacts/chart_adc7e876b59355ef.png" alt="Chart chart_adc7e876b59355ef" loading="lazy">
+      <figcaption><code>chart_adc7e876b59355ef</code> &mdash; image/png</figcaption>
+    </figure>
+    <figure class="chart">
+      <img src="/artifacts/chart_f29b96c927ebc7f6.png" alt="Chart chart_f29b96c927ebc7f6" loading="lazy">
+      <figcaption><code>chart_f29b96c927ebc7f6</code> &mdash; image/png</figcaption>
+    </figure>
+  </section>
+
+  <section id="tables">
+    <h2>Evidence tables</h2>
+    <p class="limits">Every figure in this report comes from one of these tables.</p>
+    <table>
+      <thead><tr><th>Artifact</th><th>Rows</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td><code>tbl_f4f17d0bd9e118aa</code></td>
+            <td>6</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_54e2cb8e2178ad5c</code></td>
+            <td>26</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_ee62fa5cc411fb04</code></td>
+            <td>52</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_4a7d9d2092212272</code></td>
+            <td>10512</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_d53845341dae98a6</code></td>
+            <td>6</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_3a84c421ea92e453</code></td>
+            <td>24</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_ca718ae5dfc11d8c</code></td>
+            <td>500</td>
+            <td>text/csv</td></tr>
+        <tr><td><code>tbl_158199e92f307952</code></td>
+            <td>500</td>
+            <td>text/csv</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>
+      Every figure in this report was computed by a registered analysis tool and stored as an
+      artifact before the report was written. No number here was produced by a language
+      model. Claims that could not be verified against a computed value were excluded.
+    </p>
+    <p>Composer: <code>deterministic</code> &middot;
+       Report version <code>1</code></p>
+  </footer>
+</main>
+</body>
+</html>

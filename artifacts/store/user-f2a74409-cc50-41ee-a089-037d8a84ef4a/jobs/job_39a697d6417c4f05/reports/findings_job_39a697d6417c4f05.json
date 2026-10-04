@@ -1,0 +1,998 @@
+[
+  {
+    "finding_id": "find_98715e0184ce",
+    "title": "end_year: mean (describe_measures)",
+    "statement": "The 2,008 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "end_year__mean",
+        "value": 2008.4395716872687,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6faab6f867b5",
+    "title": "end_year: median (describe_measures)",
+    "statement": "The 2,015 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "end_year__median",
+        "value": 2015.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_eee7cc5ab264",
+    "title": "end_year: total (describe_measures)",
+    "statement": "The 25,509,191 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "end_year__total",
+        "value": 25509191.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f045620e1770",
+    "title": "end_year: skewness (describe_measures, overview_measures)",
+    "statement": "The distribution is skewed (-44.20), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "end_year__skewness",
+        "value": -44.202596317017075,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_988453eed03e",
+    "title": "runtime_minutes: mean (describe_measures)",
+    "statement": "The 53.44 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "runtime_minutes__mean",
+        "value": 53.441619337471145,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_3353532af733",
+    "title": "runtime_minutes: median (describe_measures)",
+    "statement": "The 30.00 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "runtime_minutes__median",
+        "value": 30.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_2e5d4c7a620c",
+    "title": "runtime_minutes: total (describe_measures)",
+    "statement": "The 20,070,588 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "runtime_minutes__total",
+        "value": 20070588.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_c39fc5b13382",
+    "title": "runtime_minutes: skewness (describe_measures)",
+    "statement": "The distribution is skewed (612.60), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "runtime_minutes__skewness",
+        "value": 612.6015904020733,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_3e951c4141ab",
+    "title": "start_year: mean (describe_measures)",
+    "statement": "The 2,007 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "start_year__mean",
+        "value": 2006.9996505374825,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_19d373555a2a",
+    "title": "start_year: median (describe_measures)",
+    "statement": "The 2,014 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "start_year__median",
+        "value": 2014.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_8806903279c3",
+    "title": "start_year: total (describe_measures)",
+    "statement": "The 1,774,619,196 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "start_year__total",
+        "value": 1774619196.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f02ddf5bb7de",
+    "title": "start_year: skewness (describe_measures)",
+    "statement": "The distribution is skewed (-2.11), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "start_year__skewness",
+        "value": -2.1081536786006945,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_a708192bb6a3",
+    "title": "tconst: mean (describe_measures)",
+    "statement": "The 15,452,339 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "tconst__mean",
+        "value": 15452339.012046,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_22a79d305794",
+    "title": "tconst: median (describe_measures)",
+    "statement": "The 11,711,801 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "tconst__median",
+        "value": 11711801.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_93e79d0690da",
+    "title": "tconst: total (describe_measures)",
+    "statement": "The 15,452,339,012,046 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "tconst__total",
+        "value": 15452339012046.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f392684a2f00",
+    "title": "tconst: skewness (describe_measures)",
+    "statement": "The distribution is skewed (0.70), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "metric": "tconst__skewness",
+        "value": 0.7025886808877035,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_95ac11bcba04",
+    "title": "worst missing column (missingness_profile)",
+    "statement": "The least complete column in this dataset is end_year.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_1ab0b334611611ee",
+        "metric": "worst_missing_column",
+        "value": "end_year",
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_e101c1684a51",
+    "title": "worst missing share (missingness_profile)",
+    "statement": "That column has no usable values in 98.7% of rows.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_1ab0b334611611ee",
+        "metric": "worst_missing_share",
+        "value": 98.72999999999999,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_004a938e83f3",
+    "title": "group gap mean (compare_groups)",
+    "statement": "The gap between the highest and lowest group mean is 1,997.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_c23bb46cd984cb5c",
+        "metric": "group_gap_mean",
+        "value": 1997.351228389445,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test."
+    ],
+    "status": "verified",
+    "analysis_step_id": "group_comparison",
+    "tags": [
+      "compare_groups"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_5a7cec5062bd",
+    "title": "largest group mean (compare_groups)",
+    "statement": "The highest group mean is 2,013.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_c23bb46cd984cb5c",
+        "metric": "largest_group_mean",
+        "value": 2013.351228389445,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [
+      "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test."
+    ],
+    "status": "verified",
+    "analysis_step_id": "group_comparison",
+    "tags": [
+      "compare_groups"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_9514f2dd8019",
+    "title": "group difference p value (compare_groups)",
+    "statement": "The difference between the two highest-mean groups has a p-value of 0.00.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_adab9b287f1fbbda",
+        "metric": "group_difference_p_value",
+        "value": 3.2534458823892094e-127,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "medium",
+    "limitations": [
+      "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test."
+    ],
+    "status": "verified",
+    "analysis_step_id": "group_comparison",
+    "tags": [
+      "compare_groups"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_221002166107",
+    "title": "group difference cohens d (compare_groups)",
+    "statement": "The standardised difference between the two highest-mean groups is 0.41.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_adab9b287f1fbbda",
+        "metric": "group_difference_cohens_d",
+        "value": 0.4106438388761004,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "medium",
+    "limitations": [
+      "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test."
+    ],
+    "status": "verified",
+    "analysis_step_id": "group_comparison",
+    "tags": [
+      "compare_groups"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_8bd824738b0d",
+    "title": "end_year: observed total (rank_categories)",
+    "statement": "The measure totals 25,509,191 across the analysed rows.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_a916252d83744816",
+        "metric": "end_year__observed_total",
+        "value": 25509191.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "group_ranking",
+    "tags": [
+      "rank_categories"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_aef05cad8d8a",
+    "title": "title_type: top share (rank_categories)",
+    "statement": "The leading group value accounts for 74.0% of the total.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_a916252d83744816",
+        "metric": "title_type__top_share",
+        "value": 73.97786938833144,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "group_ranking",
+    "tags": [
+      "rank_categories"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_88bb6b39279a",
+    "title": "top3 share (share_of_total)",
+    "statement": "The top groups account for 100.0% of the total.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_cb74a3c71a0ca83d",
+        "metric": "top3_share",
+        "value": 100.0,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "group_contribution",
+    "tags": [
+      "share_of_total"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_08a0c7d7a2ff",
+    "title": "contribution concentration (share_of_total)",
+    "statement": "Contribution is concentrated: the leading groups hold 100.0% of the total.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_cb74a3c71a0ca83d",
+        "metric": "contribution_concentration",
+        "value": 100.0,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "group_contribution",
+    "tags": [
+      "share_of_total"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_409a70a5a289",
+    "title": "strongest correlation (correlation_matrix)",
+    "statement": "The strongest measured association in the data is 0.98.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_a384d3885a7a40b3",
+        "metric": "strongest_correlation",
+        "value": 0.979485012857175,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "medium",
+    "limitations": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "status": "verified",
+    "analysis_step_id": "correlations",
+    "tags": [
+      "correlation_matrix"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_b00b606ce9ea",
+    "title": "end_year: skewness (value_distribution, primary_distribution)",
+    "statement": "The distribution is skewed (-44.20), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_025264c30c6c1e4f",
+        "metric": "end_year__skewness",
+        "value": -44.202596317017075,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "primary_distribution",
+    "tags": [
+      "value_distribution"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_8082bb5e5c92",
+    "title": "end_year: anomaly rate pct (detect_outliers, anomalies)",
+    "statement": "0.1% of evaluated rows were flagged as unusual.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_c1cb6ccb3d4c5484",
+        "metric": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": "anomalies",
+    "tags": [
+      "anomaly",
+      "detect_outliers"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_1b35602b9bcd",
+    "title": "end_year: anomaly rate pct (detect_group_outliers, anomalies_by_group)",
+    "statement": "0.1% of evaluated rows were flagged as unusual.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_7267062e85c742fe",
+        "metric": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored."
+    ],
+    "status": "verified",
+    "analysis_step_id": "anomalies_by_group",
+    "tags": [
+      "anomaly",
+      "detect_group_outliers"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_cfd535c8e8f7",
+    "title": "500 of 1,000,000 rows flagged by iqr_fence",
+    "statement": "iqr_fence flagged 500 of 1,000,000 evaluated rows in 'end_year' as unusual relative to the stated baseline. 0.1% of the evaluated rows, flagged for review.",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:318b71a863640cfb34b1d3a02ad81d3d",
+        "metric": "end_year__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      },
+      {
+        "artifact_id": "anomaly:318b71a863640cfb34b1d3a02ad81d3d",
+        "metric": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "5812b59955dc",
+      "c88a918ca87f",
+      "13d015259bbc",
+      "4c672845b512",
+      "9fc8301e64bd",
+      "ae3b9dc3bdc6",
+      "b79eef71cc51",
+      "8970cd6beebc",
+      "f83be0fecfdd",
+      "ac2491c11e2c"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_2fbd7bf363de",
+    "title": "Most extreme iqr_fence flag: row 969",
+    "statement": "'end_year' is below the expected range for interquartile fence: 1,960 against 1,975 to 2,047, derived from 12,701 value(s).",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:318b71a863640cfb34b1d3a02ad81d3d",
+        "metric": "end_year__observed_value",
+        "value": 1960.0,
+        "unit": "end_year",
+        "comparator": null,
+        "source_rows_or_groups": [
+          "row:969"
+        ],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "low",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+      "Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "5812b59955dc"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_aa7aa81ddc39",
+    "title": "500 of 1,000,000 rows flagged by group_percentile",
+    "statement": "group_percentile flagged 500 of 1,000,000 evaluated rows in 'end_year' as unusual relative to the stated baseline. 0.1% of the evaluated rows, flagged for review.",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:19d471457c9d9eafda892e8e2e0c6c62",
+        "metric": "end_year__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      },
+      {
+        "artifact_id": "anomaly:19d471457c9d9eafda892e8e2e0c6c62",
+        "metric": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "ce6e169a368c",
+      "b1638a9ceb06",
+      "0c943675c638",
+      "30af7e9c7aea",
+      "3c3549a2fb99",
+      "73f99ffdab22",
+      "7ba0c6bd8db5",
+      "ce350b639329",
+      "a736817f60ae",
+      "4214de69ba0a"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_02fa5764d8cc",
+    "title": "Most extreme group_percentile flag: title_type=tvSeries",
+    "statement": "'end_year' is above the range typical for this group: 1,960 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:19d471457c9d9eafda892e8e2e0c6c62",
+        "metric": "end_year__observed_value",
+        "value": 1960.0,
+        "unit": "end_year",
+        "comparator": null,
+        "source_rows_or_groups": [
+          "row:969"
+        ],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "low",
+    "limitations": [
+      "Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.",
+      "Flagged for review by group_percentile, not evidence of an error or wrongdoing. Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "ce6e169a368c"
+    ],
+    "unsupported_claims": []
+  }
+]

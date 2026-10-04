@@ -1,0 +1,659 @@
+[
+  {
+    "finding_id": "find_12a8d028232f",
+    "title": "death_year: mean (describe_measures)",
+    "statement": "The 1,996 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "death_year__mean",
+        "value": 1995.7261383406324,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_7e6fdd81000c",
+    "title": "death_year: median (describe_measures)",
+    "statement": "The 2,004 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "death_year__median",
+        "value": 2004.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_597c66b1ecc2",
+    "title": "death_year: total (describe_measures)",
+    "statement": "The 33,266,759 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "death_year__total",
+        "value": 33266759.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_274238e7279b",
+    "title": "death_year: skewness (describe_measures, overview_measures)",
+    "statement": "The distribution is skewed (-5.32), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "death_year__skewness",
+        "value": -5.319984263821835,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_501594e4bcbf",
+    "title": "birth_year: mean (describe_measures)",
+    "statement": "The 1,955 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "birth_year__mean",
+        "value": 1955.0393135653653,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_4a709edd8559",
+    "title": "birth_year: median (describe_measures)",
+    "statement": "The 1,961 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "birth_year__median",
+        "value": 1961.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_24dec1fcb7d1",
+    "title": "birth_year: total (describe_measures)",
+    "statement": "The 84,987,514 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "birth_year__total",
+        "value": 84987514.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_acc5fa9200ba",
+    "title": "birth_year: skewness (describe_measures)",
+    "statement": "The distribution is skewed (-1.99), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "birth_year__skewness",
+        "value": -1.988767305950806,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_77fa57c22da9",
+    "title": "known_for_titles: mean (describe_measures)",
+    "statement": "The 726,508,973,871,049,703,890,893,144,064 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "known_for_titles__mean",
+        "value": 7.265089738710497e+29,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f2f7a89c6994",
+    "title": "known_for_titles: median (describe_measures)",
+    "statement": "The 25,244,380 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "known_for_titles__median",
+        "value": 25244380.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_54bc55f57244",
+    "title": "known_for_titles: total (describe_measures)",
+    "statement": "The 639,113,576,859,231,752,766,199,036,886,646,784 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "known_for_titles__total",
+        "value": 6.3911357685923175e+35,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6ef1812a743f",
+    "title": "known_for_titles: skewness (describe_measures)",
+    "statement": "The distribution is skewed (7.05), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "known_for_titles__skewness",
+        "value": 7.046611264174506,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_3fb7d974bfd0",
+    "title": "nconst: mean (describe_measures)",
+    "statement": "The 9,289,369 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "nconst__mean",
+        "value": 9289369.27577,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_d4709f0aa731",
+    "title": "nconst: median (describe_measures)",
+    "statement": "The 9,320,211 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "nconst__median",
+        "value": 9320211.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_68ec278e14da",
+    "title": "nconst: total (describe_measures)",
+    "statement": "The 9,289,369,275,770 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "nconst__total",
+        "value": 9289369275770.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_18f3094fc595",
+    "title": "nconst: skewness (describe_measures)",
+    "statement": "The distribution is skewed (0.03), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "metric": "nconst__skewness",
+        "value": 0.03288100487484215,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_5bdec78581e4",
+    "title": "worst missing column (missingness_profile)",
+    "statement": "The least complete column in this dataset is death_year.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_d14ebbef982da579",
+        "metric": "worst_missing_column",
+        "value": "death_year",
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_17319ad4e054",
+    "title": "worst missing share (missingness_profile)",
+    "statement": "That column has no usable values in 98.3% of rows.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_d14ebbef982da579",
+        "metric": "worst_missing_share",
+        "value": 98.33,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_a53153d45442",
+    "title": "strongest correlation (correlation_matrix)",
+    "statement": "The strongest measured association in the data is 0.86.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_be1ba0aa58e6231d",
+        "metric": "strongest_correlation",
+        "value": 0.8585129442830337,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "medium",
+    "limitations": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "status": "verified",
+    "analysis_step_id": "correlations",
+    "tags": [
+      "correlation_matrix"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_e317dcb9d4ac",
+    "title": "death_year: skewness (value_distribution, primary_distribution)",
+    "statement": "The distribution is skewed (-5.32), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_0335384693f4885c",
+        "metric": "death_year__skewness",
+        "value": -5.319984263821835,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "primary_distribution",
+    "tags": [
+      "value_distribution"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_dd7d8185d102",
+    "title": "death_year: anomaly rate pct (detect_outliers)",
+    "statement": "0.0% of evaluated rows were flagged as unusual.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_31690be4163ebd77",
+        "metric": "death_year__anomaly_rate_pct",
+        "value": 0.0388,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": "anomalies",
+    "tags": [
+      "anomaly",
+      "detect_outliers"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_eb019d99efcd",
+    "title": "388 of 1,000,000 rows flagged by iqr_fence",
+    "statement": "iqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review.",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a",
+        "metric": "death_year__anomalies_flagged",
+        "value": 388,
+        "unit": "records",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      },
+      {
+        "artifact_id": "anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a",
+        "metric": "death_year__anomaly_rate_pct",
+        "value": 0.0388,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "e54f044d3978",
+      "7134494173f0",
+      "249018ee3789",
+      "1bbcaa467427",
+      "07e729d7fc48",
+      "f664519f98b6",
+      "703c2349d597",
+      "6ef02e68b321",
+      "7061c51bc2ec",
+      "04fac4ffc0b8"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_2206bfa2930d",
+    "title": "Most extreme iqr_fence flag: row 1287",
+    "statement": "'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s).",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a",
+        "metric": "death_year__observed_value",
+        "value": 1918.0,
+        "unit": "death_year",
+        "comparator": null,
+        "source_rows_or_groups": [
+          "row:1287"
+        ],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "low",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+      "Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "e54f044d3978"
+    ],
+    "unsupported_claims": []
+  }
+]

@@ -1,0 +1,10 @@
+column,row_count,missing,missing_share,missing_pct,distinct
+end_year,1000000,987299,0.9873,98.7299,87
+runtime_minutes,1000000,624439,0.6244,62.4439,520
+start_year,1000000,115785,0.1158,11.5785,145
+genres,1000000,42268,0.0423,4.2268,1794
+tconst,1000000,0,0.0,0.0,1000000
+title_type,1000000,0,0.0,0.0,10
+primary_title,1000000,0,0.0,0.0,558867
+original_title,1000000,0,0.0,0.0,560609
+is_adult,1000000,0,0.0,0.0,5

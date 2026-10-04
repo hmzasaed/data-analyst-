@@ -1,0 +1,25 @@
+feature,origin,mutual_information,correlation,importance,combined_rank,selected,status
+start_year_squared,engineered,0.860035,0.257962,0.447006,1.0,True,selected
+start_year,original,0.858929,0.255832,0.407573,2.0,False,redundant with start_year_squared
+title_type=tvEpisode,encoded,0.072951,0.114346,0.020544,3.0,True,selected
+title_type_frequency,engineered,0.067402,0.114791,0.017005,4.0,False,redundant with title_type=tvEpisode
+start_year_mean_by_title_type,engineered,0.067223,0.116623,0.016737,5.0,True,selected
+runtime_minutes_was_missing,engineered,0.024541,0.099459,0.030653,6.0,True,selected
+start_year_was_missing,engineered,0.062331,0.029464,0.025892,7.0,True,selected
+title_type=movie,encoded,0.030092,0.097967,0.003715,8.0,True,selected
+runtime_minutes_mean_by_title_type,engineered,0.062711,0.032688,0.007152,9.0,True,selected
+title_type=short,encoded,0.009597,0.034367,0.002866,10.0,True,selected
+is_adult=1,encoded,0.004522,0.010176,0.003008,11.0,True,selected
+genres_was_missing,engineered,0.003642,0.009817,0.010192,12.0,True,selected
+title_type=tvMovie,encoded,0.001009,0.05291,0.00074,13.0,True,selected
+is_adult=0,encoded,0.004522,0.010176,0.002477,14.0,False,redundant with is_adult=1
+is_adult_frequency,engineered,0.004522,0.010176,0.00271,15.0,False,redundant with is_adult=1
+title_type=video,encoded,0.0,0.045619,0.001102,16.0,True,selected
+title_type=tvSeries,encoded,0.003137,0.013552,0.00063,17.0,False,redundant with runtime_minutes_mean_by_title_type
+title_type=tvMiniSeries,encoded,,,,,False,near-constant
+title_type=tvShort,encoded,,,,,False,near-constant
+title_type=tvSpecial,encoded,,,,,False,near-constant
+title_type=videoGame,encoded,,,,,False,near-constant
+is_adult=2022,encoded,,,,,False,near-constant
+is_adult=2023,encoded,,,,,False,near-constant
+is_adult=2025,encoded,,,,,False,near-constant

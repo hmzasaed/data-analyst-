@@ -1,0 +1,184 @@
+{
+  "objective": "Exploratory analysis of the uploaded dataset",
+  "assumptions": [
+    "Questions about change over time: no date column was identified in this dataset."
+  ],
+  "steps": [
+    {
+      "step_id": "overview_measures",
+      "analysis_type": "descriptive",
+      "tool_name": "describe_measures",
+      "parameters": {
+        "columns": [
+          "end_year",
+          "runtime_minutes",
+          "start_year",
+          "tconst"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "data_quality",
+      "analysis_type": "descriptive",
+      "tool_name": "missingness_profile",
+      "parameters": {},
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "group_comparison",
+      "analysis_type": "comparison",
+      "tool_name": "compare_groups",
+      "parameters": {
+        "group_by": "title_type",
+        "column": "end_year"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "group_ranking",
+      "analysis_type": "descriptive",
+      "tool_name": "rank_categories",
+      "parameters": {
+        "group_by": "title_type",
+        "measure": "end_year",
+        "limit": 20
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "group_contribution",
+      "analysis_type": "comparison",
+      "tool_name": "share_of_total",
+      "parameters": {
+        "group_by": "title_type",
+        "column": "end_year"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "correlations",
+      "analysis_type": "relationship",
+      "tool_name": "correlation_matrix",
+      "parameters": {
+        "columns": [
+          "end_year",
+          "runtime_minutes",
+          "start_year",
+          "tconst"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "primary_distribution",
+      "analysis_type": "distribution",
+      "tool_name": "value_distribution",
+      "parameters": {
+        "column": "end_year"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "anomalies",
+      "analysis_type": "anomaly",
+      "tool_name": "detect_outliers",
+      "parameters": {
+        "column": "end_year",
+        "method": "auto"
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    },
+    {
+      "step_id": "anomalies_by_group",
+      "analysis_type": "anomaly",
+      "tool_name": "detect_group_outliers",
+      "parameters": {
+        "column": "end_year",
+        "group_by": [
+          "title_type"
+        ]
+      },
+      "expected_outputs": [
+        "table",
+        "metric"
+      ],
+      "success_criteria": [],
+      "rationale": null,
+      "requires_user_approval": false,
+      "optional": false,
+      "depends_on": []
+    }
+  ],
+  "not_supported_questions": [
+    "Questions about change over time: no date column was identified in this dataset."
+  ],
+  "clarifying_questions": [],
+  "is_exploratory": true,
+  "planner_model": null,
+  "planner_version": "1"
+}

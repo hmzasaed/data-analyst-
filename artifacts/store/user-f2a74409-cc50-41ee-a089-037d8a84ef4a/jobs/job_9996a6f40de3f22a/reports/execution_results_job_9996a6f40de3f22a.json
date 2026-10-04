@@ -1,0 +1,531 @@
+[
+  {
+    "step_id": "overview_measures",
+    "tool_name": "describe_measures",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "death_year__count",
+        "value": 16669,
+        "unit": "rows",
+        "definition": "Non-null rows in 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "death_year__mean",
+        "value": 1995.7261383406324,
+        "unit": null,
+        "definition": "Arithmetic mean of 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "death_year__median",
+        "value": 2004.0,
+        "unit": null,
+        "definition": "Median of 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "death_year__total",
+        "value": 33266759.0,
+        "unit": null,
+        "definition": "Sum of 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "death_year__skewness",
+        "value": -5.319984263821835,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "birth_year__count",
+        "value": 43471,
+        "unit": "rows",
+        "definition": "Non-null rows in 'birth_year'.",
+        "n": 43471,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "birth_year__mean",
+        "value": 1955.0393135653653,
+        "unit": null,
+        "definition": "Arithmetic mean of 'birth_year'.",
+        "n": 43471,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "birth_year__median",
+        "value": 1961.0,
+        "unit": null,
+        "definition": "Median of 'birth_year'.",
+        "n": 43471,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "birth_year__total",
+        "value": 84987514.0,
+        "unit": null,
+        "definition": "Sum of 'birth_year'.",
+        "n": 43471,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "birth_year__skewness",
+        "value": -1.988767305950806,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 43471,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "known_for_titles__count",
+        "value": 879705,
+        "unit": "rows",
+        "definition": "Non-null rows in 'known_for_titles'.",
+        "n": 879705,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "known_for_titles__mean",
+        "value": 7.265089738710497e+29,
+        "unit": null,
+        "definition": "Arithmetic mean of 'known_for_titles'.",
+        "n": 879705,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "known_for_titles__median",
+        "value": 25244380.0,
+        "unit": null,
+        "definition": "Median of 'known_for_titles'.",
+        "n": 879705,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "known_for_titles__total",
+        "value": 6.3911357685923175e+35,
+        "unit": null,
+        "definition": "Sum of 'known_for_titles'.",
+        "n": 879705,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "known_for_titles__skewness",
+        "value": 7.046611264174506,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 879705,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "nconst__count",
+        "value": 1000000,
+        "unit": "rows",
+        "definition": "Non-null rows in 'nconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "nconst__mean",
+        "value": 9289369.27577,
+        "unit": null,
+        "definition": "Arithmetic mean of 'nconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "nconst__median",
+        "value": 9320211.0,
+        "unit": null,
+        "definition": "Median of 'nconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "nconst__total",
+        "value": 9289369275770.0,
+        "unit": null,
+        "definition": "Sum of 'nconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "nconst__skewness",
+        "value": 0.03288100487484215,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_4eb03f08965e3847",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_9996a6f40de3f22a\\tables\\overview_measures_measure_summary.csv",
+        "row_count": 4,
+        "byte_size": 734,
+        "sha256": "c08a9e76293d5593220987b6f3b209cc70ef74989c2d4773d1909cbcb79bc3a8",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.2658,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "da31236bd457816b6c723cf9"
+  },
+  {
+    "step_id": "data_quality",
+    "tool_name": "missingness_profile",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "worst_missing_column",
+        "value": "death_year",
+        "unit": null,
+        "definition": "Column with the highest share of missing values.",
+        "n": 6,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      },
+      {
+        "name": "worst_missing_share",
+        "value": 98.33,
+        "unit": "%",
+        "definition": "Share of rows missing in the least complete column.",
+        "n": 6,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_d14ebbef982da579",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_9996a6f40de3f22a\\tables\\data_quality_missingness.csv",
+        "row_count": 6,
+        "byte_size": 330,
+        "sha256": "e76fff3186ea0fbb5947760c117d0c7d2cc6b22673eb76e31f1d19e58ea29ba8",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.2623,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "3d809eaa42868a7fa33e360c"
+  },
+  {
+    "step_id": "correlations",
+    "tool_name": "correlation_matrix",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "correlation__death_year__birth_year",
+        "value": 0.8585129442830337,
+        "unit": null,
+        "definition": "Pearson correlation between 'death_year' and 'birth_year', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__birth_year__nconst",
+        "value": 0.17216911645278724,
+        "unit": null,
+        "definition": "Pearson correlation between 'birth_year' and 'nconst', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__death_year__nconst",
+        "value": 0.14752091084380548,
+        "unit": null,
+        "definition": "Pearson correlation between 'death_year' and 'nconst', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__known_for_titles__nconst",
+        "value": 0.13125638598381673,
+        "unit": null,
+        "definition": "Pearson correlation between 'known_for_titles' and 'nconst', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__birth_year__known_for_titles",
+        "value": 0.04448013528161238,
+        "unit": null,
+        "definition": "Pearson correlation between 'birth_year' and 'known_for_titles', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__death_year__known_for_titles",
+        "value": 0.02955210390788791,
+        "unit": null,
+        "definition": "Pearson correlation between 'death_year' and 'known_for_titles', on complete rows only.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "strongest_correlation",
+        "value": 0.8585129442830337,
+        "unit": null,
+        "definition": "Largest absolute correlation found: 'death_year' and 'birth_year'.",
+        "n": 14571,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_be1ba0aa58e6231d",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_9996a6f40de3f22a\\tables\\correlations_correlation_matrix.csv",
+        "row_count": 4,
+        "byte_size": 368,
+        "sha256": "e791916fc2bed51f8c0af5c0669dcd6666e73bc2315a767b3393fcac746bd9dc",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0124,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "19ea17aa6bfe1d3b78ba4bf0"
+  },
+  {
+    "step_id": "primary_distribution",
+    "tool_name": "value_distribution",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "death_year__min",
+        "value": 1220.0,
+        "unit": null,
+        "definition": "Smallest observed value of 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_death_year"
+      },
+      {
+        "name": "death_year__max",
+        "value": 2026.0,
+        "unit": null,
+        "definition": "Largest observed value of 'death_year'.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_death_year"
+      },
+      {
+        "name": "death_year__skewness",
+        "value": -5.319984263821835,
+        "unit": null,
+        "definition": "Sample skewness; large values mean a long right tail.",
+        "n": 16669,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_death_year"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_0335384693f4885c",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_9996a6f40de3f22a\\tables\\primary_distribution_distribution_death_year.csv",
+        "row_count": 23,
+        "byte_size": 1621,
+        "sha256": "6c1bf8e800b746b4e144333e70dc9d8be869536199b4c2bb85597b529f321cbd",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0123,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "4a4898cbd3a09b289feefb3b"
+  },
+  {
+    "step_id": "anomalies",
+    "tool_name": "detect_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "death_year__anomalies_flagged",
+        "value": 388,
+        "unit": "records",
+        "definition": "Records flagged as unusual by iqr_fence, compared against the baseline stated in each record's explanation.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_death_year"
+      },
+      {
+        "name": "death_year__anomaly_rate_pct",
+        "value": 0.0388,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by iqr_fence in 'death_year'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_death_year"
+      },
+      {
+        "name": "death_year__anomaly_method",
+        "value": "iqr_fence",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_death_year"
+      },
+      {
+        "name": "death_year__anomalies_evaluated",
+        "value": 1000000,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_death_year"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_31690be4163ebd77",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_9996a6f40de3f22a\\tables\\anomalies_anomalies_death_year.csv",
+        "row_count": 388,
+        "byte_size": 154092,
+        "sha256": "27535c3a7689e770b85dbbe23a872dae3a50caac1a558fde296b1952c6f00e87",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.1993,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "df9b74b9cc43dab3077c4645"
+  }
+]

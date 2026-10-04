@@ -1,0 +1,27 @@
+{
+  "$comment": [
+    "Sandbox policy overrides. Every value here may only make the sandbox stricter",
+    "than the application default; the runner intersects allowlists and takes the",
+    "minimum of numeric limits. Setting a value cannot loosen a control."
+  ],
+  "timeout_seconds": 300,
+  "cpu_seconds": 300,
+  "memory_limit_bytes": 2147483648,
+  "max_processes": 64,
+  "max_output_bytes": 1000000,
+  "max_file_descriptors": 64,
+  "allow_generated_code": true,
+  "allow_network": false,
+  "allowed_imports": [
+    "math",
+    "statistics",
+    "json",
+    "collections",
+    "itertools",
+    "functools",
+    "decimal",
+    "fractions",
+    "polars",
+    "numpy"
+  ]
+}

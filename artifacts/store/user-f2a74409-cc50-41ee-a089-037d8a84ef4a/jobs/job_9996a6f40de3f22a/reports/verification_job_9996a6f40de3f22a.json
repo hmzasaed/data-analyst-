@@ -1,0 +1,1145 @@
+{
+  "verified_finding_ids": [
+    "find_12a8d028232f",
+    "find_7e6fdd81000c",
+    "find_597c66b1ecc2",
+    "find_274238e7279b",
+    "find_501594e4bcbf",
+    "find_4a709edd8559",
+    "find_24dec1fcb7d1",
+    "find_acc5fa9200ba",
+    "find_77fa57c22da9",
+    "find_f2f7a89c6994",
+    "find_54bc55f57244",
+    "find_6ef1812a743f",
+    "find_3fb7d974bfd0",
+    "find_d4709f0aa731",
+    "find_68ec278e14da",
+    "find_18f3094fc595",
+    "find_5bdec78581e4",
+    "find_17319ad4e054",
+    "find_a53153d45442",
+    "find_e317dcb9d4ac",
+    "find_dd7d8185d102",
+    "find_eb019d99efcd",
+    "find_2206bfa2930d"
+  ],
+  "rejected_finding_ids": [],
+  "checks": [
+    {
+      "check_id": "find_12a8d028232f:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_12a8d028232f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_12a8d028232f:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_12a8d028232f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_12a8d028232f:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_12a8d028232f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_12a8d028232f:death_year__mean:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 1995.7261383406324 matches the computed metric 1995.7261383406324",
+      "finding_id": "find_12a8d028232f",
+      "expected": "1995.7261383406324",
+      "actual": "1995.7261383406324",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_12a8d028232f:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_12a8d028232f",
+      "expected": null,
+      "actual": "The 1,996 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_7e6fdd81000c:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_7e6fdd81000c",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_7e6fdd81000c:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_7e6fdd81000c",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_7e6fdd81000c:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_7e6fdd81000c",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_7e6fdd81000c:death_year__median:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 2004.0 matches the computed metric 2004.0",
+      "finding_id": "find_7e6fdd81000c",
+      "expected": "2004.0",
+      "actual": "2004.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_7e6fdd81000c:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_7e6fdd81000c",
+      "expected": null,
+      "actual": "The 2,004 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_597c66b1ecc2:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_597c66b1ecc2",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_597c66b1ecc2:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_597c66b1ecc2",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_597c66b1ecc2:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_597c66b1ecc2",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_597c66b1ecc2:death_year__total:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 33266759.0 matches the computed metric 33266759.0",
+      "finding_id": "find_597c66b1ecc2",
+      "expected": "33266759.0",
+      "actual": "33266759.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_597c66b1ecc2:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_597c66b1ecc2",
+      "expected": null,
+      "actual": "The 33,266,759 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_274238e7279b:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_274238e7279b",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_274238e7279b:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_274238e7279b",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_274238e7279b:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_274238e7279b",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_274238e7279b:death_year__skewness:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value -5.319984263821835 matches the computed metric -5.319984263821835",
+      "finding_id": "find_274238e7279b",
+      "expected": "-5.319984263821835",
+      "actual": "-5.319984263821835",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_274238e7279b:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_274238e7279b",
+      "expected": null,
+      "actual": "The distribution is skewed (-5.32), so averages understate the spread.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_501594e4bcbf:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_501594e4bcbf",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_501594e4bcbf:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_501594e4bcbf",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_501594e4bcbf:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_501594e4bcbf",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_501594e4bcbf:birth_year__mean:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 1955.0393135653653 matches the computed metric 1955.0393135653653",
+      "finding_id": "find_501594e4bcbf",
+      "expected": "1955.0393135653653",
+      "actual": "1955.0393135653653",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_501594e4bcbf:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_501594e4bcbf",
+      "expected": null,
+      "actual": "The 1,955 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_4a709edd8559:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_4a709edd8559",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_4a709edd8559:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_4a709edd8559",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_4a709edd8559:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_4a709edd8559",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_4a709edd8559:birth_year__median:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 1961.0 matches the computed metric 1961.0",
+      "finding_id": "find_4a709edd8559",
+      "expected": "1961.0",
+      "actual": "1961.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_4a709edd8559:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_4a709edd8559",
+      "expected": null,
+      "actual": "The 1,961 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_24dec1fcb7d1:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_24dec1fcb7d1",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_24dec1fcb7d1:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_24dec1fcb7d1",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_24dec1fcb7d1:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_24dec1fcb7d1",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_24dec1fcb7d1:birth_year__total:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 84987514.0 matches the computed metric 84987514.0",
+      "finding_id": "find_24dec1fcb7d1",
+      "expected": "84987514.0",
+      "actual": "84987514.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_24dec1fcb7d1:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_24dec1fcb7d1",
+      "expected": null,
+      "actual": "The 84,987,514 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_acc5fa9200ba:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_acc5fa9200ba",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_acc5fa9200ba:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_acc5fa9200ba",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_acc5fa9200ba:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_acc5fa9200ba",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_acc5fa9200ba:birth_year__skewness:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value -1.988767305950806 matches the computed metric -1.988767305950806",
+      "finding_id": "find_acc5fa9200ba",
+      "expected": "-1.988767305950806",
+      "actual": "-1.988767305950806",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_acc5fa9200ba:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_acc5fa9200ba",
+      "expected": null,
+      "actual": "The distribution is skewed (-1.99), so averages understate the spread.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_77fa57c22da9:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_77fa57c22da9",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_77fa57c22da9:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_77fa57c22da9",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_77fa57c22da9:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_77fa57c22da9",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_77fa57c22da9:known_for_titles__mean:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 7.265089738710497e+29 matches the computed metric 7.265089738710497e+29",
+      "finding_id": "find_77fa57c22da9",
+      "expected": "7.265089738710497e+29",
+      "actual": "7.265089738710497e+29",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_77fa57c22da9:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_77fa57c22da9",
+      "expected": null,
+      "actual": "The 726,508,973,871,049,703,890,893,144,064 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_f2f7a89c6994:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_f2f7a89c6994",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_f2f7a89c6994:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_f2f7a89c6994",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_f2f7a89c6994:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_f2f7a89c6994",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_f2f7a89c6994:known_for_titles__median:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 25244380.0 matches the computed metric 25244380.0",
+      "finding_id": "find_f2f7a89c6994",
+      "expected": "25244380.0",
+      "actual": "25244380.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_f2f7a89c6994:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_f2f7a89c6994",
+      "expected": null,
+      "actual": "The 25,244,380 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_54bc55f57244:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_54bc55f57244",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_54bc55f57244:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_54bc55f57244",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_54bc55f57244:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_54bc55f57244",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_54bc55f57244:known_for_titles__total:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 6.3911357685923175e+35 matches the computed metric 6.3911357685923175e+35",
+      "finding_id": "find_54bc55f57244",
+      "expected": "6.3911357685923175e+35",
+      "actual": "6.3911357685923175e+35",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_54bc55f57244:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_54bc55f57244",
+      "expected": null,
+      "actual": "The 639,113,576,859,231,752,766,199,036,886,646,784 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_6ef1812a743f:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_6ef1812a743f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_6ef1812a743f:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_6ef1812a743f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_6ef1812a743f:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_6ef1812a743f",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_6ef1812a743f:known_for_titles__skewness:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 7.046611264174506 matches the computed metric 7.046611264174506",
+      "finding_id": "find_6ef1812a743f",
+      "expected": "7.046611264174506",
+      "actual": "7.046611264174506",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_6ef1812a743f:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_6ef1812a743f",
+      "expected": null,
+      "actual": "The distribution is skewed (7.05), so averages understate the spread.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_3fb7d974bfd0:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_3fb7d974bfd0",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_3fb7d974bfd0:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_3fb7d974bfd0",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_3fb7d974bfd0:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_3fb7d974bfd0",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_3fb7d974bfd0:nconst__mean:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 9289369.27577 matches the computed metric 9289369.27577",
+      "finding_id": "find_3fb7d974bfd0",
+      "expected": "9289369.27577",
+      "actual": "9289369.27577",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_3fb7d974bfd0:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_3fb7d974bfd0",
+      "expected": null,
+      "actual": "The 9,289,369 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_d4709f0aa731:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_d4709f0aa731",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_d4709f0aa731:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_d4709f0aa731",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_d4709f0aa731:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_d4709f0aa731",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_d4709f0aa731:nconst__median:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 9320211.0 matches the computed metric 9320211.0",
+      "finding_id": "find_d4709f0aa731",
+      "expected": "9320211.0",
+      "actual": "9320211.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_d4709f0aa731:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_d4709f0aa731",
+      "expected": null,
+      "actual": "The 9,320,211 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_68ec278e14da:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_68ec278e14da",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_68ec278e14da:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_68ec278e14da",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_68ec278e14da:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_68ec278e14da",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_68ec278e14da:nconst__total:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 9289369275770.0 matches the computed metric 9289369275770.0",
+      "finding_id": "find_68ec278e14da",
+      "expected": "9289369275770.0",
+      "actual": "9289369275770.0",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_68ec278e14da:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_68ec278e14da",
+      "expected": null,
+      "actual": "The 9,289,369,275,770 value of this measure was computed.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_18f3094fc595:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_18f3094fc595",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_18f3094fc595:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_18f3094fc595",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_18f3094fc595:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_18f3094fc595",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_18f3094fc595:nconst__skewness:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 0.03288100487484215 matches the computed metric 0.03288100487484215",
+      "finding_id": "find_18f3094fc595",
+      "expected": "0.03288100487484215",
+      "actual": "0.03288100487484215",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_18f3094fc595:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_18f3094fc595",
+      "expected": null,
+      "actual": "The distribution is skewed (0.03), so averages understate the spread.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_5bdec78581e4:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_5bdec78581e4",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_5bdec78581e4:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_5bdec78581e4",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_5bdec78581e4:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_5bdec78581e4",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_5bdec78581e4:worst_missing_column:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 'death_year' matches the computed metric",
+      "finding_id": "find_5bdec78581e4",
+      "expected": "death_year",
+      "actual": "death_year",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_5bdec78581e4:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_5bdec78581e4",
+      "expected": null,
+      "actual": "The least complete column in this dataset is death_year.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_17319ad4e054:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_17319ad4e054",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_17319ad4e054:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_17319ad4e054",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_17319ad4e054:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_17319ad4e054",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_17319ad4e054:worst_missing_share:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 98.33 matches the computed metric 98.33",
+      "finding_id": "find_17319ad4e054",
+      "expected": "98.33",
+      "actual": "98.33",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_17319ad4e054:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_17319ad4e054",
+      "expected": null,
+      "actual": "That column has no usable values in 98.3% of rows.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_a53153d45442:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_a53153d45442",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_a53153d45442:strongest_correlation:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 0.8585129442830337 matches the computed metric 0.8585129442830337",
+      "finding_id": "find_a53153d45442",
+      "expected": "0.8585129442830337",
+      "actual": "0.8585129442830337",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_a53153d45442:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_a53153d45442",
+      "expected": null,
+      "actual": "The strongest measured association in the data is 0.86.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_e317dcb9d4ac:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_e317dcb9d4ac",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_e317dcb9d4ac:high_confidence_needs_limitations",
+      "name": "high_confidence_needs_limitations",
+      "status": "pass_with_warning",
+      "detail": "high-confidence finding states no limitations",
+      "finding_id": "find_e317dcb9d4ac",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_e317dcb9d4ac:limitations_stated",
+      "name": "limitations_stated",
+      "status": "pass_with_warning",
+      "detail": "finding states no limitations",
+      "finding_id": "find_e317dcb9d4ac",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_e317dcb9d4ac:death_year__skewness:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value -5.319984263821835 matches the computed metric -5.319984263821835",
+      "finding_id": "find_e317dcb9d4ac",
+      "expected": "-5.319984263821835",
+      "actual": "-5.319984263821835",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_e317dcb9d4ac:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_e317dcb9d4ac",
+      "expected": null,
+      "actual": "The distribution is skewed (-5.32), so averages understate the spread.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_dd7d8185d102:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_dd7d8185d102",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_dd7d8185d102:death_year__anomaly_rate_pct:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 0.0388 matches the computed metric 0.0388",
+      "finding_id": "find_dd7d8185d102",
+      "expected": "0.0388",
+      "actual": "0.0388",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_dd7d8185d102:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_dd7d8185d102",
+      "expected": null,
+      "actual": "0.0% of evaluated rows were flagged as unusual.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_eb019d99efcd",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:death_year__anomalies_flagged:artifact_exists",
+      "name": "artifact_exists",
+      "status": "pass_with_warning",
+      "detail": "evidence references artifact 'anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a', which is not in this result set; it may belong to another stage",
+      "finding_id": "find_eb019d99efcd",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:death_year__anomalies_flagged:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 388 matches the computed metric 388",
+      "finding_id": "find_eb019d99efcd",
+      "expected": "388",
+      "actual": "388",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:death_year__anomaly_rate_pct:artifact_exists",
+      "name": "artifact_exists",
+      "status": "pass_with_warning",
+      "detail": "evidence references artifact 'anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a', which is not in this result set; it may belong to another stage",
+      "finding_id": "find_eb019d99efcd",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:death_year__anomaly_rate_pct:value_matches_artifact",
+      "name": "value_matches_artifact",
+      "status": "pass",
+      "detail": "value 0.0388 matches the computed metric 0.0388",
+      "finding_id": "find_eb019d99efcd",
+      "expected": "0.0388",
+      "actual": "0.0388",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_eb019d99efcd:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_eb019d99efcd",
+      "expected": null,
+      "actual": "iqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review.",
+      "tolerance": null
+    },
+    {
+      "check_id": "find_2206bfa2930d:evidence_present",
+      "name": "evidence_present",
+      "status": "pass",
+      "detail": "finding carries at least one evidence reference",
+      "finding_id": "find_2206bfa2930d",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_2206bfa2930d:death_year__observed_value:artifact_exists",
+      "name": "artifact_exists",
+      "status": "pass_with_warning",
+      "detail": "evidence references artifact 'anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a', which is not in this result set; it may belong to another stage",
+      "finding_id": "find_2206bfa2930d",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_2206bfa2930d:death_year__observed_value:metric_known",
+      "name": "metric_known",
+      "status": "pass_with_warning",
+      "detail": "no unambiguous computed metric named 'death_year__observed_value' is available to cross-check this value",
+      "finding_id": "find_2206bfa2930d",
+      "expected": null,
+      "actual": null,
+      "tolerance": null
+    },
+    {
+      "check_id": "find_2206bfa2930d:language",
+      "name": "language",
+      "status": "pass",
+      "detail": "statement avoids unsupported language",
+      "finding_id": "find_2206bfa2930d",
+      "expected": null,
+      "actual": "'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s).",
+      "tolerance": null
+    }
+  ],
+  "unsupported_claims": [],
+  "contradictions": [],
+  "summary": "23 finding(s) verified, 0 rejected, 42 warning(s). A rejected finding is kept out of the report rather than corrected silently.",
+  "verifier_model": null,
+  "verifier_version": "1"
+}

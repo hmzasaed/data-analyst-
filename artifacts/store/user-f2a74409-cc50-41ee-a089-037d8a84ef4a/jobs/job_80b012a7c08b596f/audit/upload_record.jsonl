@@ -1,0 +1,16 @@
+{
+  "artifact_id": "raw_3115aa9a3d2ad7ec",
+  "owner_id": "user-f2a74409-cc50-41ee-a089-037d8a84ef4a",
+  "filename": "Global Economy Indicators.csv",
+  "declared_media_type": null,
+  "detected_format": "csv",
+  "byte_size": 2679897,
+  "sha256": "858e69c3d62a9272513e9d49ed69fa4cf9a141e7bc6dd3d0a45330d235ef8d9a",
+  "sha256_verified": true,
+  "uploaded_at": "2026-10-01T09:40:06.436896Z",
+  "retention_until": null,
+  "encrypted": false,
+  "quarantined": false,
+  "scan_status": "passed",
+  "notes": []
+}

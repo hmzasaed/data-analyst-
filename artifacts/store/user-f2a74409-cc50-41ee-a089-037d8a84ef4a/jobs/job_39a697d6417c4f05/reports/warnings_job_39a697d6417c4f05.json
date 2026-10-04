@@ -1,0 +1,8 @@
+[
+  "Ranking and cross-validation used a fixed random sample of 3,000 rows.",
+  "Questions about change over time: no date column was identified in this dataset.",
+  "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test.",
+  "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.",
+  "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+  "Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored."
+]

@@ -1,0 +1,99 @@
+[project]
+name = "insightflow"
+version = "0.1.0"
+description = "InsightFlow: Secure Agentic Data Analysis Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+# The virtual root depends on the two deployable apps so that a plain `uv sync`
+# installs every workspace member into .venv for development and tests.
+dependencies = [
+    "insightflow-api",
+    "insightflow-worker",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/*", "apps/api", "apps/worker"]
+
+[tool.uv.sources]
+insightflow-agents = { workspace = true }
+insightflow-analytics = { workspace = true }
+insightflow-anomaly = { workspace = true }
+insightflow-api = { workspace = true }
+insightflow-cleaning = { workspace = true }
+insightflow-contracts = { workspace = true }
+insightflow-features = { workspace = true }
+insightflow-ingestion = { workspace = true }
+insightflow-orchestration = { workspace = true }
+insightflow-preprocessing = { workspace = true }
+insightflow-profiling = { workspace = true }
+insightflow-reporting = { workspace = true }
+insightflow-sandbox = { workspace = true }
+insightflow-storage = { workspace = true }
+insightflow-visualization = { workspace = true }
+insightflow-worker = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pandas>=2.2",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "pyright>=1.1.380",
+    "ruff>=0.9",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "security: adversarial / sandbox-escape tests",
+    "evaluation: golden-dataset quality benchmarks",
+    "integration: multi-component tests",
+    "slow: long running",
+]
+filterwarnings = ["error::DeprecationWarning:insightflow.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv", "artifacts", "infra/migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "DTZ", "T20", "SIM", "RUF", "S", "PTH", "PLC", "PLE", "PLW", "TRY", "ARG", "PERF"]
+ignore = [
+    "E501",
+    "S101",
+    "PLR0913",
+    "TRY003",
+    "EM101",
+    "EM102",
+    "PERF203",
+    # Imports are deliberately lazy: optional heavy dependencies (scikit-learn,
+    # matplotlib), package import cycles, and FastAPI startup cost.
+    "PLC0415",
+    # Append-in-loop reads more clearly than a nested comprehension in the
+    # report/finding builders, and the collections are small.
+    "PERF401",
+    # Probing a list of date formats or encodings is exactly "try it, skip on
+    # failure"; the reason is recorded in the audit trail, not a log line.
+    "S112",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S", "ARG", "PLC", "PLW", "TRY", "N802", "N803", "N806", "PLR2004"]
+"apps/api/**" = ["S101"]
+"packages/sandbox/**" = ["S603", "S607", "PLW1509"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.pyright]
+pythonVersion = "3.11"
+include = ["packages", "apps", "tests"]
+exclude = ["**/.venv/**", "infra"]
+typeCheckingMode = "standard"
+reportMissingTypeStubs = false
+reportPrivateImportUsage = false

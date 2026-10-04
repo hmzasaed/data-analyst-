@@ -1,0 +1,862 @@
+{
+  "dataset_id": "ds_710f18b1fde0d489",
+  "source_file_hash": "126888d4a5e8063fa935a95eb8ac09fe3f6bfdfaed19f535ef5d24566ed38381",
+  "sheet_name": null,
+  "row_count": 2716,
+  "column_count": 12,
+  "estimated_memory_bytes": 1683176,
+  "columns": [
+    {
+      "name": "tconst",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2716,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "tt0903747",
+        "tt0185906",
+        "tt7366338",
+        "tt0417299",
+        "tt0306414",
+        "tt0795176",
+        "tt5491994",
+        "tt0944947",
+        "tt0141842",
+        "tt2560140"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2716,
+        "null_count": 0,
+        "mean": 7267675.125552283,
+        "std": 8162068.282438006,
+        "min": 43208.0,
+        "p05": 93994.5,
+        "p25": 1058415.75,
+        "median": 4574535.0,
+        "p75": 10801693.0,
+        "p95": 27458619.5,
+        "max": 42178219.0,
+        "sum": 19739005641.0,
+        "skewness": 1.6033457440847707,
+        "kurtosis": 2.3304077500362226,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 25190,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "primary_title",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2654,
+      "distinct_fraction": 0.9772,
+      "sample_values": [
+        "Breaking Bad",
+        "Band of Brothers",
+        "Chernobyl",
+        "Avatar: The Last Airbender",
+        "The Wire",
+        "Planet Earth",
+        "Planet Earth II",
+        "Game of Thrones",
+        "The Sopranos",
+        "Attack on Titan"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "The Twilight Zone",
+            3
+          ],
+          [
+            "Battlestar Galactica",
+            3
+          ],
+          [
+            "Doctor Who",
+            3
+          ],
+          [
+            "Teenage Mutant Ninja Turtles",
+            3
+          ],
+          [
+            "V",
+            3
+          ],
+          [
+            "Avatar: The Last Airbender",
+            2
+          ],
+          [
+            "The Office",
+            2
+          ],
+          [
+            "One Piece",
+            2
+          ],
+          [
+            "Cowboy Bebop",
+            2
+          ],
+          [
+            "Life",
+            2
+          ]
+        ],
+        "distinct_count": 2654,
+        "normalised_forms": 2653,
+        "case_variants": 0,
+        "whitespace_variants": 1
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 38606,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "start_year",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 71,
+      "distinct_fraction": 0.0261,
+      "sample_values": [
+        "2008",
+        "2001",
+        "2019",
+        "2005",
+        "2002",
+        "2006",
+        "2016",
+        "2011",
+        "1999",
+        "2013"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2716,
+        "null_count": 0,
+        "mean": 2012.293446244477,
+        "std": 12.264084973486131,
+        "min": 1951.0,
+        "p05": 1986.75,
+        "p25": 2008.0,
+        "median": 2016.0,
+        "p75": 2021.0,
+        "p95": 2024.0,
+        "max": 2026.0,
+        "sum": 5465389.0,
+        "skewness": -1.7530021760109866,
+        "kurtosis": 3.4532924545070216,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 10864,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "end_year",
+      "original_name": null,
+      "inferred_type": "number",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 68,
+      "distinct_fraction": 0.025,
+      "sample_values": [
+        "2013",
+        "2001",
+        "2019",
+        "2008",
+        "2006",
+        "2016",
+        "2007",
+        "2023",
+        "2020",
+        "2014"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2317,
+        "null_count": 0,
+        "mean": 2014.5990504963315,
+        "std": 11.37913351629402,
+        "min": 1957.0,
+        "p05": 1989.0,
+        "p25": 2011.0,
+        "median": 2018.0,
+        "p75": 2022.0,
+        "p95": 2025.0,
+        "max": 2027.0,
+        "sum": 4667826.0,
+        "skewness": -1.9422932266814998,
+        "kurtosis": 4.15380873211731,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 399
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 10066,
+      "parse_failure_fraction": 0.1469
+    },
+    {
+      "name": "rank",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2716,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2716,
+        "null_count": 0,
+        "mean": 1358.5,
+        "std": 784.1859898433959,
+        "min": 1.0,
+        "p05": 136.75,
+        "p25": 679.75,
+        "median": 1358.5,
+        "p75": 2037.25,
+        "p95": 2580.25,
+        "max": 2716.0,
+        "sum": 3689686.0,
+        "skewness": -8.371637534728721e-17,
+        "kurtosis": -1.2000003253507177,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 9757,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "average_rating",
+      "original_name": null,
+      "inferred_type": "number",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 68,
+      "distinct_fraction": 0.025,
+      "sample_values": [
+        "9.5",
+        "9.4",
+        "9.3",
+        "9.2",
+        "9.1",
+        "9",
+        "8.9",
+        "8.8",
+        "8.7",
+        "8.6"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2716,
+        "null_count": 0,
+        "mean": 7.585530191458027,
+        "std": 0.8785768956210261,
+        "min": 1.1,
+        "p05": 6.175,
+        "p25": 7.2,
+        "median": 7.7,
+        "p75": 8.2,
+        "p95": 8.7,
+        "max": 9.5,
+        "sum": 20602.3,
+        "skewness": -1.7256596546905156,
+        "kurtosis": 7.26286628827409,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 7616,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "num_votes",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2642,
+      "distinct_fraction": 0.9728,
+      "sample_values": [
+        "2682902",
+        "606821",
+        "1067559",
+        "456736",
+        "440179",
+        "237022",
+        "177102",
+        "2667141",
+        "598660",
+        "749881"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 2716,
+        "null_count": 0,
+        "mean": 60997.648379970546,
+        "std": 132216.40752016028,
+        "min": 10003.0,
+        "p05": 10714.75,
+        "p25": 14504.25,
+        "median": 23994.5,
+        "p75": 51744.0,
+        "p95": 228771.5,
+        "max": 2682902.0,
+        "sum": 165669613.0,
+        "skewness": 9.126804283766273,
+        "kurtosis": 135.06165834662454,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 13950,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "directors",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2644,
+      "distinct_fraction": 0.9735,
+      "sample_values": [
+        "Michelle MacLaren, Adam Bernstein, Vince Gilligan, Colin Bucksey, Michael Slovis, Bryan Cranston, Terry McDonough, Johan",
+        "David Frankel, Mikael Salomon, Tom Hanks, David Leland, Richard Loncraine, David Nutter, Phil Alden Robinson, Tony To",
+        "Johan Renck",
+        "Oh Seung-hyun, Giancarlo Volpe, Ethan Spaulding, Lauren MacMullan, Dave Filoni, Joaquim Dos Santos, Michael Dante DiMart",
+        "Joe Chappelle, Ernest Dickerson, Clark Johnson, Ed Bianchi, Steve Shill, Daniel Attias, Timothy Van Patten, Agnieszka Ho",
+        "Alastair Fothergill, Mark Linfield",
+        "Justin Anderson, Ed Charles, Fredi Devas, Chadden Hunter, Emma Napper, Elizabeth White",
+        "David Nutter, Alan Taylor, Alex Graves, Miguel Sapochnik, Mark Mylod, Jeremy Podeswa, Daniel Minahan, Alik Sakharov, Mic",
+        "Timothy Van Patten, John Patterson, Allen Coulter, Alan Taylor, Henry Bronchtein, Jack Bender, Steve Buscemi, Daniel Att",
+        "Tetsurō Araki, Masashi Koizuka, Yūichirō Hayashi, Jun Shishido, Hiroyuki Tanaka, Shintarô Itoga, Yasuhiro Akamatsu, Teru"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "NA",
+            6
+          ],
+          [
+            "Choong Hwan Oh",
+            4
+          ],
+          [
+            "Joe Berlinger",
+            4
+          ],
+          [
+            "Kim Won-seok",
+            3
+          ],
+          [
+            "Ricky Gervais, Stephen Merchant",
+            3
+          ],
+          [
+            "Joseph Barbera, William Hanna",
+            3
+          ],
+          [
+            "Craig R. Baxley",
+            3
+          ],
+          [
+            "Nick Willing",
+            3
+          ],
+          [
+            "Ambrish Verma",
+            2
+          ],
+          [
+            "Baran bo Odar",
+            2
+          ]
+        ],
+        "distinct_count": 2644,
+        "normalised_forms": 2644,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 442746,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "writers",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2612,
+      "distinct_fraction": 0.9617,
+      "sample_values": [
+        "Vince Gilligan, Peter Gould, George Mastras, Moira Walley-Beckett, Gennifer Hutchison, J. Roberts, Sam Catlin, Thomas Sc",
+        "Stephen Ambrose, Tom Hanks, Erik Jendresen, Bruce C. McKenna, Erik Bork, John Orloff, Graham Yost, E. Max Frye, Steven S",
+        "Craig Mazin",
+        "Michael Dante DiMartino, Bryan Konietzko, Aaron Ehasz, John O'Bryan, Elizabeth Welch Ehasz, Tim Hedrick, Joshua Hamilton",
+        "David Simon, Ed Burns, Joy Kecken, Rafael Álvarez, William F. Zorzi, Chris Collins, George Pelecanos, Richard Price, Den",
+        "David Attenborough, Vanessa Berlowitz, Alastair Fothergill, Gary Parker",
+        "Elizabeth White",
+        "David Benioff, George R.R. Martin, D.B. Weiss, Dave Hill, Bryan Cogman, Ethan J. Antonucci, Gursimran Sandhu, Vanessa Ta",
+        "David Chase, Terence Winter, Mitchell Burgess, Robin Green, Matthew Weiner, Frank Renzulli, Michael Imperioli, Todd A. K",
+        "John Burgmeier, Bonny Clinkenbeard, Aaron Dismuke, Jarrod Greene, Hajime Isayama, Yasuko Kobayashi, Jeramey Kraatz, Tyso"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "NA",
+            57
+          ],
+          [
+            "Kim Eun-sook",
+            6
+          ],
+          [
+            "Stephen King",
+            4
+          ],
+          [
+            "Richard Curtis, Ben Elton",
+            3
+          ],
+          [
+            "Taylor Sheridan",
+            3
+          ],
+          [
+            "Park Ji-eun",
+            3
+          ],
+          [
+            "Harry Williams, Jack Williams",
+            3
+          ],
+          [
+            "Shane Meadows, Jack Thorne",
+            3
+          ],
+          [
+            "Park Hye-ryeon",
+            3
+          ],
+          [
+            "Agatha Christie, Sarah Phelps",
+            3
+          ]
+        ],
+        "distinct_count": 2612,
+        "normalised_forms": 2612,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 641487,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "genres",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 279,
+      "distinct_fraction": 0.1027,
+      "sample_values": [
+        "Crime, Drama, Thriller",
+        "Action, Drama, History",
+        "Drama, History, Thriller",
+        "Action, Adventure, Animation",
+        "Documentary, Family",
+        "Drama, Fantasy",
+        "Crime, Drama",
+        "Biography, Crime, Drama",
+        "Crime, Drama, Mystery",
+        "Comedy"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "Crime, Drama, Mystery",
+            209
+          ],
+          [
+            "Action, Adventure, Animation",
+            203
+          ],
+          [
+            "Comedy",
+            169
+          ],
+          [
+            "Comedy, Drama",
+            111
+          ],
+          [
+            "Action, Crime, Drama",
+            101
+          ],
+          [
+            "Drama",
+            99
+          ],
+          [
+            "Action, Adventure, Drama",
+            81
+          ],
+          [
+            "Comedy, Drama, Romance",
+            77
+          ],
+          [
+            "Crime, Drama, Thriller",
+            64
+          ],
+          [
+            "Drama, Romance",
+            61
+          ]
+        ],
+        "distinct_count": 279,
+        "normalised_forms": 279,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 53662,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "imdb_link",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2716,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "<a href=\"https://www.imdb.com/title/tt0903747\" target=\"_blank\">tt0903747</a>",
+        "<a href=\"https://www.imdb.com/title/tt0185906\" target=\"_blank\">tt0185906</a>",
+        "<a href=\"https://www.imdb.com/title/tt7366338\" target=\"_blank\">tt7366338</a>",
+        "<a href=\"https://www.imdb.com/title/tt0417299\" target=\"_blank\">tt0417299</a>",
+        "<a href=\"https://www.imdb.com/title/tt0306414\" target=\"_blank\">tt0306414</a>",
+        "<a href=\"https://www.imdb.com/title/tt0795176\" target=\"_blank\">tt0795176</a>",
+        "<a href=\"https://www.imdb.com/title/tt5491994\" target=\"_blank\">tt5491994</a>",
+        "<a href=\"https://www.imdb.com/title/tt0944947\" target=\"_blank\">tt0944947</a>",
+        "<a href=\"https://www.imdb.com/title/tt0141842\" target=\"_blank\">tt0141842</a>",
+        "<a href=\"https://www.imdb.com/title/tt2560140\" target=\"_blank\">tt2560140</a>"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "<a href=\"https://www.imdb.com/title/tt0903747\" target=\"_blank\">tt0903747</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0185906\" target=\"_blank\">tt0185906</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt7366338\" target=\"_blank\">tt7366338</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0417299\" target=\"_blank\">tt0417299</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0306414\" target=\"_blank\">tt0306414</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0795176\" target=\"_blank\">tt0795176</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt5491994\" target=\"_blank\">tt5491994</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0944947\" target=\"_blank\">tt0944947</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0141842\" target=\"_blank\">tt0141842</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt2560140\" target=\"_blank\">tt2560140</a>",
+            1
+          ]
+        ],
+        "distinct_count": 2716,
+        "normalised_forms": 2716,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 207908,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "title_imdb_link",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 2716,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "<a href=\"https://www.imdb.com/title/tt0903747\" target=\"_blank\">Breaking Bad</a>",
+        "<a href=\"https://www.imdb.com/title/tt0185906\" target=\"_blank\">Band of Brothers</a>",
+        "<a href=\"https://www.imdb.com/title/tt7366338\" target=\"_blank\">Chernobyl</a>",
+        "<a href=\"https://www.imdb.com/title/tt0417299\" target=\"_blank\">Avatar: The Last Airbender</a>",
+        "<a href=\"https://www.imdb.com/title/tt0306414\" target=\"_blank\">The Wire</a>",
+        "<a href=\"https://www.imdb.com/title/tt0795176\" target=\"_blank\">Planet Earth</a>",
+        "<a href=\"https://www.imdb.com/title/tt5491994\" target=\"_blank\">Planet Earth II</a>",
+        "<a href=\"https://www.imdb.com/title/tt0944947\" target=\"_blank\">Game of Thrones</a>",
+        "<a href=\"https://www.imdb.com/title/tt0141842\" target=\"_blank\">The Sopranos</a>",
+        "<a href=\"https://www.imdb.com/title/tt2560140\" target=\"_blank\">Attack on Titan</a>"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "<a href=\"https://www.imdb.com/title/tt0903747\" target=\"_blank\">Breaking Bad</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0185906\" target=\"_blank\">Band of Brothers</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt7366338\" target=\"_blank\">Chernobyl</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0417299\" target=\"_blank\">Avatar: The Last Airbender</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0306414\" target=\"_blank\">The Wire</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0795176\" target=\"_blank\">Planet Earth</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt5491994\" target=\"_blank\">Planet Earth II</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0944947\" target=\"_blank\">Game of Thrones</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt0141842\" target=\"_blank\">The Sopranos</a>",
+            1
+          ],
+          [
+            "<a href=\"https://www.imdb.com/title/tt2560140\" target=\"_blank\">Attack on Titan</a>",
+            1
+          ]
+        ],
+        "distinct_count": 2716,
+        "normalised_forms": 2716,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 221324,
+      "parse_failure_fraction": 0.0
+    }
+  ],
+  "quality_issues": [
+    {
+      "kind": "inconsistent_categories",
+      "severity": "medium",
+      "column": "primary_title",
+      "description": "2653 normalised forms cover 2654 raw values: casing and whitespace differ between otherwise identical labels.",
+      "affected_rows": 62,
+      "affected_fraction": 0.0228,
+      "evidence": {
+        "case_variants": 0,
+        "whitespace_variants": 1
+      },
+      "recommended_action": "Trim and case-normalise, keeping the original column for reference."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "primary_title",
+      "description": "2,654 distinct values across 2,716 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 2716,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "parse_failures",
+      "severity": "medium",
+      "column": "end_year",
+      "description": "14.7% of non-null values could not be parsed as number.",
+      "affected_rows": 398,
+      "affected_fraction": 0.1469,
+      "evidence": {},
+      "recommended_action": "Inspect the failing values before converting; keep the original text alongside the parsed column."
+    },
+    {
+      "kind": "non_finite_numbers",
+      "severity": "medium",
+      "column": "end_year",
+      "description": "399 values are infinite or not a number and will break arithmetic.",
+      "affected_rows": 399,
+      "affected_fraction": 0.1469,
+      "evidence": {},
+      "recommended_action": "Replace with null and count them separately in the report."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "directors",
+      "description": "2,644 distinct values across 2,716 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 2716,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "writers",
+      "description": "2,612 distinct values across 2,716 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 2716,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "imdb_link",
+      "description": "2,716 distinct values across 2,716 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 2716,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "title_imdb_link",
+      "description": "2,716 distinct values across 2,716 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 2716,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    }
+  ],
+  "duplicate_row_count": 0,
+  "time_coverage": null,
+  "warnings": [],
+  "is_exploratory": true,
+  "profiler_version": "1"
+}

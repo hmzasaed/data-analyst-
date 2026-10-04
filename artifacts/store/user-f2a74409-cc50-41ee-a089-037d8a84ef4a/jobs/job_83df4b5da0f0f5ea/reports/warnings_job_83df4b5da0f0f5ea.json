@@ -1,0 +1,6 @@
+[
+  "Questions about change over time: no date column was identified in this dataset.",
+  "Questions comparing segments: no categorical dimension column was identified.",
+  "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.",
+  "Robust z-scores assume the bulk of the data is representative; a broad shift in the data can hide a genuine change."
+]

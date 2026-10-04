@@ -1,0 +1,671 @@
+[
+  {
+    "step_id": "overview_measures",
+    "tool_name": "describe_measures",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "tconst__count",
+        "value": 2716,
+        "unit": "rows",
+        "definition": "Non-null rows in 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__mean",
+        "value": 7267675.125552283,
+        "unit": null,
+        "definition": "Arithmetic mean of 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__median",
+        "value": 4574535.0,
+        "unit": null,
+        "definition": "Median of 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__total",
+        "value": 19739005641.0,
+        "unit": null,
+        "definition": "Sum of 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__skewness",
+        "value": 1.6033457440847705,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__count",
+        "value": 2716,
+        "unit": "rows",
+        "definition": "Non-null rows in 'start_year'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__mean",
+        "value": 2012.293446244477,
+        "unit": null,
+        "definition": "Arithmetic mean of 'start_year'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__median",
+        "value": 2016.0,
+        "unit": null,
+        "definition": "Median of 'start_year'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__total",
+        "value": 5465389.0,
+        "unit": null,
+        "definition": "Sum of 'start_year'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__skewness",
+        "value": -1.7530021760109864,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__count",
+        "value": 2317,
+        "unit": "rows",
+        "definition": "Non-null rows in 'end_year'.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__mean",
+        "value": 2014.5990504963315,
+        "unit": null,
+        "definition": "Arithmetic mean of 'end_year'.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__median",
+        "value": 2018.0,
+        "unit": null,
+        "definition": "Median of 'end_year'.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__total",
+        "value": 4667826.0,
+        "unit": null,
+        "definition": "Sum of 'end_year'.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__skewness",
+        "value": -1.9422932266815,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "rank__count",
+        "value": 2716,
+        "unit": "rows",
+        "definition": "Non-null rows in 'rank'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "rank__mean",
+        "value": 1358.5,
+        "unit": null,
+        "definition": "Arithmetic mean of 'rank'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "rank__median",
+        "value": 1358.5,
+        "unit": null,
+        "definition": "Median of 'rank'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "rank__total",
+        "value": 3689686.0,
+        "unit": null,
+        "definition": "Sum of 'rank'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "rank__skewness",
+        "value": 0.0,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "average_rating__count",
+        "value": 2716,
+        "unit": "rows",
+        "definition": "Non-null rows in 'average_rating'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "average_rating__mean",
+        "value": 7.585530191458027,
+        "unit": null,
+        "definition": "Arithmetic mean of 'average_rating'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "average_rating__median",
+        "value": 7.7,
+        "unit": null,
+        "definition": "Median of 'average_rating'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "average_rating__total",
+        "value": 20602.3,
+        "unit": null,
+        "definition": "Sum of 'average_rating'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "average_rating__skewness",
+        "value": -1.725659654690515,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "num_votes__count",
+        "value": 2716,
+        "unit": "rows",
+        "definition": "Non-null rows in 'num_votes'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "num_votes__mean",
+        "value": 60997.648379970546,
+        "unit": null,
+        "definition": "Arithmetic mean of 'num_votes'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "num_votes__median",
+        "value": 23994.5,
+        "unit": null,
+        "definition": "Median of 'num_votes'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "num_votes__total",
+        "value": 165669613.0,
+        "unit": null,
+        "definition": "Sum of 'num_votes'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "num_votes__skewness",
+        "value": 9.126804283766273,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_862ac4a4e48e81f9",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_83df4b5da0f0f5ea\\tables\\overview_measures_measure_summary.csv",
+        "row_count": 6,
+        "byte_size": 854,
+        "sha256": "4ec9015a9af14b13e351c33ecf9691143b114754e2a0f7a3fe9a7c61dd29ea69",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0324,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "47b64fbbbc9e4892de909f56"
+  },
+  {
+    "step_id": "data_quality",
+    "tool_name": "missingness_profile",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "worst_missing_column",
+        "value": "end_year",
+        "unit": null,
+        "definition": "Column with the highest share of missing values.",
+        "n": 12,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      },
+      {
+        "name": "worst_missing_share",
+        "value": 14.69,
+        "unit": "%",
+        "definition": "Share of rows missing in the least complete column.",
+        "n": 12,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_78566a73c577ced7",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_83df4b5da0f0f5ea\\tables\\data_quality_missingness.csv",
+        "row_count": 12,
+        "byte_size": 424,
+        "sha256": "e837dd084d2c1f3c5379da0935ef6f203d44c9d2130ea59f1e492ca9915e20ba",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0145,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "3d809eaa42868a7fa33e360c"
+  },
+  {
+    "step_id": "correlations",
+    "tool_name": "correlation_matrix",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "correlation__start_year__end_year",
+        "value": 0.9395558499802887,
+        "unit": null,
+        "definition": "Pearson correlation between 'start_year' and 'end_year', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__rank__average_rating",
+        "value": -0.8987634550479706,
+        "unit": null,
+        "definition": "Pearson correlation between 'rank' and 'average_rating', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__tconst__start_year",
+        "value": 0.6236482623285571,
+        "unit": null,
+        "definition": "Pearson correlation between 'tconst' and 'start_year', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__tconst__end_year",
+        "value": 0.5438780429763275,
+        "unit": null,
+        "definition": "Pearson correlation between 'tconst' and 'end_year', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__rank__num_votes",
+        "value": -0.32751484716347185,
+        "unit": null,
+        "definition": "Pearson correlation between 'rank' and 'num_votes', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__average_rating__num_votes",
+        "value": 0.23962284957413574,
+        "unit": null,
+        "definition": "Pearson correlation between 'average_rating' and 'num_votes', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__tconst__rank",
+        "value": 0.2130086842590637,
+        "unit": null,
+        "definition": "Pearson correlation between 'tconst' and 'rank', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__tconst__average_rating",
+        "value": -0.20552729052469976,
+        "unit": null,
+        "definition": "Pearson correlation between 'tconst' and 'average_rating', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__start_year__average_rating",
+        "value": -0.16274870406594427,
+        "unit": null,
+        "definition": "Pearson correlation between 'start_year' and 'average_rating', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__start_year__rank",
+        "value": 0.13958070364838876,
+        "unit": null,
+        "definition": "Pearson correlation between 'start_year' and 'rank', on complete rows only.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "strongest_correlation",
+        "value": 0.9395558499802887,
+        "unit": null,
+        "definition": "Largest absolute correlation found: 'start_year' and 'end_year'.",
+        "n": 2317,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_ca0b61299cf90dc4",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_83df4b5da0f0f5ea\\tables\\correlations_correlation_matrix.csv",
+        "row_count": 6,
+        "byte_size": 762,
+        "sha256": "29c39a6db7c42816edc4b3d43cd9ea5a268abda554c9264abd61979f2caa8c51",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0228,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "6601c044fd1278b1281fe65e"
+  },
+  {
+    "step_id": "primary_distribution",
+    "tool_name": "value_distribution",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "tconst__min",
+        "value": 43208.0,
+        "unit": null,
+        "definition": "Smallest observed value of 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_tconst"
+      },
+      {
+        "name": "tconst__max",
+        "value": 42178219.0,
+        "unit": null,
+        "definition": "Largest observed value of 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_tconst"
+      },
+      {
+        "name": "tconst__skewness",
+        "value": 1.6033457440847705,
+        "unit": null,
+        "definition": "Sample skewness; large values mean a long right tail.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_tconst"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_2e079bc103079869",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_83df4b5da0f0f5ea\\tables\\primary_distribution_distribution_tconst.csv",
+        "row_count": 29,
+        "byte_size": 2269,
+        "sha256": "81e29b49625e8e36bec18516b8672167a6421996cce676b606c4708177dc1d12",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0222,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "ffbb2cfd7391cf53a325ca0f"
+  },
+  {
+    "step_id": "anomalies",
+    "tool_name": "detect_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "tconst__anomalies_flagged",
+        "value": 163,
+        "unit": "records",
+        "definition": "Records flagged as unusual by robust_zscore, compared against the baseline stated in each record's explanation.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_tconst"
+      },
+      {
+        "name": "tconst__anomaly_rate_pct",
+        "value": 6.001472754050074,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by robust_zscore in 'tconst'.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_tconst"
+      },
+      {
+        "name": "tconst__anomaly_method",
+        "value": "robust_zscore",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_tconst"
+      },
+      {
+        "name": "tconst__anomalies_evaluated",
+        "value": 2716,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 2716,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_tconst"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_5fd8c48a2198d868",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_83df4b5da0f0f5ea\\tables\\anomalies_anomalies_tconst.csv",
+        "row_count": 163,
+        "byte_size": 63300,
+        "sha256": "aad8191786c978349f08f0c9821dced05f15dd89270e6f4804e235c2e0788c39",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Robust z-scores assume the bulk of the data is representative; a broad shift in the data can hide a genuine change."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0279,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "f9770f13ea08992450a9c707"
+  }
+]

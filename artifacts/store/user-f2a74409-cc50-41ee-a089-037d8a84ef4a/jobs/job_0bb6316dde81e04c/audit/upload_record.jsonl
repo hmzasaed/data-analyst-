@@ -1,0 +1,16 @@
+{
+  "artifact_id": "raw_81d0b2913fdc7ee3",
+  "owner_id": "user-f2a74409-cc50-41ee-a089-037d8a84ef4a",
+  "filename": "title.basics.csv",
+  "declared_media_type": null,
+  "detected_format": "csv",
+  "byte_size": 86033190,
+  "sha256": "f074d50b1769f8bb34d7af5f8b183e295184e0e14484bf738385a0a83ffd551e",
+  "sha256_verified": true,
+  "uploaded_at": "2026-10-01T12:28:00.485663Z",
+  "retention_until": null,
+  "encrypted": false,
+  "quarantined": false,
+  "scan_status": "passed",
+  "notes": []
+}

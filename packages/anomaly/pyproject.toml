@@ -1,0 +1,24 @@
+[project]
+name = "insightflow-anomaly"
+version = "0.1.0"
+description = "Explainable anomaly detection methods with baselines and caveats"
+requires-python = ">=3.11"
+dependencies = [
+    "insightflow-contracts",
+    "insightflow-ingestion",
+    "polars>=1.17",
+    "numpy>=2.1",
+    "scipy>=1.14",
+    "scikit-learn>=1.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/insightflow_anomaly"]
+
+[tool.uv.sources]
+insightflow-contracts = { workspace = true }
+insightflow-ingestion = { workspace = true }

@@ -1,0 +1,97 @@
+{
+  "options": {
+    "missing_numeric": "none",
+    "missing_categorical": "none",
+    "outliers": "none",
+    "drop_columns_missing_above": 0.5,
+    "scaling": "standard",
+    "encode_categoricals": true,
+    "date_features": true,
+    "max_encoding_levels": 20
+  },
+  "analysis_changed": false,
+  "rows_before": 1000000,
+  "rows_after": 1000000,
+  "columns_before": 6,
+  "columns_after": 6,
+  "steps": [
+    {
+      "step_id": "export_drop_columns",
+      "scope": "export",
+      "action": "drop_columns",
+      "column": null,
+      "detail": "Dropped 4 column(s) a model cannot use: primary_name (free text); birth_year (96% missing, above the 50% limit); death_year (98% missing, above the 50% limit); primary_profession (free text)",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": [
+        "primary_name",
+        "birth_year",
+        "death_year",
+        "primary_profession"
+      ]
+    },
+    {
+      "step_id": "export_impute_median_known_for_titles",
+      "scope": "export",
+      "action": "impute_median",
+      "column": "known_for_titles",
+      "detail": "Filled 120,295 missing value(s) with the median (2.524e+07).",
+      "rows_affected": 120295,
+      "columns_added": [],
+      "columns_removed": []
+    },
+    {
+      "step_id": "export_scale_standard",
+      "scope": "export",
+      "action": "scale_standard",
+      "column": null,
+      "detail": "2 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler).",
+      "rows_affected": 0,
+      "columns_added": [],
+      "columns_removed": []
+    }
+  ],
+  "missing_before": {
+    "birth_year": 956529,
+    "death_year": 983331,
+    "primary_profession": 201474,
+    "known_for_titles": 120295
+  },
+  "missing_after": {
+    "birth_year": 956529,
+    "death_year": 983331,
+    "primary_profession": 201474,
+    "known_for_titles": 120295
+  },
+  "export": {
+    "artifact_id": "model_ready_dataset",
+    "rows": 1000000,
+    "columns": 2,
+    "column_names": [
+      "nconst",
+      "known_for_titles"
+    ],
+    "scaling": "standard",
+    "encoded_columns": [],
+    "date_feature_columns": [],
+    "dropped_columns": [
+      {
+        "column": "primary_name",
+        "reason": "free text"
+      },
+      {
+        "column": "birth_year",
+        "reason": "96% missing, above the 50% limit"
+      },
+      {
+        "column": "death_year",
+        "reason": "98% missing, above the 50% limit"
+      },
+      {
+        "column": "primary_profession",
+        "reason": "free text"
+      }
+    ]
+  },
+  "warnings": []
+}

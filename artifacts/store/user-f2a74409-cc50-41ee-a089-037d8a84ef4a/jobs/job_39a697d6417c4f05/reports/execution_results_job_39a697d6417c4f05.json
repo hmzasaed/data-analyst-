@@ -1,0 +1,847 @@
+[
+  {
+    "step_id": "overview_measures",
+    "tool_name": "describe_measures",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "end_year__count",
+        "value": 12701,
+        "unit": "rows",
+        "definition": "Non-null rows in 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__mean",
+        "value": 2008.4395716872687,
+        "unit": null,
+        "definition": "Arithmetic mean of 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__median",
+        "value": 2015.0,
+        "unit": null,
+        "definition": "Median of 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__total",
+        "value": 25509191.0,
+        "unit": null,
+        "definition": "Sum of 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "end_year__skewness",
+        "value": -44.202596317017075,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "runtime_minutes__count",
+        "value": 375561,
+        "unit": "rows",
+        "definition": "Non-null rows in 'runtime_minutes'.",
+        "n": 375561,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "runtime_minutes__mean",
+        "value": 53.441619337471145,
+        "unit": null,
+        "definition": "Arithmetic mean of 'runtime_minutes'.",
+        "n": 375561,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "runtime_minutes__median",
+        "value": 30.0,
+        "unit": null,
+        "definition": "Median of 'runtime_minutes'.",
+        "n": 375561,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "runtime_minutes__total",
+        "value": 20070588.0,
+        "unit": null,
+        "definition": "Sum of 'runtime_minutes'.",
+        "n": 375561,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "runtime_minutes__skewness",
+        "value": 612.6015904020733,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 375561,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__count",
+        "value": 884215,
+        "unit": "rows",
+        "definition": "Non-null rows in 'start_year'.",
+        "n": 884215,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__mean",
+        "value": 2006.9996505374825,
+        "unit": null,
+        "definition": "Arithmetic mean of 'start_year'.",
+        "n": 884215,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__median",
+        "value": 2014.0,
+        "unit": null,
+        "definition": "Median of 'start_year'.",
+        "n": 884215,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__total",
+        "value": 1774619196.0,
+        "unit": null,
+        "definition": "Sum of 'start_year'.",
+        "n": 884215,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "start_year__skewness",
+        "value": -2.1081536786006945,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 884215,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__count",
+        "value": 1000000,
+        "unit": "rows",
+        "definition": "Non-null rows in 'tconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__mean",
+        "value": 15452339.012046,
+        "unit": null,
+        "definition": "Arithmetic mean of 'tconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__median",
+        "value": 11711801.0,
+        "unit": null,
+        "definition": "Median of 'tconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__total",
+        "value": 15452339012046.0,
+        "unit": null,
+        "definition": "Sum of 'tconst'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      },
+      {
+        "name": "tconst__skewness",
+        "value": 0.7025886808877035,
+        "unit": null,
+        "definition": "Sample skewness; 0 means symmetric.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "overview_measures",
+        "table": "measure_summary"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_3bcbc39635b641d1",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\overview_measures_measure_summary.csv",
+        "row_count": 4,
+        "byte_size": 658,
+        "sha256": "31d0b37fd6088f0a4af840c4992924e09eacf19e9b396e9692e7db27ddedd778",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.3731,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "eef50b0ab4de77e9ef009076"
+  },
+  {
+    "step_id": "data_quality",
+    "tool_name": "missingness_profile",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "worst_missing_column",
+        "value": "end_year",
+        "unit": null,
+        "definition": "Column with the highest share of missing values.",
+        "n": 9,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      },
+      {
+        "name": "worst_missing_share",
+        "value": 98.72999999999999,
+        "unit": "%",
+        "definition": "Share of rows missing in the least complete column.",
+        "n": 9,
+        "precision": 4,
+        "source_step": "data_quality",
+        "table": "missingness"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_1ab0b334611611ee",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\data_quality_missingness.csv",
+        "row_count": 9,
+        "byte_size": 410,
+        "sha256": "cafdbbc82883cac66fe83e47a0d5b40ec28c43294978838352767ded59311de4",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.476,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "3d809eaa42868a7fa33e360c"
+  },
+  {
+    "step_id": "group_comparison",
+    "tool_name": "compare_groups",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "group_gap_mean",
+        "value": 1997.351228389445,
+        "unit": null,
+        "definition": "Difference between the highest and lowest group mean of 'end_year' (tvMiniSeries vs tvEpisode).",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_comparison_title_type"
+      },
+      {
+        "name": "largest_group_mean",
+        "value": 2013.351228389445,
+        "unit": null,
+        "definition": "Highest mean of 'end_year', for group 'tvMiniSeries'.",
+        "n": 3297,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_comparison_title_type"
+      },
+      {
+        "name": "smallest_group_mean",
+        "value": 16.0,
+        "unit": null,
+        "definition": "Lowest mean of 'end_year', for group 'tvEpisode'.",
+        "n": 1,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_comparison_title_type"
+      },
+      {
+        "name": "group_gap_in_sd_units",
+        "value": 1.7348330179998779,
+        "unit": null,
+        "definition": "Group gap expressed in standard deviations of the group means (a rough standardised effect size).",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_comparison_title_type"
+      },
+      {
+        "name": "group_difference_p_value",
+        "value": 3.2534458823892094e-127,
+        "unit": null,
+        "definition": "mann_whitney_u on 'end_year' for groups 'tvMiniSeries' and 'tvSeries'.",
+        "n": 12700,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_test_title_type"
+      },
+      {
+        "name": "group_difference_cohens_d",
+        "value": 0.4106438388761004,
+        "unit": null,
+        "definition": "Standardised mean difference between the two highest-mean groups.",
+        "n": 12700,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_test_title_type"
+      },
+      {
+        "name": "group_difference_test",
+        "value": "mann_whitney_u",
+        "unit": null,
+        "definition": "Statistical test used for the reported p-value.",
+        "n": 12700,
+        "precision": 4,
+        "source_step": "group_comparison",
+        "table": "group_test_title_type"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_c23bb46cd984cb5c",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\group_comparison_group_comparison_title_type.csv",
+        "row_count": 3,
+        "byte_size": 387,
+        "sha256": "f5d0f8f43a9cd45eaae08ce1cbac67a4a78bfaa3a44d7f60350c666a4786ec6f",
+        "mime_type": "text/csv",
+        "created_at": null
+      },
+      {
+        "artifact_id": "tbl_adab9b287f1fbbda",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\group_comparison_group_test_title_type.csv",
+        "row_count": 2,
+        "byte_size": 284,
+        "sha256": "e00469f8797dd2fc349a7d40e7fbe379f10044fd20c077efc108576ae97e6c2d",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Values deviate strongly from normality (Shapiro p=1.4e-55 < 0.01), so a rank-based test was used instead of a t-test."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0646,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "2ea73306650ed5159ebf24ae"
+  },
+  {
+    "step_id": "group_ranking",
+    "tool_name": "rank_categories",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "title_type__distinct_values",
+        "value": 10,
+        "unit": "values",
+        "definition": "Number of distinct values in 'title_type'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "group_ranking",
+        "table": "ranking_title_type"
+      },
+      {
+        "name": "end_year__observed_total",
+        "value": 25509191.0,
+        "unit": null,
+        "definition": "Denominator used for shares: total end_year.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "group_ranking",
+        "table": "ranking_title_type"
+      },
+      {
+        "name": "title_type__top_share",
+        "value": 73.97786938833144,
+        "unit": "%",
+        "definition": "Share of total end_year held by the top-ranked 'title_type' value.",
+        "n": 10,
+        "precision": 4,
+        "source_step": "group_ranking",
+        "table": "ranking_title_type"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_a916252d83744816",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\group_ranking_ranking_title_type.csv",
+        "row_count": 10,
+        "byte_size": 807,
+        "sha256": "01252f512fd6b5a569ad839fbf09e8549dbeec73b9c9f605cdaa1a8384113fdd",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.1045,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "2a198a93dae11bc66cef3d0c"
+  },
+  {
+    "step_id": "group_contribution",
+    "tool_name": "share_of_total",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "grand_total",
+        "value": 25509191.0,
+        "unit": null,
+        "definition": "Sum of 'end_year' across all analysed rows.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "group_contribution",
+        "table": "contribution_title_type"
+      },
+      {
+        "name": "top3_share",
+        "value": 100.0,
+        "unit": "%",
+        "definition": "Share of total 'end_year' contributed by the top 3 'title_type' values.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "group_contribution",
+        "table": "contribution_title_type"
+      },
+      {
+        "name": "contribution_concentration",
+        "value": 100.0,
+        "unit": "%",
+        "definition": "Cumulative share of 'end_year' held by the top 3 'title_type' values.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "group_contribution",
+        "table": "contribution_title_type"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_cb74a3c71a0ca83d",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\group_contribution_contribution_title_type.csv",
+        "row_count": 3,
+        "byte_size": 398,
+        "sha256": "02f7c79ad000daaf72e1901a120112a6a7cc4fb228375d6491830250cd536af5",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0117,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "b4fade62576520da327679fe"
+  },
+  {
+    "step_id": "correlations",
+    "tool_name": "correlation_matrix",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "correlation__end_year__start_year",
+        "value": 0.979485012857175,
+        "unit": null,
+        "definition": "Pearson correlation between 'end_year' and 'start_year', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__start_year__tconst",
+        "value": 0.35101834315882813,
+        "unit": null,
+        "definition": "Pearson correlation between 'start_year' and 'tconst', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__end_year__tconst",
+        "value": 0.3258070845316186,
+        "unit": null,
+        "definition": "Pearson correlation between 'end_year' and 'tconst', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__end_year__runtime_minutes",
+        "value": 0.008548529273164665,
+        "unit": null,
+        "definition": "Pearson correlation between 'end_year' and 'runtime_minutes', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__runtime_minutes__tconst",
+        "value": -0.0037039918196439332,
+        "unit": null,
+        "definition": "Pearson correlation between 'runtime_minutes' and 'tconst', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "correlation__runtime_minutes__start_year",
+        "value": 0.002603305320232966,
+        "unit": null,
+        "definition": "Pearson correlation between 'runtime_minutes' and 'start_year', on complete rows only.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      },
+      {
+        "name": "strongest_correlation",
+        "value": 0.979485012857175,
+        "unit": null,
+        "definition": "Largest absolute correlation found: 'end_year' and 'start_year'.",
+        "n": 5944,
+        "precision": 4,
+        "source_step": "correlations",
+        "table": "correlation_matrix"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_a384d3885a7a40b3",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\correlations_correlation_matrix.csv",
+        "row_count": 4,
+        "byte_size": 368,
+        "sha256": "0300e7d8e70d62832cd1209fdf111cfac2329c0e1cc2e6aa9f772f1b85d820b6",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0127,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "8b12b9415fc40577c54a86a3"
+  },
+  {
+    "step_id": "primary_distribution",
+    "tool_name": "value_distribution",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "end_year__min",
+        "value": 16.0,
+        "unit": null,
+        "definition": "Smallest observed value of 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_end_year"
+      },
+      {
+        "name": "end_year__max",
+        "value": 2028.0,
+        "unit": null,
+        "definition": "Largest observed value of 'end_year'.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_end_year"
+      },
+      {
+        "name": "end_year__skewness",
+        "value": -44.202596317017075,
+        "unit": null,
+        "definition": "Sample skewness; large values mean a long right tail.",
+        "n": 12701,
+        "precision": 4,
+        "source_step": "primary_distribution",
+        "table": "distribution_end_year"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_025264c30c6c1e4f",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\primary_distribution_distribution_end_year.csv",
+        "row_count": 3,
+        "byte_size": 269,
+        "sha256": "8bc5ee8a40df7d23f24aaeb161012a58efb2dfbb48c4c9884e7a276772f03633",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.0151,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "b427811d0d11621c2d5e2c14"
+  },
+  {
+    "step_id": "anomalies",
+    "tool_name": "detect_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "end_year__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "definition": "Records flagged as unusual by iqr_fence, compared against the baseline stated in each record's explanation.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_end_year"
+      },
+      {
+        "name": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by iqr_fence in 'end_year'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_end_year"
+      },
+      {
+        "name": "end_year__anomaly_method",
+        "value": "iqr_fence",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_end_year"
+      },
+      {
+        "name": "end_year__anomalies_evaluated",
+        "value": 1000000,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies",
+        "table": "anomalies_end_year"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_c1cb6ccb3d4c5484",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\anomalies_anomalies_end_year.csv",
+        "row_count": 500,
+        "byte_size": 196481,
+        "sha256": "2a7da214fab370c03bd9e885ca710a3102a22fd50368b21f6cc83e9b4f82cb14",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.3245,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "c13b025a06fd762a4953f28b"
+  },
+  {
+    "step_id": "anomalies_by_group",
+    "tool_name": "detect_group_outliers",
+    "tool_version": "1",
+    "dataset_version": 2,
+    "status": "succeeded",
+    "metrics": [
+      {
+        "name": "end_year__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "definition": "Records flagged as unusual by group_percentile, compared against the baseline stated in each record's explanation.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies_by_group",
+        "table": "anomalies_end_year_by_title_type"
+      },
+      {
+        "name": "end_year__anomaly_rate_pct",
+        "value": 0.05,
+        "unit": "%",
+        "definition": "Share of evaluated rows flagged by group_percentile in 'end_year'.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies_by_group",
+        "table": "anomalies_end_year_by_title_type"
+      },
+      {
+        "name": "end_year__anomaly_method",
+        "value": "group_percentile",
+        "unit": null,
+        "definition": "Detection method used. The method determines what the result does and does not mean.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies_by_group",
+        "table": "anomalies_end_year_by_title_type"
+      },
+      {
+        "name": "end_year__anomalies_evaluated",
+        "value": 1000000,
+        "unit": "records",
+        "definition": "Number of rows that were actually scored.",
+        "n": 1000000,
+        "precision": 4,
+        "source_step": "anomalies_by_group",
+        "table": "anomalies_end_year_by_title_type"
+      }
+    ],
+    "tables": [
+      {
+        "artifact_id": "tbl_7267062e85c742fe",
+        "kind": "table_csv",
+        "path": "C:\\Users\\hamza.saeed\\Downloads\\Aalysis-Agent\\artifacts\\store\\user-f2a74409-cc50-41ee-a089-037d8a84ef4a\\jobs\\job_39a697d6417c4f05\\tables\\anomalies_by_group_anomalies_end_year_by_title_type.csv",
+        "row_count": 500,
+        "byte_size": 230453,
+        "sha256": "e068907e8b290fb7ce68fe295223b2ca9dd0ca644554f72c4e69fe7425cb3373",
+        "mime_type": "text/csv",
+        "created_at": null
+      }
+    ],
+    "charts": [],
+    "records": [],
+    "code": null,
+    "query": null,
+    "warnings": [
+      "Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored."
+    ],
+    "errors": [],
+    "usage": {
+      "wall_seconds": 0.1665,
+      "peak_memory_bytes": null,
+      "cpu_seconds": null
+    },
+    "tool_digest": "865a38fd2acb40431c8e16a2"
+  }
+]

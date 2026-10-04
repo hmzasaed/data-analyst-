@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Analysis of name.basics</title>
+<style>
+:root {
+  --ink: #17212b; --ink-2: #3b4754; --muted: #66727f; --line: #e3e8ee; --line-2: #d3dae2;
+  --surface: #ffffff; --surface-2: #f6f8fa; --accent: #2f6fb3; --accent-soft: #e8f0fa;
+  --warn-bg: #fff8e6; --warn-line: #e6c06a; --ok: #2e7d4f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--ink); background: var(--surface-2);
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.page { max-width: 72rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.cover {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 2rem 2rem 1.5rem; margin-bottom: 1.25rem;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--accent); font-weight: 700; }
+h1 { font-size: 1.95rem; line-height: 1.2; margin: .35rem 0 .5rem; letter-spacing: -.01em; }
+.meta { color: var(--muted); font-size: .85rem; display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; }
+.meta code { font-size: .8rem; }
+.question {
+  margin: 1.1rem 0 0; padding: .8rem 1rem; background: var(--accent-soft);
+  border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; font-size: .98rem;
+}
+.kpis {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .75rem;
+  margin: 0 0 1.25rem;
+}
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .85rem 1rem; }
+.kpi .label { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.kpi .value { font-size: 1.45rem; font-weight: 700; margin-top: .15rem; font-variant-numeric: tabular-nums; }
+.kpi .note { color: var(--muted); font-size: .75rem; }
+.layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+nav.toc {
+  position: sticky; top: 1rem; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1rem 1rem .75rem; font-size: .86rem;
+}
+nav.toc h2 { font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .5rem; border: 0; padding: 0; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; }
+nav.toc li { margin: .15rem 0; }
+nav.toc a { color: var(--ink-2); text-decoration: none; display: flex; gap: .5rem; padding: .2rem .35rem; border-radius: 6px; }
+nav.toc a:hover { background: var(--surface-2); color: var(--accent); }
+nav.toc .n { color: var(--muted); min-width: 1.4rem; font-variant-numeric: tabular-nums; }
+.report-section {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.5rem 1.75rem 1.25rem; margin-bottom: 1.25rem; scroll-margin-top: 1rem;
+}
+.report-section > h2 {
+  font-size: 1.28rem; margin: 0 0 1rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: .6rem;
+}
+.report-section > h2 .n {
+  font-size: .8rem; color: var(--accent); background: var(--accent-soft); border-radius: 999px;
+  padding: .1rem .55rem; font-variant-numeric: tabular-nums;
+}
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
+h4 { font-size: .97rem; margin: 1.25rem 0 .35rem; }
+p { margin: .55rem 0; }
+ul, ol { margin: .5rem 0; padding-left: 1.3rem; }
+li { margin: .25rem 0; }
+code { background: var(--surface-2); border: 1px solid var(--line); padding: .05rem .3rem; border-radius: 4px; font-size: .84em; }
+blockquote { margin: .9rem 0; padding: .65rem 1rem; background: var(--surface-2); border-left: 3px solid var(--line-2); }
+.table-block { margin: 1.25rem 0; }
+.table-block h3 { margin: 0 0 .45rem; font-size: .98rem; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: .86rem; }
+th, td { padding: .5rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+thead th {
+  background: var(--surface-2); font-weight: 600; color: var(--ink-2); white-space: nowrap;
+  position: sticky; top: 0;
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) td { background: #fbfcfd; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table-meta { color: var(--muted); font-size: .78rem; margin-top: .35rem; display: flex; flex-wrap: wrap; gap: .2rem 1rem; }
+.section-body table { border: 1px solid var(--line); }
+.charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+figure.chart { margin: 0; border: 1px solid var(--line); border-radius: 10px; padding: .85rem; background: #fff; }
+figure.chart.wide { grid-column: 1 / -1; }
+figure.chart h3 { margin: 0 0 .5rem; font-size: .95rem; }
+figure.chart img { width: 100%; height: auto; display: block; }
+figure.chart figcaption { color: var(--muted); font-size: .8rem; margin-top: .5rem; line-height: 1.45; }
+.callout {
+  margin: 1rem 0; padding: .8rem 1rem; background: var(--warn-bg);
+  border: 1px solid var(--warn-line); border-radius: 10px; font-size: .9rem;
+}
+.callout strong { display: block; margin-bottom: .2rem; }
+.section-footer { color: var(--ink-2); font-size: .9rem; }
+.muted { color: var(--muted); }
+footer.report-footer { color: var(--muted); font-size: .82rem; padding: .5rem .25rem; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  nav.toc { position: static; }
+  .charts { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .page { padding: 1rem .75rem 3rem; }
+  .cover, .report-section { padding: 1.1rem 1rem; border-radius: 10px; }
+  h1 { font-size: 1.5rem; }
+}
+@media print {
+  body { background: #fff; font-size: 10.5pt; }
+  .page { max-width: none; padding: 0; }
+  .layout { display: block; }
+  nav.toc { display: none; }
+  .cover, .report-section, .kpi { border: 0; padding-left: 0; padding-right: 0; }
+  .report-section { page-break-before: auto; }
+  .report-section > h2 { page-break-after: avoid; }
+  figure.chart, .table-block { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="eyebrow">InsightFlow analysis report</div>
+    <h1>Analysis of name.basics</h1>
+    <div class="meta">
+<span>File <code>name.basics.csv</code></span>      <span>Dataset <code>ds_0d956819221a3004</code></span>
+      <span>Job <code>job_9996a6f40de3f22a</code></span>
+<span>Generated 2026-10-01 11:32:23 UTC</span>    </div>
+    <div class="callout">
+      <strong>Exploratory report</strong>
+      No specific question was asked, so this is a general overview of the dataset rather
+      than an answer to a targeted business question.
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Rows</div>
+      <div class="value">1,000,000</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Columns</div>
+      <div class="value">6</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Missing cells</div>
+      <div class="value">37.7%</div>
+<div class="note">2,261,637 of 6,000,000</div>    </div>
+    <div class="kpi">
+      <div class="label">Duplicate rows</div>
+      <div class="value">0</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Preprocessing</div>
+      <div class="value">export only</div>
+<div class="note">3 logged step(s)</div>    </div>
+    <div class="kpi">
+      <div class="label">Verified findings</div>
+      <div class="value">23</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Charts</div>
+      <div class="value">8</div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#executive_summary"><span class="n">1</span>Executive summary</a></li>
+        <li><a href="#dataset_overview"><span class="n">2</span>Dataset overview</a></li>
+        <li><a href="#data_quality"><span class="n">3</span>Data-quality assessment</a></li>
+        <li><a href="#preprocessing"><span class="n">4</span>Data preprocessing</a></li>
+        <li><a href="#descriptive_statistics"><span class="n">5</span>Descriptive statistics</a></li>
+        <li><a href="#distributions"><span class="n">6</span>Distributions</a></li>
+        <li><a href="#relationships"><span class="n">7</span>Relationships between measures</a></li>
+        <li><a href="#key_findings"><span class="n">8</span>Key findings</a></li>
+        <li><a href="#anomalies"><span class="n">9</span>Anomalies</a></li>
+        <li><a href="#methodology"><span class="n">10</span>Methodology</a></li>
+        <li><a href="#limitations"><span class="n">11</span>Limitations</a></li>
+        <li><a href="#next_steps"><span class="n">12</span>Suggested next questions</a></li>
+        <li><a href="#reproducibility"><span class="n">13</span>Reproducibility</a></li>
+        <li><a href="#appendix"><span class="n">A</span>Appendix: evidence</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="executive_summary" class="report-section">
+        <h2><span class="n">1</span>Executive summary</h2>
+
+
+        <div class="section-body"><p>This report covers 1,000,000 rows and 6 columns. It was produced in response to this exploratory overview. 23 finding(s) were verified against computed values, 5 of them at medium or high importance. Each finding below links to the artifact it came from.</p>
+<h3>Key findings</h3>
+<ul><li><strong>worst missing column (missingness_profile)</strong> — The least complete column in this dataset is death_year. (confidence: high)</li><li><strong>worst missing share (missingness_profile)</strong> — That column has no usable values in 98.3% of rows. (confidence: high)</li><li><strong>death_year: anomaly rate pct (detect_outliers)</strong> — 0.0% of evaluated rows were flagged as unusual. (confidence: medium)</li><li><strong>388 of 1,000,000 rows flagged by iqr_fence</strong> — iqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review. (confidence: medium)</li><li><strong>Most extreme iqr_fence flag: row 1287</strong> — 'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s). (confidence: low)</li></ul>
+<p><strong>Most important data-quality caveat:</strong> <code>death_year</code> is missing in 98.3% of rows, so any figure involving it is calculated on partial data.</p></div>
+
+
+
+
+      </section>
+      <section id="dataset_overview" class="report-section">
+        <h2><span class="n">2</span>Dataset overview</h2>
+
+
+        <div class="section-body"><p><strong>Source file:</strong> name.basics.csv <strong>Dimensions:</strong> 1,000,000 rows x 6 columns <strong>Column types:</strong> nconst (integer), primary_name (text), birth_year (integer), death_year (integer), primary_profession (text), known_for_titles (integer) <strong>Key measures:</strong> nconst, birth_year, death_year, known_for_titles</p></div>
+
+
+        <div class="table-block">
+          <h3>Column overview</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th>Type</th>
+                <th>Role</th>
+                <th class="num">Missing</th>
+                <th class="num">Missing %</th>
+                <th class="num">Unique values</th>
+                <th>PII risk</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>nconst</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">0</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">1,000,000</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>primary_name</td>
+                  <td>text</td>
+                  <td>free text</td>
+                  <td class="num">8</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">927,763</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>birth_year</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">956,529</td>
+                  <td class="num">95.7%</td>
+                  <td class="num">257</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>death_year</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">983,331</td>
+                  <td class="num">98.3%</td>
+                  <td class="num">194</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>primary_profession</td>
+                  <td>text</td>
+                  <td>free text</td>
+                  <td class="num">201,474</td>
+                  <td class="num">20.2%</td>
+                  <td class="num">11,611</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>known_for_titles</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">120,295</td>
+                  <td class="num">12.0%</td>
+                  <td class="num">666,574</td>
+                  <td>none</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Types and roles are inferred from values and column names.</span><span>Source: <code>eda_column_overview.csv</code></span>          </div>
+        </div>
+
+
+      </section>
+      <section id="data_quality" class="report-section">
+        <h2><span class="n">3</span>Data-quality assessment</h2>
+
+
+        <div class="section-body"><p><strong>Missing values</strong></p>
+<ul><li><code>death_year</code>: 98.3% of rows</li><li><code>birth_year</code>: 95.7% of rows</li><li><code>primary_profession</code>: 20.2% of rows</li><li><code>known_for_titles</code>: 12.0% of rows</li></ul>
+<p><strong>Other issues detected</strong></p>
+<ul><li>[medium] <code>primary_name</code> 927517 normalised forms cover 927763 raw values: casing and whitespace differ between otherwise identical labels.</li><li>[medium] <code>primary_name</code> 927,762 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.</li><li>[high] <code>birth_year</code> 956,529 of 1,000,000 rows (95.7%) have no value.</li><li>[high] <code>death_year</code> 983,331 of 1,000,000 rows (98.3%) have no value.</li><li>[medium] <code>primary_profession</code> 201,474 of 1,000,000 rows (20.2%) have no value.</li><li>[medium] <code>known_for_titles</code> 120,295 of 1,000,000 rows (12.0%) have no value.</li></ul>
+<p><strong>Cleaning applied</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Change</th><th>Rows affected</th><th>Reason</th><th>Reversible</th></tr></thead><tbody><tr><td>parse_number on <code>nconst</code></td><td>1,000,000</td><td>Parsed 'nconst' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>trim_whitespace on <code>primary_name</code></td><td>0</td><td>Trimmed leading and trailing whitespace in 'primary_name'.</td><td>yes</td></tr><tr><td>normalise_categories on <code>primary_name</code></td><td>247</td><td>'primary_name' has 927762 raw labels for 927517 distinct values once case and whitespace are normalised.</td><td>yes</td></tr><tr><td>parse_number on <code>birth_year</code></td><td>43,471</td><td>Parsed 'birth_year' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>parse_number on <code>death_year</code></td><td>16,669</td><td>Parsed 'death_year' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>parse_number on <code>known_for_titles</code></td><td>879,705</td><td>Parsed 'known_for_titles' to a number with no loss of values.</td><td>no (restore from raw)</td></tr></tbody></table></div>
+<p>4 proposed change(s) were <strong>not</strong> applied because they were not approved.</p></div>
+
+
+        <div class="table-block">
+          <h3>Missing values by column</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th class="num">Missing</th>
+                <th class="num">Missing %</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>death_year</td>
+                  <td class="num">983,331</td>
+                  <td class="num">98.3%</td>
+                </tr>
+                <tr>
+                  <td>birth_year</td>
+                  <td class="num">956,529</td>
+                  <td class="num">95.7%</td>
+                </tr>
+                <tr>
+                  <td>primary_profession</td>
+                  <td class="num">201,474</td>
+                  <td class="num">20.2%</td>
+                </tr>
+                <tr>
+                  <td>known_for_titles</td>
+                  <td class="num">120,295</td>
+                  <td class="num">12.0%</td>
+                </tr>
+                <tr>
+                  <td>primary_name</td>
+                  <td class="num">8</td>
+                  <td class="num">0.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_missing_values.csv</code></span>          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart">
+            <h3>Missing values by column</h3>
+            <img src="/artifacts/eda_missing_values.png" alt="Missing values by column" loading="lazy">
+<figcaption>Share of rows with no value, per column. Computed on the uploaded data before cleaning.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="preprocessing" class="report-section">
+        <h2><span class="n">4</span>Data preprocessing</h2>
+
+
+        <div class="section-body"><p>Preprocessing runs after cleaning and has two separate scopes:</p>
+<ul><li><strong>Analysed data</strong> - optional changes to the data every figure in this report is computed from. <strong>No changes were applied</strong>, so the figures reflect the cleaned data.</li><li><strong>Model-ready export</strong> - a separate copy prepared for machine learning (scaled, encoded, with date features). It is offered as a download and does not feed any figure in this report.</li></ul>
+<p><strong>Settings:</strong> missing numbers = <code>none</code>, missing categories = <code>none</code>, outliers = <code>none</code>, scaling = <code>standard</code>, one-hot encoding = <code>on</code>, date features = <code>on</code>.</p></div>
+
+
+        <div class="table-block">
+          <h3>Model-ready export</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Step</th>
+                <th>Column</th>
+                <th>What was done</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>drop columns</td>
+                  <td>-</td>
+                  <td>Dropped 4 column(s) a model cannot use: primary_name (free text); birth_year (96% missing, above the 50% limit); death_year (98% missing, above the 50% limit); primary_profession (free text)</td>
+                </tr>
+                <tr>
+                  <td>impute median</td>
+                  <td>known_for_titles</td>
+                  <td>Filled 120,295 missing value(s) with the median (2.524e+07).</td>
+                </tr>
+                <tr>
+                  <td>scale standard</td>
+                  <td>-</td>
+                  <td>2 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Result: 1,000,000 rows x 2 columns, downloadable from the job&#39;s Preprocessing tab.</span>          </div>
+        </div>
+        <div class="table-block">
+          <h3>Columns left out of the model-ready export</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th>Reason</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>primary_name</td>
+                  <td>free text</td>
+                </tr>
+                <tr>
+                  <td>birth_year</td>
+                  <td>96% missing, above the 50% limit</td>
+                </tr>
+                <tr>
+                  <td>death_year</td>
+                  <td>98% missing, above the 50% limit</td>
+                </tr>
+                <tr>
+                  <td>primary_profession</td>
+                  <td>free text</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </section>
+      <section id="descriptive_statistics" class="report-section">
+        <h2><span class="n">5</span>Descriptive statistics</h2>
+
+
+        <div class="section-body"><p>Summary statistics for every numeric measure and grouping column, computed on every analysed row.</p></div>
+
+
+        <div class="table-block">
+          <h3>Numeric columns</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th class="num">Count</th>
+                <th class="num">Mean</th>
+                <th class="num">Std dev</th>
+                <th class="num">Min</th>
+                <th class="num">25%</th>
+                <th class="num">Median</th>
+                <th class="num">75%</th>
+                <th class="num">Max</th>
+                <th class="num">Skew</th>
+                <th class="num">Kurtosis</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>nconst</td>
+                  <td class="num">1,000,000</td>
+                  <td class="num">9,289,369</td>
+                  <td class="num">5,524,575</td>
+                  <td class="num">7</td>
+                  <td class="num">4,407,448</td>
+                  <td class="num">9,320,211</td>
+                  <td class="num">13,993,858</td>
+                  <td class="num">18,963,961</td>
+                  <td class="num">0.03</td>
+                  <td class="num">-1.21</td>
+                </tr>
+                <tr>
+                  <td>birth_year</td>
+                  <td class="num">43,471</td>
+                  <td class="num">1,955.0</td>
+                  <td class="num">33.96</td>
+                  <td class="num">1,150</td>
+                  <td class="num">1,934</td>
+                  <td class="num">1,961</td>
+                  <td class="num">1,981</td>
+                  <td class="num">2,025</td>
+                  <td class="num">-1.99</td>
+                  <td class="num">21.99</td>
+                </tr>
+                <tr>
+                  <td>death_year</td>
+                  <td class="num">16,669</td>
+                  <td class="num">1,995.7</td>
+                  <td class="num">31.20</td>
+                  <td class="num">1,220</td>
+                  <td class="num">1,982</td>
+                  <td class="num">2,004</td>
+                  <td class="num">2,017</td>
+                  <td class="num">2,026</td>
+                  <td class="num">-5.32</td>
+                  <td class="num">78.37</td>
+                </tr>
+                <tr>
+                  <td>known_for_titles</td>
+                  <td class="num">879,705</td>
+                  <td class="num">726,508,973,871,049,703,890,893,144,064</td>
+                  <td class="num">4,393,250,270,748,034,954,753,357,119,488</td>
+                  <td class="num">32</td>
+                  <td class="num">3,458,542</td>
+                  <td class="num">25,244,380</td>
+                  <td class="num">33,245,203,654,850,318,336</td>
+                  <td class="num">47,656,666,374,299,974,273,745,029,169,152</td>
+                  <td class="num">7.05</td>
+                  <td class="num">51.52</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Count excludes missing values. Skew above 1 or below -1 indicates a strongly lopsided distribution.</span><span>Source: <code>eda_numeric_summary.csv</code></span>          </div>
+        </div>
+
+
+      </section>
+      <section id="distributions" class="report-section">
+        <h2><span class="n">6</span>Distributions</h2>
+
+
+        <div class="section-body"><p>How the values of each column are spread: shape, centre, outliers and the most frequent categories.</p></div>
+
+
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Distribution of numeric columns</h3>
+            <img src="/artifacts/eda_histograms.png" alt="Distribution of numeric columns" loading="lazy">
+<figcaption>Histograms with a smoothed density curve; solid line = mean, dashed = median. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Spread and outliers</h3>
+            <img src="/artifacts/eda_box_plots.png" alt="Spread and outliers" loading="lazy">
+<figcaption>Box = middle 50% of values, line = median, whiskers = 1.5 x IQR; points beyond are unusual relative to the column, not necessarily errors. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+          <figure class="chart">
+            <h3>Distribution of death_year</h3>
+            <img src="/artifacts/chart_5079cfa7ef1bd921.png" alt="Distribution of death_year" loading="lazy">
+<figcaption>16,669 non-null values across 30 equal-width bins. Bins are equal width; a skewed measure is easier to read as a log scale, which is not shown.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="relationships" class="report-section">
+        <h2><span class="n">7</span>Relationships between measures</h2>
+
+
+        <div class="section-body"><p>Pairwise correlations between numeric measures. A correlation describes how two columns move together; it is an association, not evidence that one affects the other.</p></div>
+
+
+        <div class="table-block">
+          <h3>Strongest correlations</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column A</th>
+                <th>Column B</th>
+                <th class="num">Pearson r</th>
+                <th>Strength</th>
+                <th class="num">Rows used</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>birth_year</td>
+                  <td>death_year</td>
+                  <td class="num">+0.849</td>
+                  <td>strong positive</td>
+                  <td class="num">15,531</td>
+                </tr>
+                <tr>
+                  <td>nconst</td>
+                  <td>birth_year</td>
+                  <td class="num">+0.385</td>
+                  <td>weak positive</td>
+                  <td class="num">43,471</td>
+                </tr>
+                <tr>
+                  <td>birth_year</td>
+                  <td>known_for_titles</td>
+                  <td class="num">+0.186</td>
+                  <td>negligible</td>
+                  <td class="num">41,636</td>
+                </tr>
+                <tr>
+                  <td>nconst</td>
+                  <td>death_year</td>
+                  <td class="num">+0.121</td>
+                  <td>negligible</td>
+                  <td class="num">16,669</td>
+                </tr>
+                <tr>
+                  <td>nconst</td>
+                  <td>known_for_titles</td>
+                  <td class="num">+0.110</td>
+                  <td>negligible</td>
+                  <td class="num">879,705</td>
+                </tr>
+                <tr>
+                  <td>death_year</td>
+                  <td>known_for_titles</td>
+                  <td class="num">+0.031</td>
+                  <td>negligible</td>
+                  <td class="num">15,582</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_top_correlations.csv</code></span>          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Correlation matrix</h3>
+            <img src="/artifacts/eda_correlation_heatmap.png" alt="Correlation matrix" loading="lazy">
+<figcaption>Pearson correlation on rows where both values are present. Correlation measures association only; it does not show that one column affects another.</figcaption>          </figure>
+          <figure class="chart">
+            <h3>birth_year vs death_year</h3>
+            <img src="/artifacts/eda_top_pair_scatter.png" alt="birth_year vs death_year" loading="lazy">
+<figcaption>The most strongly correlated pair (r = +0.85), with a least-squares line. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="key_findings" class="report-section">
+        <h2><span class="n">8</span>Key findings</h2>
+
+
+        <div class="section-body"><h4>worst missing column (missingness_profile)</h4>
+<p>The least complete column in this dataset is death_year.</p>
+<p><strong>Evidence</strong> (tbl_d14ebbef982da579)</p>
+<ul><li><code>worst_missing_column</code> = death_year</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> medium</p>
+<h4>worst missing share (missingness_profile)</h4>
+<p>That column has no usable values in 98.3% of rows.</p>
+<p><strong>Evidence</strong> (tbl_d14ebbef982da579)</p>
+<ul><li><code>worst_missing_share</code> = 98.33 %</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> medium</p>
+<h4>death_year: anomaly rate pct (detect_outliers)</h4>
+<p>0.0% of evaluated rows were flagged as unusual.</p>
+<p><strong>Evidence</strong> (tbl_31690be4163ebd77)</p>
+<ul><li><code>death_year__anomaly_rate_pct</code> = 0.0388 %</li></ul>
+<p><strong>Confidence:</strong> medium <strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>388 of 1,000,000 rows flagged by iqr_fence</h4>
+<p>iqr_fence flagged 388 of 1,000,000 evaluated rows in 'death_year' as unusual relative to the stated baseline. 0.0% of the evaluated rows, flagged for review.</p>
+<p><strong>Evidence</strong> (anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a)</p>
+<ul><li><code>death_year__anomalies_flagged</code> = 388 records</li><li><code>death_year__anomaly_rate_pct</code> = 0.0388 %</li></ul>
+<p><strong>Confidence:</strong> medium <strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>Most extreme iqr_fence flag: row 1287</h4>
+<p>'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 value(s).</p>
+<p><strong>Evidence</strong> (anomaly:03b6c0fae9fc5f5f7ebfa2f782e3989a)</p>
+<ul><li><code>death_year__observed_value</code> = 1,918 death_year</li></ul>
+<p><strong>Confidence:</strong> low <strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li><li>Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>death_year: skewness (describe_measures, overview_measures)</h4>
+<p>The distribution is skewed (-5.32), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>death_year__skewness</code> = -5.32</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> low</p>
+<h4>birth_year: skewness (describe_measures)</h4>
+<p>The distribution is skewed (-1.99), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>birth_year__skewness</code> = -1.989</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> low</p>
+<h4>known_for_titles: skewness (describe_measures)</h4>
+<p>The distribution is skewed (7.05), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>known_for_titles__skewness</code> = 7.047</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> low</p>
+<h4>nconst: skewness (describe_measures)</h4>
+<p>The distribution is skewed (0.03), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>nconst__skewness</code> = 0.03288</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> low</p>
+<h4>death_year: skewness (value_distribution, primary_distribution)</h4>
+<p>The distribution is skewed (-5.32), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_0335384693f4885c)</p>
+<ul><li><code>death_year__skewness</code> = -5.32</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> low</p>
+<h4>strongest correlation (correlation_matrix)</h4>
+<p>The strongest measured association in the data is 0.86.</p>
+<p><strong>Evidence</strong> (tbl_be1ba0aa58e6231d)</p>
+<ul><li><code>strongest_correlation</code> = 0.8585</li></ul>
+<p><strong>Confidence:</strong> medium <strong>Severity:</strong> low</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.</li></ul>
+<h4>death_year: mean (describe_measures)</h4>
+<p>The 1,996 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>death_year__mean</code> = 1,996</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>death_year: median (describe_measures)</h4>
+<p>The 2,004 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>death_year__median</code> = 2,004</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>death_year: total (describe_measures)</h4>
+<p>The 33,266,759 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>death_year__total</code> = 3.327e+07</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>birth_year: mean (describe_measures)</h4>
+<p>The 1,955 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>birth_year__mean</code> = 1,955</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>birth_year: median (describe_measures)</h4>
+<p>The 1,961 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>birth_year__median</code> = 1,961</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>birth_year: total (describe_measures)</h4>
+<p>The 84,987,514 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>birth_year__total</code> = 8.499e+07</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>known_for_titles: mean (describe_measures)</h4>
+<p>The 726,508,973,871,049,703,890,893,144,064 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>known_for_titles__mean</code> = 7.265e+29</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>known_for_titles: median (describe_measures)</h4>
+<p>The 25,244,380 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>known_for_titles__median</code> = 2.524e+07</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>known_for_titles: total (describe_measures)</h4>
+<p>The 639,113,576,859,231,752,766,199,036,886,646,784 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>known_for_titles__total</code> = 6.391e+35</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>nconst: mean (describe_measures)</h4>
+<p>The 9,289,369 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>nconst__mean</code> = 9.289e+06</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>nconst: median (describe_measures)</h4>
+<p>The 9,320,211 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>nconst__median</code> = 9.32e+06</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p>
+<h4>nconst: total (describe_measures)</h4>
+<p>The 9,289,369,275,770 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_4eb03f08965e3847)</p>
+<ul><li><code>nconst__total</code> = 9.289e+12</li></ul>
+<p><strong>Confidence:</strong> high <strong>Severity:</strong> info</p></div>
+
+
+
+
+      </section>
+      <section id="anomalies" class="report-section">
+        <h2><span class="n">9</span>Anomalies</h2>
+
+        <div class="callout">
+          <strong>Read this before acting on anything below</strong>
+          A flagged record is unusual relative to a stated baseline. It is not evidence of an
+          error or of wrongdoing, and it may be entirely legitimate.
+        </div>
+
+        <div class="section-body"><p><strong>A flagged record is unusual relative to a stated baseline. It is not evidence of an error, mistake or wrongdoing, and it may be entirely legitimate.</strong></p>
+<h3><code>death_year</code> - iqr_fence</h3>
+<ul><li>Flagged: <strong>388</strong> of 1,000,000 evaluated rows (0.0%)</li><li>Baseline: First and third quartiles of 'death_year', extended by 1.5 times the interquartile range on each side.</li><li>Limitation: Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>Flagged value</th><th>Compared against</th><th>Severity</th><th>Why flagged</th></tr></thead><tbody><tr><td>1,918</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,918 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,929</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,929 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,928</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,928 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,653</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,653 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,888</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,888 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,923</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,923 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,917</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,917 against 1,930 to 2,070, derived from 16,669 valu</td></tr><tr><td>1,913</td><td>1,930 to 2,070</td><td>medium</td><td>'death_year' is below the expected range for interquartile fence: 1,913 against 1,930 to 2,070, derived from 16,669 valu</td></tr></tbody></table></div>
+<p><strong>Suggested review order:</strong> start with high-severity flags, then check whether the surrounding periods and groups corroborate them.</p></div>
+
+
+
+        <div class="charts">
+          <figure class="chart">
+            <h3>Values flagged by iqr_fence</h3>
+            <img src="/artifacts/chart_c13b05452eccd546.png" alt="Values flagged by iqr_fence" loading="lazy">
+<figcaption>388 flagged record(s) from death_year. Shown: 15. Detected by iqr_fence. A flagged record is unusual relative to the stated baseline. It is not evidence of an error, and it may be entirely legitimate.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="methodology" class="report-section">
+        <h2><span class="n">10</span>Methodology</h2>
+
+
+        <div class="section-body"><p>Every figure in this report was computed by a registered analysis tool and stored as an artifact before the report was written. No number was produced by a language model.</p>
+<p><strong>Tools used</strong></p>
+<ul><li><code>describe_measures</code> v1 on dataset version 2 - 20 metric(s), 1 table(s)</li><li><code>missingness_profile</code> v1 on dataset version 2 - 2 metric(s), 1 table(s)</li><li><code>correlation_matrix</code> v1 on dataset version 2 - 7 metric(s), 1 table(s)</li><li><code>value_distribution</code> v1 on dataset version 2 - 3 metric(s), 1 table(s)</li><li><code>detect_outliers</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)</li></ul>
+<p><strong>Exploratory analysis:</strong> descriptive statistics, distributions, correlations, segment and trend views were computed with pandas and NumPy and drawn with seaborn and matplotlib. Charts over many rows use a fixed random sample, stated in each caption; tables use every row.</p>
+<p>This report includes <strong>8 chart(s)</strong> and <strong>9 evidence table(s)</strong>. Each table cites the stored CSV that holds its unrounded values; the full list is in the appendix.</p></div>
+
+
+
+
+      </section>
+      <section id="limitations" class="report-section">
+        <h2><span class="n">11</span>Limitations</h2>
+
+
+        <div class="section-body"><p><strong>Missing fields:</strong> <code>birth_year</code> (96%), <code>death_year</code> (98%), <code>primary_profession</code> (20%). Aggregates over these columns exclude missing rows, which can bias totals downward. <strong>No causal claims:</strong> where this report describes relationships, they are associations observed in the data. Establishing cause would require a different study design.</p>
+<p><strong>Questions this dataset cannot answer</strong></p>
+<ul><li>Questions about change over time: no date column was identified in this dataset.</li><li>Questions comparing segments: no categorical dimension column was identified.</li></ul></div>
+
+
+
+
+      </section>
+      <section id="next_steps" class="report-section">
+        <h2><span class="n">12</span>Suggested next questions</h2>
+
+
+        <div class="section-body"><p>Suggested next questions, based on what this dataset can answer:</p>
+<ol><li>Drill into the flagged periods and check whether an operational event (campaign, outage, pricing change) lines up with them.</li><li>Establish whether the missing values in <code>birth_year</code> are random or systematic, because that changes how the results should be read.</li><li>Add a target or prior-period column so the numbers can be judged against a goal rather than only against each other.</li></ol></div>
+
+
+
+
+      </section>
+      <section id="reproducibility" class="report-section">
+        <h2><span class="n">13</span>Reproducibility</h2>
+
+
+        <div class="section-body"><ul><li><strong>Job:</strong> <code>job_9996a6f40de3f22a</code></li><li><strong>Dataset:</strong> <code>ds_0d956819221a3004</code></li><li><strong>Source file hash:</strong> <code>6fd1f702a187bbeb757f4fb574da08423d7a770f670e907f4e92231e8bc03950</code></li><li><strong>Rows x columns:</strong> 1,000,000 x 6</li><li><strong>Profiler version:</strong> 1</li><li><strong>Report generated:</strong> 2026-10-01T11:32:23.709965+00:00</li></ul>
+<p>Re-running the same file produces the same profile and the same computed metrics. Every table and chart in this report is stored as an artifact and can be downloaded alongside it.</p></div>
+
+
+
+
+      </section>
+
+
+      <section id="appendix" class="report-section">
+        <h2><span class="n">A</span>Appendix: evidence</h2>
+        <p class="muted">Every figure in this report comes from one of these stored artifacts.
+          8 chart(s) and 9 table(s) were produced.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Evidence table</th><th class="num">Rows</th><th>Format</th></tr></thead>
+            <tbody>
+              <tr><td><code>tbl_4eb03f08965e3847</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_d14ebbef982da579</code></td>
+                  <td class="num">6</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_be1ba0aa58e6231d</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_0335384693f4885c</code></td>
+                  <td class="num">23</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_31690be4163ebd77</code></td>
+                  <td class="num">388</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_column_overview</code></td>
+                  <td class="num">6</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_missing_values</code></td>
+                  <td class="num">5</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_numeric_summary</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_top_correlations</code></td>
+                  <td class="num">6</td>
+                  <td>text/csv</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="report-footer">
+        <p>
+          Every figure in this report was computed by a registered analysis tool or the
+          exploratory analysis module and stored as an artifact before the report was written.
+          No number here was produced by a language model. Claims that could not be verified
+          against a computed value were excluded.
+        </p>
+        <p>Composer <code>deterministic</code> &middot;
+           report version <code>2</code></p>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

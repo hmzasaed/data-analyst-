@@ -1,0 +1,14 @@
+[
+  {
+    "artifact_id": "feature_importance",
+    "title": "Feature ranking for predicting tconst",
+    "caption": "The 17 highest-ranked candidates ([x] = selected, darker label). Cells show each method's raw score, shaded relative to the best feature for that method. Scores describe association with the target in this data, not that a feature affects it.",
+    "wide": true
+  },
+  {
+    "artifact_id": "feature_cv_comparison",
+    "title": "Cross-validated score: all candidates vs selected",
+    "caption": "Mean R\u00b2 over 5 folds; bars show one standard deviation. Higher is better.",
+    "wide": false
+  }
+]

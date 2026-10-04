@@ -1,0 +1,13 @@
+column,row_count,missing,missing_share,missing_pct,distinct
+end_year,2716,399,0.1469,14.6907,68
+tconst,2716,0,0.0,0.0,2716
+primary_title,2716,0,0.0,0.0,2653
+start_year,2716,0,0.0,0.0,71
+rank,2716,0,0.0,0.0,2716
+average_rating,2716,0,0.0,0.0,68
+num_votes,2716,0,0.0,0.0,2642
+directors,2716,0,0.0,0.0,2644
+writers,2716,0,0.0,0.0,2612
+genres,2716,0,0.0,0.0,279
+imdb_link,2716,0,0.0,0.0,2716
+title_imdb_link,2716,0,0.0,0.0,2716

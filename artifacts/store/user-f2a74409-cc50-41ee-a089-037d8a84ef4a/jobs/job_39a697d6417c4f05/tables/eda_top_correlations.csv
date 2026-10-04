@@ -1,0 +1,7 @@
+column_a,column_b,pearson_r,rows
+start_year,end_year,0.97659222458771,12700
+tconst,start_year,0.2815659663077486,884215
+tconst,end_year,0.23418221903008654,12701
+end_year,runtime_minutes,0.008548529273164004,5944
+tconst,runtime_minutes,-0.0010174207777103829,375561
+start_year,runtime_minutes,6.999470590620744e-05,355110

@@ -1,0 +1,1100 @@
+[
+  {
+    "finding_id": "find_e094c1f450fb",
+    "title": "changes_in_inventories: mean (describe_measures)",
+    "statement": "The 1,626,543,203 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "changes_in_inventories__mean",
+        "value": 1626543202.9493716,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6725f1329196",
+    "title": "changes_in_inventories: median (describe_measures)",
+    "statement": "The 68,296,349 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "changes_in_inventories__median",
+        "value": 68296349.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_bb3c1fec4e51",
+    "title": "changes_in_inventories: total (describe_measures)",
+    "statement": "The 14,103,756,112,774 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "changes_in_inventories__total",
+        "value": 14103756112774.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_c9780644dab9",
+    "title": "changes_in_inventories: skewness (describe_measures, overview_measures)",
+    "statement": "The distribution is skewed (10.12), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "changes_in_inventories__skewness",
+        "value": 10.119369345176363,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_25525283bda6",
+    "title": "agriculture_hunting_forestry_fishing_isic_a_b: mean (describe_measures)",
+    "statement": "The 7,793,212,164 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "agriculture_hunting_forestry_fishing_isic_a_b__mean",
+        "value": 7793212164.361178,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f7d04fabaf11",
+    "title": "agriculture_hunting_forestry_fishing_isic_a_b: median (describe_measures)",
+    "statement": "The 931,367,444 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "agriculture_hunting_forestry_fishing_isic_a_b__median",
+        "value": 931367444.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_aec5eea92b5f",
+    "title": "agriculture_hunting_forestry_fishing_isic_a_b: total (describe_measures)",
+    "statement": "The 80,979,267,599,877 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "agriculture_hunting_forestry_fishing_isic_a_b__total",
+        "value": 80979267599877.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_aaffdecd58fd",
+    "title": "agriculture_hunting_forestry_fishing_isic_a_b: skewness (describe_measures)",
+    "statement": "The distribution is skewed (18.91), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "agriculture_hunting_forestry_fishing_isic_a_b__skewness",
+        "value": 18.90525520466264,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6af6485b2968",
+    "title": "general_government_final_consumption_expenditure: mean (describe_measures)",
+    "statement": "The 30,853,786,134 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "general_government_final_consumption_expenditure__mean",
+        "value": 30853786134.32113,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_75db8b46fda3",
+    "title": "general_government_final_consumption_expenditure: median (describe_measures)",
+    "statement": "The 1,122,262,120 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "general_government_final_consumption_expenditure__median",
+        "value": 1122262119.5,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_02dceabf2911",
+    "title": "general_government_final_consumption_expenditure: total (describe_measures)",
+    "statement": "The 322,730,602,964,999 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "general_government_final_consumption_expenditure__total",
+        "value": 322730602964999.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_724f16aebb57",
+    "title": "general_government_final_consumption_expenditure: skewness (describe_measures)",
+    "statement": "The distribution is skewed (11.62), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "general_government_final_consumption_expenditure__skewness",
+        "value": 11.616086947582724,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_0912f6fe0f2e",
+    "title": "gross_capital_formation: mean (describe_measures)",
+    "statement": "The 46,537,415,280 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_capital_formation__mean",
+        "value": 46537415280.18327,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_a15a5db93681",
+    "title": "gross_capital_formation: median (describe_measures)",
+    "statement": "The 1,766,391,186 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_capital_formation__median",
+        "value": 1766391185.5,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_0a0db4261717",
+    "title": "gross_capital_formation: total (describe_measures)",
+    "statement": "The 486,781,363,830,717 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_capital_formation__total",
+        "value": 486781363830717.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_9b3be0a74138",
+    "title": "gross_capital_formation: skewness (describe_measures)",
+    "statement": "The distribution is skewed (14.53), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_capital_formation__skewness",
+        "value": 14.526447546304858,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_146973a351b8",
+    "title": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: mean (describe_measures)",
+    "statement": "The 45,189,202,120 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__mean",
+        "value": 45189202119.86826,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_d2a595294aef",
+    "title": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: median (describe_measures)",
+    "statement": "The 1,631,733,278 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__median",
+        "value": 1631733278.5,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_89354a33a4ca",
+    "title": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: total (describe_measures)",
+    "statement": "The 472,679,054,173,822 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__total",
+        "value": 472679054173822.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_7328241916bf",
+    "title": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables: skewness (describe_measures)",
+    "statement": "The distribution is skewed (14.53), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "gross_fixed_capital_formation_including_acquisitions_less_disposals_of_valuables__skewness",
+        "value": 14.532273412367058,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_d06f7a426dcd",
+    "title": "household_consumption_expenditure_including_non_profit_institutions_serving_households: mean (describe_measures)",
+    "statement": "The 105,504,146,606 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "household_consumption_expenditure_including_non_profit_institutions_serving_households__mean",
+        "value": 105504146606.43336,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6bf3c9966fd2",
+    "title": "household_consumption_expenditure_including_non_profit_institutions_serving_households: median (describe_measures)",
+    "statement": "The 5,154,424,420 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "household_consumption_expenditure_including_non_profit_institutions_serving_households__median",
+        "value": 5154424420.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f36fb14ccd8c",
+    "title": "household_consumption_expenditure_including_non_profit_institutions_serving_households: total (describe_measures)",
+    "statement": "The 1,103,573,373,503,293 value of this measure was computed.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "household_consumption_expenditure_including_non_profit_institutions_serving_households__total",
+        "value": 1103573373503293.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_59c7baa9f248",
+    "title": "household_consumption_expenditure_including_non_profit_institutions_serving_households: skewness (describe_measures)",
+    "statement": "The distribution is skewed (15.04), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_f4f17d0bd9e118aa",
+        "metric": "household_consumption_expenditure_including_non_profit_institutions_serving_households__skewness",
+        "value": 15.03837811371943,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "overview_measures",
+    "tags": [
+      "describe_measures"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_d7b749592579",
+    "title": "worst missing column (missingness_profile)",
+    "statement": "The least complete column in this dataset is changes_in_inventories.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_54e2cb8e2178ad5c",
+        "metric": "worst_missing_column",
+        "value": "changes_in_inventories",
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_6ac3382da600",
+    "title": "worst missing share (missingness_profile)",
+    "statement": "That column has no usable values in 17.5% of rows.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_54e2cb8e2178ad5c",
+        "metric": "worst_missing_share",
+        "value": 17.51,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "data_quality",
+    "tags": [
+      "missingness_profile"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_38e88b617aac",
+    "title": "period count (time_series_aggregate)",
+    "statement": "The series covers 52 periods periods.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_ee62fa5cc411fb04",
+        "metric": "period_count",
+        "value": 52,
+        "unit": "periods",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "time_series",
+    "tags": [
+      "time_series_aggregate"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_f39e2cb8ebd1",
+    "title": "changes_in_inventories: first period total (time_series_aggregate)",
+    "statement": "The period total was 46,553,060,712.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_ee62fa5cc411fb04",
+        "metric": "changes_in_inventories__first_period_total",
+        "value": 46553060712.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "time_series",
+    "tags": [
+      "time_series_aggregate"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_584b8de94f58",
+    "title": "changes_in_inventories: last period total (time_series_aggregate)",
+    "statement": "The period total was 669,720,069,370.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_ee62fa5cc411fb04",
+        "metric": "changes_in_inventories__last_period_total",
+        "value": 669720069370.0,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "info",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "time_series",
+    "tags": [
+      "time_series_aggregate"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_a145f83a351e",
+    "title": "changes_in_inventories: overall change pct (time_series_aggregate)",
+    "statement": "The measure changed by 1338.6% between the first and last period.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_ee62fa5cc411fb04",
+        "metric": "changes_in_inventories__overall_change_pct",
+        "value": 1338.6166218226033,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "time_series",
+    "tags": [
+      "time_series_aggregate"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_c3c333c3ab1f",
+    "title": "strongest correlation (correlation_matrix)",
+    "statement": "The strongest measured association in the data is 1.00.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_d53845341dae98a6",
+        "metric": "strongest_correlation",
+        "value": 0.9997212691925037,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "medium",
+    "limitations": [
+      "Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor."
+    ],
+    "status": "verified",
+    "analysis_step_id": "correlations",
+    "tags": [
+      "correlation_matrix"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_e49c0d4d80db",
+    "title": "changes_in_inventories: skewness (value_distribution, primary_distribution)",
+    "statement": "The distribution is skewed (10.12), so averages understate the spread.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_3a84c421ea92e453",
+        "metric": "changes_in_inventories__skewness",
+        "value": 10.119369345176363,
+        "unit": null,
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "low",
+    "confidence": "high",
+    "limitations": [],
+    "status": "verified",
+    "analysis_step_id": "primary_distribution",
+    "tags": [
+      "value_distribution"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_ba0a67e60550",
+    "title": "changes_in_inventories: anomaly rate pct (detect_outliers, anomalies)",
+    "statement": "4.8% of evaluated rows were flagged as unusual.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_ca718ae5dfc11d8c",
+        "metric": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": "anomalies",
+    "tags": [
+      "anomaly",
+      "detect_outliers"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_009a4aa33825",
+    "title": "changes_in_inventories: anomaly rate pct (detect_outliers, anomalies_over_time)",
+    "statement": "4.8% of evaluated rows were flagged as unusual.",
+    "evidence": [
+      {
+        "artifact_id": "tbl_158199e92f307952",
+        "metric": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Requires reliable time ordering and enough history; results change with the window size and are unstable for short series.",
+      "The first 7 point(s) have no trailing history and cannot be scored.",
+      "11 point(s) followed a perfectly flat window. With no variation to compare against, any departure from that level is flagged, so expect these flags to be easy to explain and easy to dismiss."
+    ],
+    "status": "verified",
+    "analysis_step_id": "anomalies_over_time",
+    "tags": [
+      "anomaly",
+      "detect_outliers"
+    ],
+    "flagged_for_review": false,
+    "anomaly_ids": [],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_199d0a64d228",
+    "title": "500 of 10,512 rows flagged by iqr_fence",
+    "statement": "iqr_fence flagged 500 of 10,512 evaluated rows in 'changes_in_inventories' as unusual relative to the stated baseline. 4.8% of the evaluated rows, flagged for review.",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:42db9cc1e64a6646422fe11aa719effe",
+        "metric": "changes_in_inventories__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      },
+      {
+        "artifact_id": "anomaly:42db9cc1e64a6646422fe11aa719effe",
+        "metric": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "3222e06a6822",
+      "29d88ee3e55a",
+      "c1e45d90e4f4",
+      "4e15356cdd6f",
+      "bbd7879fdb9b",
+      "48c735fb4876",
+      "e4d3651d5da5",
+      "d50757f03867",
+      "0c694e19015e",
+      "1ab74e725e5a"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_655702c74c9d",
+    "title": "Most extreme iqr_fence flag: row 114",
+    "statement": "'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1,726,986,548, derived from 8,671 value(s).",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:42db9cc1e64a6646422fe11aa719effe",
+        "metric": "changes_in_inventories__observed_value",
+        "value": 2193385763.0,
+        "unit": "changes_in_inventories",
+        "comparator": null,
+        "source_rows_or_groups": [
+          "row:114"
+        ],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "low",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+      "Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "3222e06a6822"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_b17cc20419ba",
+    "title": "500 of 10,512 rows flagged by iqr_fence",
+    "statement": "iqr_fence flagged 500 of 10,512 evaluated rows in 'changes_in_inventories' as unusual relative to the stated baseline. 4.8% of the evaluated rows, flagged for review.",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:8a570a3c83b85e14f1fbe7275d345fd1",
+        "metric": "changes_in_inventories__anomalies_flagged",
+        "value": 500,
+        "unit": "records",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      },
+      {
+        "artifact_id": "anomaly:8a570a3c83b85e14f1fbe7275d345fd1",
+        "metric": "changes_in_inventories__anomaly_rate_pct",
+        "value": 4.756468797564688,
+        "unit": "%",
+        "comparator": null,
+        "source_rows_or_groups": [],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "medium",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "3222e06a6822",
+      "29d88ee3e55a",
+      "c1e45d90e4f4",
+      "4e15356cdd6f",
+      "bbd7879fdb9b",
+      "48c735fb4876",
+      "e4d3651d5da5",
+      "d50757f03867",
+      "0c694e19015e",
+      "1ab74e725e5a"
+    ],
+    "unsupported_claims": []
+  },
+  {
+    "finding_id": "find_655702c74c9d",
+    "title": "Most extreme iqr_fence flag: row 114",
+    "statement": "'changes_in_inventories' is above the expected range for interquartile fence: 2,193,385,763 against -1,035,444,162 to 1,726,986,548, derived from 8,671 value(s).",
+    "evidence": [
+      {
+        "artifact_id": "anomaly:8a570a3c83b85e14f1fbe7275d345fd1",
+        "metric": "changes_in_inventories__observed_value",
+        "value": 2193385763.0,
+        "unit": "changes_in_inventories",
+        "comparator": null,
+        "source_rows_or_groups": [
+          "row:114"
+        ],
+        "dataset_version": 2
+      }
+    ],
+    "severity": "medium",
+    "confidence": "low",
+    "limitations": [
+      "Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.",
+      "Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution."
+    ],
+    "status": "verified",
+    "analysis_step_id": null,
+    "tags": [
+      "anomaly",
+      "review"
+    ],
+    "flagged_for_review": true,
+    "anomaly_ids": [
+      "3222e06a6822"
+    ],
+    "unsupported_claims": []
+  }
+]

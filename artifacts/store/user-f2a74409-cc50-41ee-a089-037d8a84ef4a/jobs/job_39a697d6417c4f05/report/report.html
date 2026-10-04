@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Analysis of title.basics</title>
+<style>
+:root {
+  --ink: #17212b; --ink-2: #3b4754; --muted: #66727f; --line: #e3e8ee; --line-2: #d3dae2;
+  --surface: #ffffff; --surface-2: #f6f8fa; --accent: #2f6fb3; --accent-soft: #e8f0fa;
+  --warn-bg: #fff8e6; --warn-line: #e6c06a; --ok: #2e7d4f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--ink); background: var(--surface-2);
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.page { max-width: 72rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.cover {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 2rem 2rem 1.5rem; margin-bottom: 1.25rem;
+}
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--accent); font-weight: 700; }
+h1 { font-size: 1.95rem; line-height: 1.2; margin: .35rem 0 .5rem; letter-spacing: -.01em; }
+.meta { color: var(--muted); font-size: .85rem; display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; }
+.meta code { font-size: .8rem; }
+.question {
+  margin: 1.1rem 0 0; padding: .8rem 1rem; background: var(--accent-soft);
+  border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; font-size: .98rem;
+}
+.kpis {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .75rem;
+  margin: 0 0 1.25rem;
+}
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .85rem 1rem; }
+.kpi .label { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.kpi .value { font-size: 1.45rem; font-weight: 700; margin-top: .15rem; font-variant-numeric: tabular-nums; }
+.kpi .note { color: var(--muted); font-size: .75rem; }
+.layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+nav.toc {
+  position: sticky; top: 1rem; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1rem 1rem .75rem; font-size: .86rem;
+}
+nav.toc h2 { font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .5rem; border: 0; padding: 0; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; }
+nav.toc li { margin: .15rem 0; }
+nav.toc a { color: var(--ink-2); text-decoration: none; display: flex; gap: .5rem; padding: .2rem .35rem; border-radius: 6px; }
+nav.toc a:hover { background: var(--surface-2); color: var(--accent); }
+nav.toc .n { color: var(--muted); min-width: 1.4rem; font-variant-numeric: tabular-nums; }
+.report-section {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.5rem 1.75rem 1.25rem; margin-bottom: 1.25rem; scroll-margin-top: 1rem;
+}
+.report-section > h2 {
+  font-size: 1.28rem; margin: 0 0 1rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: .6rem;
+}
+.report-section > h2 .n {
+  font-size: .8rem; color: var(--accent); background: var(--accent-soft); border-radius: 999px;
+  padding: .1rem .55rem; font-variant-numeric: tabular-nums;
+}
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
+h4 { font-size: .97rem; margin: 1.25rem 0 .35rem; }
+p { margin: .55rem 0; }
+ul, ol { margin: .5rem 0; padding-left: 1.3rem; }
+li { margin: .25rem 0; }
+code { background: var(--surface-2); border: 1px solid var(--line); padding: .05rem .3rem; border-radius: 4px; font-size: .84em; }
+blockquote { margin: .9rem 0; padding: .65rem 1rem; background: var(--surface-2); border-left: 3px solid var(--line-2); }
+.table-block { margin: 1.25rem 0; }
+.table-block h3 { margin: 0 0 .45rem; font-size: .98rem; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: .86rem; }
+th, td { padding: .5rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+thead th {
+  background: var(--surface-2); font-weight: 600; color: var(--ink-2); white-space: nowrap;
+  position: sticky; top: 0;
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) td { background: #fbfcfd; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table-meta { color: var(--muted); font-size: .78rem; margin-top: .35rem; display: flex; flex-wrap: wrap; gap: .2rem 1rem; }
+.section-body table { border: 1px solid var(--line); }
+.charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+figure.chart { margin: 0; border: 1px solid var(--line); border-radius: 10px; padding: .85rem; background: #fff; }
+figure.chart.wide { grid-column: 1 / -1; }
+figure.chart h3 { margin: 0 0 .5rem; font-size: .95rem; }
+figure.chart img { width: 100%; height: auto; display: block; }
+figure.chart figcaption { color: var(--muted); font-size: .8rem; margin-top: .5rem; line-height: 1.45; }
+.callout {
+  margin: 1rem 0; padding: .8rem 1rem; background: var(--warn-bg);
+  border: 1px solid var(--warn-line); border-radius: 10px; font-size: .9rem;
+}
+.callout strong { display: block; margin-bottom: .2rem; }
+.section-footer { color: var(--ink-2); font-size: .9rem; }
+.muted { color: var(--muted); }
+footer.report-footer { color: var(--muted); font-size: .82rem; padding: .5rem .25rem; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  nav.toc { position: static; }
+  .charts { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .page { padding: 1rem .75rem 3rem; }
+  .cover, .report-section { padding: 1.1rem 1rem; border-radius: 10px; }
+  h1 { font-size: 1.5rem; }
+}
+@media print {
+  body { background: #fff; font-size: 10.5pt; }
+  .page { max-width: none; padding: 0; }
+  .layout { display: block; }
+  nav.toc { display: none; }
+  .cover, .report-section, .kpi { border: 0; padding-left: 0; padding-right: 0; }
+  .report-section { page-break-before: auto; }
+  .report-section > h2 { page-break-after: avoid; }
+  figure.chart, .table-block { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="eyebrow">InsightFlow analysis report</div>
+    <h1>Analysis of title.basics</h1>
+    <div class="meta">
+<span>File <code>title.basics.csv</code></span>      <span>Dataset <code>ds_bd7d63297da395d0</code></span>
+      <span>Job <code>job_39a697d6417c4f05</code></span>
+<span>Generated 2026-10-01 12:42:53 UTC</span>    </div>
+    <div class="callout">
+      <strong>Exploratory report</strong>
+      No specific question was asked, so this is a general overview of the dataset rather
+      than an answer to a targeted business question.
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Rows</div>
+      <div class="value">1,000,000</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Columns</div>
+      <div class="value">9</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Missing cells</div>
+      <div class="value">19.7%</div>
+<div class="note">1,769,806 of 9,000,000</div>    </div>
+    <div class="kpi">
+      <div class="label">Duplicate rows</div>
+      <div class="value">0</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Preprocessing</div>
+      <div class="value">export only</div>
+<div class="note">4 logged step(s)</div>    </div>
+    <div class="kpi">
+      <div class="label">Verified findings</div>
+      <div class="value">34</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Selected features</div>
+      <div class="value">12</div>
+<div class="note">of 24 for tconst</div>    </div>
+    <div class="kpi">
+      <div class="label">Charts</div>
+      <div class="value">17</div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#executive_summary"><span class="n">1</span>Executive summary</a></li>
+        <li><a href="#dataset_overview"><span class="n">2</span>Dataset overview</a></li>
+        <li><a href="#data_quality"><span class="n">3</span>Data-quality assessment</a></li>
+        <li><a href="#preprocessing"><span class="n">4</span>Data preprocessing</a></li>
+        <li><a href="#descriptive_statistics"><span class="n">5</span>Descriptive statistics</a></li>
+        <li><a href="#distributions"><span class="n">6</span>Distributions</a></li>
+        <li><a href="#relationships"><span class="n">7</span>Relationships between measures</a></li>
+        <li><a href="#trends_and_segments"><span class="n">8</span>Trends and segments</a></li>
+        <li><a href="#features"><span class="n">9</span>Feature engineering and selection</a></li>
+        <li><a href="#key_findings"><span class="n">10</span>Key findings</a></li>
+        <li><a href="#anomalies"><span class="n">11</span>Anomalies</a></li>
+        <li><a href="#methodology"><span class="n">12</span>Methodology</a></li>
+        <li><a href="#limitations"><span class="n">13</span>Limitations</a></li>
+        <li><a href="#next_steps"><span class="n">14</span>Suggested next questions</a></li>
+        <li><a href="#reproducibility"><span class="n">15</span>Reproducibility</a></li>
+        <li><a href="#appendix"><span class="n">A</span>Appendix: evidence</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="executive_summary" class="report-section">
+        <h2><span class="n">1</span>Executive summary</h2>
+
+
+        <div class="section-body"><p>This report covers 1,000,000 rows and 9 columns. It was produced in response to this exploratory overview. 34 finding(s) were verified against computed values, 12 of them at medium or high importance. Each finding below links to the artifact it came from.</p>
+<h3>Key findings</h3>
+<ul><li><strong>worst missing column (missingness_profile)</strong> — The least complete column in this dataset is end_year. (confidence: high)</li><li><strong>worst missing share (missingness_profile)</strong> — That column has no usable values in 98.7% of rows. (confidence: high)</li><li><strong>title_type: top share (rank_categories)</strong> — The leading group value accounts for 74.0% of the total. (confidence: high)</li><li><strong>top3 share (share_of_total)</strong> — The top groups account for 100.0% of the total. (confidence: high)</li><li><strong>contribution concentration (share_of_total)</strong> — Contribution is concentrated: the leading groups hold 100.0% of the total. (confidence: high)</li></ul>
+<p><strong>Most important data-quality caveat:</strong> <code>end_year</code> is missing in 98.7% of rows, so any figure involving it is calculated on partial data.</p></div>
+
+
+
+
+      </section>
+      <section id="dataset_overview" class="report-section">
+        <h2><span class="n">2</span>Dataset overview</h2>
+
+
+        <div class="section-body"><p><strong>Source file:</strong> title.basics.csv</p>
+<p><strong>Dimensions:</strong> 1,000,000 rows x 9 columns</p>
+<p><strong>Column types:</strong> tconst (integer), title_type (category), primary_title (text), original_title (text), is_adult (boolean), start_year (integer), end_year (integer), runtime_minutes (integer), genres (text)</p>
+<p><strong>Key measures:</strong> tconst, start_year, end_year, runtime_minutes</p>
+<p><strong>Grouping fields:</strong> title_type</p></div>
+
+
+        <div class="table-block">
+          <h3>Column overview</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th>Type</th>
+                <th>Role</th>
+                <th class="num">Missing</th>
+                <th class="num">Missing %</th>
+                <th class="num">Unique values</th>
+                <th>PII risk</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>tconst</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">0</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">1,000,000</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>title_type</td>
+                  <td>category</td>
+                  <td>category</td>
+                  <td class="num">0</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">10</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>primary_title</td>
+                  <td>text</td>
+                  <td>free text</td>
+                  <td class="num">9</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">560,663</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>original_title</td>
+                  <td>text</td>
+                  <td>free text</td>
+                  <td class="num">9</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">562,406</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>is_adult</td>
+                  <td>boolean</td>
+                  <td>flag</td>
+                  <td class="num">0</td>
+                  <td class="num">0.0%</td>
+                  <td class="num">5</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>start_year</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">115,785</td>
+                  <td class="num">11.6%</td>
+                  <td class="num">145</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>end_year</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">987,299</td>
+                  <td class="num">98.7%</td>
+                  <td class="num">87</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes</td>
+                  <td>integer</td>
+                  <td>measure</td>
+                  <td class="num">624,436</td>
+                  <td class="num">62.4%</td>
+                  <td class="num">523</td>
+                  <td>none</td>
+                </tr>
+                <tr>
+                  <td>genres</td>
+                  <td>text</td>
+                  <td>free text</td>
+                  <td class="num">42,268</td>
+                  <td class="num">4.2%</td>
+                  <td class="num">1,794</td>
+                  <td>none</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Types and roles are inferred from values and column names.</span><span>Source: <code>eda_column_overview.csv</code></span>          </div>
+        </div>
+
+
+      </section>
+      <section id="data_quality" class="report-section">
+        <h2><span class="n">3</span>Data-quality assessment</h2>
+
+
+        <div class="section-body"><p><strong>Missing values</strong></p>
+<ul><li><code>end_year</code>: 98.7% of rows</li><li><code>runtime_minutes</code>: 62.4% of rows</li><li><code>start_year</code>: 11.6% of rows</li><li><code>genres</code>: 4.2% of rows</li></ul>
+<p><strong>Other issues detected</strong></p>
+<ul><li>[medium] <code>primary_title</code> 558866 normalised forms cover 560663 raw values: casing and whitespace differ between otherwise identical labels.</li><li>[medium] <code>primary_title</code> 560,662 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.</li><li>[medium] <code>original_title</code> 560608 normalised forms cover 562406 raw values: casing and whitespace differ between otherwise identical labels.</li><li>[medium] <code>original_title</code> 562,405 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.</li><li>[medium] <code>start_year</code> 115,785 of 1,000,000 rows (11.6%) have no value.</li><li>[high] <code>end_year</code> 987,299 of 1,000,000 rows (98.7%) have no value.</li><li>[high] <code>runtime_minutes</code> 624,436 of 1,000,000 rows (62.4%) have no value.</li><li>[medium] <code>runtime_minutes</code> 3 values are infinite or not a number and will break arithmetic.</li></ul>
+<p><strong>Cleaning applied</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Change</th><th>Rows affected</th><th>Reason</th><th>Reversible</th></tr></thead><tbody><tr><td>parse_number on <code>tconst</code></td><td>1,000,000</td><td>Parsed 'tconst' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>trim_whitespace on <code>primary_title</code></td><td>0</td><td>Trimmed leading and trailing whitespace in 'primary_title'.</td><td>yes</td></tr><tr><td>normalise_categories on <code>primary_title</code></td><td>1,940</td><td>'primary_title' has 560662 raw labels for 558866 distinct values once case and whitespace are normalised.</td><td>yes</td></tr><tr><td>trim_whitespace on <code>original_title</code></td><td>0</td><td>Trimmed leading and trailing whitespace in 'original_title'.</td><td>yes</td></tr><tr><td>normalise_categories on <code>original_title</code></td><td>1,942</td><td>'original_title' has 562405 raw labels for 560608 distinct values once case and whitespace are normalised.</td><td>yes</td></tr><tr><td>parse_number on <code>start_year</code></td><td>884,215</td><td>Parsed 'start_year' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>parse_number on <code>end_year</code></td><td>12,701</td><td>Parsed 'end_year' to a number with no loss of values.</td><td>no (restore from raw)</td></tr><tr><td>parse_number on <code>runtime_minutes</code></td><td>375,564</td><td>Parsed 'runtime_minutes' to a number with no loss of values.</td><td>no (restore from raw)</td></tr></tbody></table></div>
+<p>5 proposed change(s) were <strong>not</strong> applied because they were not approved.</p></div>
+
+
+        <div class="table-block">
+          <h3>Missing values by column</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th class="num">Missing</th>
+                <th class="num">Missing %</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>end_year</td>
+                  <td class="num">987,299</td>
+                  <td class="num">98.7%</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes</td>
+                  <td class="num">624,436</td>
+                  <td class="num">62.4%</td>
+                </tr>
+                <tr>
+                  <td>start_year</td>
+                  <td class="num">115,785</td>
+                  <td class="num">11.6%</td>
+                </tr>
+                <tr>
+                  <td>genres</td>
+                  <td class="num">42,268</td>
+                  <td class="num">4.2%</td>
+                </tr>
+                <tr>
+                  <td>original_title</td>
+                  <td class="num">9</td>
+                  <td class="num">0.0%</td>
+                </tr>
+                <tr>
+                  <td>primary_title</td>
+                  <td class="num">9</td>
+                  <td class="num">0.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_missing_values.csv</code></span>          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart">
+            <h3>Missing values by column</h3>
+            <img src="/artifacts/eda_missing_values.png" alt="Missing values by column" loading="lazy">
+<figcaption>Share of rows with no value, per column. Computed on the uploaded data before cleaning.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="preprocessing" class="report-section">
+        <h2><span class="n">4</span>Data preprocessing</h2>
+
+
+        <div class="section-body"><p>Preprocessing runs after cleaning and has two separate scopes:</p>
+<ul><li><strong>Analysed data</strong> - optional changes to the data every figure in this report is computed from. <strong>No changes were applied</strong>, so the figures reflect the cleaned data.</li><li><strong>Model-ready export</strong> - a separate copy prepared for machine learning (scaled, encoded, with date features). It is offered as a download and does not feed any figure in this report.</li></ul>
+<p><strong>Settings:</strong> missing numbers = <code>none</code>, missing categories = <code>none</code>, outliers = <code>none</code>, scaling = <code>standard</code>, one-hot encoding = <code>on</code>, date features = <code>on</code>.</p></div>
+
+
+        <div class="table-block">
+          <h3>Model-ready export</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Step</th>
+                <th>Column</th>
+                <th>What was done</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>drop columns</td>
+                  <td>-</td>
+                  <td>Dropped 5 column(s) a model cannot use: primary_title (free text); original_title (free text); end_year (99% missing, above the 50% limit); runtime_minutes (62% missing, above the 50% limit); genres (free text)</td>
+                </tr>
+                <tr>
+                  <td>impute median</td>
+                  <td>start_year</td>
+                  <td>Filled 115,785 missing value(s) with the median (2,014).</td>
+                </tr>
+                <tr>
+                  <td>one hot encode</td>
+                  <td>-</td>
+                  <td>One-hot encoded 2 categorical column(s) into 15 indicator column(s).</td>
+                </tr>
+                <tr>
+                  <td>scale standard</td>
+                  <td>-</td>
+                  <td>2 numeric column(s) standardised to mean 0 and standard deviation 1 (scikit-learn StandardScaler).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Result: 1,000,000 rows x 17 columns, downloadable from the job&#39;s Preprocessing tab.</span>          </div>
+        </div>
+        <div class="table-block">
+          <h3>Columns left out of the model-ready export</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th>Reason</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>primary_title</td>
+                  <td>free text</td>
+                </tr>
+                <tr>
+                  <td>original_title</td>
+                  <td>free text</td>
+                </tr>
+                <tr>
+                  <td>end_year</td>
+                  <td>99% missing, above the 50% limit</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes</td>
+                  <td>62% missing, above the 50% limit</td>
+                </tr>
+                <tr>
+                  <td>genres</td>
+                  <td>free text</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </section>
+      <section id="descriptive_statistics" class="report-section">
+        <h2><span class="n">5</span>Descriptive statistics</h2>
+
+
+        <div class="section-body"><p>Summary statistics for every numeric measure and grouping column, computed on every analysed row.</p></div>
+
+
+        <div class="table-block">
+          <h3>Numeric columns</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th class="num">Count</th>
+                <th class="num">Mean</th>
+                <th class="num">Std dev</th>
+                <th class="num">Min</th>
+                <th class="num">25%</th>
+                <th class="num">Median</th>
+                <th class="num">75%</th>
+                <th class="num">Max</th>
+                <th class="num">Skew</th>
+                <th class="num">Kurtosis</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>tconst</td>
+                  <td class="num">1,000,000</td>
+                  <td class="num">15,452,339</td>
+                  <td class="num">12,980,237</td>
+                  <td class="num">13</td>
+                  <td class="num">4,525,353</td>
+                  <td class="num">11,711,801</td>
+                  <td class="num">27,072,774</td>
+                  <td class="num">47,661,711</td>
+                  <td class="num">0.70</td>
+                  <td class="num">-0.77</td>
+                </tr>
+                <tr>
+                  <td>start_year</td>
+                  <td class="num">884,215</td>
+                  <td class="num">2,007.0</td>
+                  <td class="num">20.15</td>
+                  <td class="num">1,878</td>
+                  <td class="num">2,002</td>
+                  <td class="num">2,014</td>
+                  <td class="num">2,020</td>
+                  <td class="num">2,032</td>
+                  <td class="num">-2.11</td>
+                  <td class="num">5.35</td>
+                </tr>
+                <tr>
+                  <td>end_year</td>
+                  <td class="num">12,701</td>
+                  <td class="num">2,008.4</td>
+                  <td class="num">24.23</td>
+                  <td class="num">16</td>
+                  <td class="num">2,002</td>
+                  <td class="num">2,015</td>
+                  <td class="num">2,020</td>
+                  <td class="num">2,028</td>
+                  <td class="num">-44.21</td>
+                  <td class="num">3,597.35</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes</td>
+                  <td class="num">375,561</td>
+                  <td class="num">53.44</td>
+                  <td class="num">6,025.3</td>
+                  <td class="num">1</td>
+                  <td class="num">21</td>
+                  <td class="num">30</td>
+                  <td class="num">60</td>
+                  <td class="num">3,692,080</td>
+                  <td class="num">612.60</td>
+                  <td class="num">375,375.14</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Count excludes missing values. Skew above 1 or below -1 indicates a strongly lopsided distribution.</span><span>Source: <code>eda_numeric_summary.csv</code></span>          </div>
+        </div>
+        <div class="table-block">
+          <h3>Categorical columns</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column</th>
+                <th class="num">Non-missing</th>
+                <th class="num">Unique</th>
+                <th>Most common</th>
+                <th class="num">Count</th>
+                <th class="num">Share</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>title_type</td>
+                  <td class="num">1,000,000</td>
+                  <td class="num">10</td>
+                  <td>tvEpisode</td>
+                  <td class="num">772,220</td>
+                  <td class="num">77.2%</td>
+                </tr>
+                <tr>
+                  <td>is_adult</td>
+                  <td class="num">1,000,000</td>
+                  <td class="num">5</td>
+                  <td>0</td>
+                  <td class="num">967,464</td>
+                  <td class="num">96.7%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_categorical_summary.csv</code></span>          </div>
+        </div>
+
+
+      </section>
+      <section id="distributions" class="report-section">
+        <h2><span class="n">6</span>Distributions</h2>
+
+
+        <div class="section-body"><p>How the values of each column are spread: shape, centre, outliers and the most frequent categories.</p></div>
+
+
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Distribution of numeric columns</h3>
+            <img src="/artifacts/eda_histograms.png" alt="Distribution of numeric columns" loading="lazy">
+<figcaption>Histograms with a smoothed density curve; solid line = mean, dashed = median. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Spread and outliers</h3>
+            <img src="/artifacts/eda_box_plots.png" alt="Spread and outliers" loading="lazy">
+<figcaption>Box = middle 50% of values, line = median, whiskers = 1.5 x IQR; points beyond are unusual relative to the column, not necessarily errors. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Most frequent categories</h3>
+            <img src="/artifacts/eda_category_frequencies.png" alt="Most frequent categories" loading="lazy">
+<figcaption>Row counts for the 12 most frequent values of each grouping column, computed on every row.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>end_year by title_type</h3>
+            <img src="/artifacts/chart_6d9dcd5164bd598b.png" alt="end_year by title_type" loading="lazy">
+<figcaption>Top 10 of 10 distinct &#39;title_type&#39; values. Shares are computed on the analysed rows only; filtered-out rows are not included.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Distribution of end_year</h3>
+            <img src="/artifacts/chart_b74372b30f7e4ec6.png" alt="Distribution of end_year" loading="lazy">
+<figcaption>12,701 non-null values across 30 equal-width bins. Bins are equal width; a skewed measure is easier to read as a log scale, which is not shown.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="relationships" class="report-section">
+        <h2><span class="n">7</span>Relationships between measures</h2>
+
+
+        <div class="section-body"><p>Pairwise correlations between numeric measures. A correlation describes how two columns move together; it is an association, not evidence that one affects the other.</p></div>
+
+
+        <div class="table-block">
+          <h3>Strongest correlations</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Column A</th>
+                <th>Column B</th>
+                <th class="num">Pearson r</th>
+                <th>Strength</th>
+                <th class="num">Rows used</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>start_year</td>
+                  <td>end_year</td>
+                  <td class="num">+0.977</td>
+                  <td>strong positive</td>
+                  <td class="num">12,700</td>
+                </tr>
+                <tr>
+                  <td>tconst</td>
+                  <td>start_year</td>
+                  <td class="num">+0.282</td>
+                  <td>weak positive</td>
+                  <td class="num">884,215</td>
+                </tr>
+                <tr>
+                  <td>tconst</td>
+                  <td>end_year</td>
+                  <td class="num">+0.234</td>
+                  <td>weak positive</td>
+                  <td class="num">12,701</td>
+                </tr>
+                <tr>
+                  <td>end_year</td>
+                  <td>runtime_minutes</td>
+                  <td class="num">+0.009</td>
+                  <td>negligible</td>
+                  <td class="num">5,944</td>
+                </tr>
+                <tr>
+                  <td>tconst</td>
+                  <td>runtime_minutes</td>
+                  <td class="num">-0.001</td>
+                  <td>negligible</td>
+                  <td class="num">375,561</td>
+                </tr>
+                <tr>
+                  <td>start_year</td>
+                  <td>runtime_minutes</td>
+                  <td class="num">+0.000</td>
+                  <td>negligible</td>
+                  <td class="num">355,110</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_top_correlations.csv</code></span>          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Correlation matrix</h3>
+            <img src="/artifacts/eda_correlation_heatmap.png" alt="Correlation matrix" loading="lazy">
+<figcaption>Pearson correlation on rows where both values are present. Correlation measures association only; it does not show that one column affects another.</figcaption>          </figure>
+          <figure class="chart">
+            <h3>start_year vs end_year</h3>
+            <img src="/artifacts/eda_top_pair_scatter.png" alt="start_year vs end_year" loading="lazy">
+<figcaption>The most strongly correlated pair (r = +0.98), with a least-squares line. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="trends_and_segments" class="report-section">
+        <h2><span class="n">8</span>Trends and segments</h2>
+
+
+        <div class="section-body"><p>How the headline measure changes over time and differs between groups.</p></div>
+
+
+        <div class="table-block">
+          <h3>tconst by title_type</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>title_type</th>
+                <th class="num">Rows</th>
+                <th class="num">Total</th>
+                <th class="num">Mean</th>
+                <th class="num">Median</th>
+                <th class="num">Share of total</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>tvEpisode</td>
+                  <td class="num">772,220</td>
+                  <td class="num">12,659,746,631,082</td>
+                  <td class="num">16,393,964</td>
+                  <td class="num">12,761,871</td>
+                  <td class="num">81.9%</td>
+                </tr>
+                <tr>
+                  <td>short</td>
+                  <td class="num">90,915</td>
+                  <td class="num">1,164,098,591,623</td>
+                  <td class="num">12,804,252</td>
+                  <td class="num">7,264,348</td>
+                  <td class="num">7.5%</td>
+                </tr>
+                <tr>
+                  <td>movie</td>
+                  <td class="num">59,481</td>
+                  <td class="num">632,618,382,063</td>
+                  <td class="num">10,635,638</td>
+                  <td class="num">4,888,582</td>
+                  <td class="num">4.1%</td>
+                </tr>
+                <tr>
+                  <td>tvSeries</td>
+                  <td class="num">23,956</td>
+                  <td class="num">329,043,469,332</td>
+                  <td class="num">13,735,326</td>
+                  <td class="num">9,168,159</td>
+                  <td class="num">2.1%</td>
+                </tr>
+                <tr>
+                  <td>video</td>
+                  <td class="num">26,032</td>
+                  <td class="num">303,832,289,391</td>
+                  <td class="num">11,671,492</td>
+                  <td class="num">6,942,371</td>
+                  <td class="num">2.0%</td>
+                </tr>
+                <tr>
+                  <td>tvMiniSeries</td>
+                  <td class="num">5,703</td>
+                  <td class="num">105,576,931,662</td>
+                  <td class="num">18,512,525</td>
+                  <td class="num">14,050,960</td>
+                  <td class="num">0.7%</td>
+                </tr>
+                <tr>
+                  <td>tvMovie</td>
+                  <td class="num">12,148</td>
+                  <td class="num">99,892,076,504</td>
+                  <td class="num">8,222,924</td>
+                  <td class="num">3,069,361</td>
+                  <td class="num">0.6%</td>
+                </tr>
+                <tr>
+                  <td>tvSpecial</td>
+                  <td class="num">4,790</td>
+                  <td class="num">84,387,229,149</td>
+                  <td class="num">17,617,376</td>
+                  <td class="num">13,780,587</td>
+                  <td class="num">0.5%</td>
+                </tr>
+                <tr>
+                  <td>videoGame</td>
+                  <td class="num">3,909</td>
+                  <td class="num">66,822,182,544</td>
+                  <td class="num">17,094,444</td>
+                  <td class="num">12,331,416</td>
+                  <td class="num">0.4%</td>
+                </tr>
+                <tr>
+                  <td>tvShort</td>
+                  <td class="num">846</td>
+                  <td class="num">6,321,228,696</td>
+                  <td class="num">7,471,902</td>
+                  <td class="num">5,170,265</td>
+                  <td class="num">0.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>eda_segments_title_type.csv</code></span>          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart">
+            <h3>Total tconst by title_type</h3>
+            <img src="/artifacts/eda_segment_totals_title_type.png" alt="Total tconst by title_type" loading="lazy">
+<figcaption>Sum over every row in each group, largest first.</figcaption>          </figure>
+          <figure class="chart">
+            <h3>Spread of tconst within each title_type</h3>
+            <img src="/artifacts/eda_segment_spread_title_type.png" alt="Spread of tconst within each title_type" loading="lazy">
+<figcaption>How values vary inside each group, for the largest groups. Drawn from a fixed random sample of 20,000 of 1,000,000 rows.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>end_year by title_type</h3>
+            <img src="/artifacts/chart_0ab46074d33cae61.png" alt="end_year by title_type" loading="lazy">
+<figcaption>Mean of &#39;end_year&#39; across 3 title_type values; group sizes range from 1 to 9403 rows. Means are sensitive to outliers. Check the accompanying table for group sizes and medians before relying on small differences.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Share of total end_year by title_type</h3>
+            <img src="/artifacts/chart_e48d023da88a89f0.png" alt="Share of total end_year by title_type" loading="lazy">
+<figcaption>3 groups; shares sum to 100% of the analysed rows. Groups with null measures are excluded from both numerator and denominator.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="features" class="report-section">
+        <h2><span class="n">9</span>Feature engineering and selection</h2>
+
+
+        <div class="section-body"><p>Two agents prepare the data for predictive modelling. This does not change any figure elsewhere in this report: engineered features exist only in the downloadable feature set.</p>
+<ul><li><strong>Target:</strong> <code>tconst</code> (regression), the dataset's headline measure.</li><li><strong>Feature engineering agent:</strong> 16 feature(s) created, 0 proposal(s) rejected; proposals were rule-based.</li><li><strong>Feature selection agent:</strong> 12 of 24 candidate(s) kept, ranked on 3,000 rows.</li></ul>
+<p>The agent treated this as a regression problem: predicting <code>tconst</code>. Of 24 candidate features, 12 were kept. The strongest were <code>start_year_squared</code>, <code>title_type=tvEpisode</code>, <code>start_year_mean_by_title_type</code>, <code>runtime_minutes_was_missing</code>, <code>start_year_was_missing</code>. Not kept: 7 near-constant, 5 redundant. Cross-validated r2 was 0.412 with the selected set and 0.411 with every candidate. Rankings describe association with the target in this data, not cause and effect.</p></div>
+
+        <div class="callout">
+          <strong>Warnings</strong>
+          <ul><li>Ranking and cross-validation used a fixed random sample of 3,000 rows.</li></ul>
+        </div>
+
+        <div class="table-block">
+          <h3>Engineered features</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Feature</th>
+                <th>Kind</th>
+                <th>Inputs</th>
+                <th>Source</th>
+                <th>Why</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>log1p_runtime_minutes</td>
+                  <td>log1p</td>
+                  <td>runtime_minutes</td>
+                  <td>rule</td>
+                  <td>&#39;runtime_minutes&#39; is right-skewed (skew 612.60); a log scale tames large values.</td>
+                </tr>
+                <tr>
+                  <td>start_year_per_runtime_minutes</td>
+                  <td>ratio</td>
+                  <td>start_year, runtime_minutes</td>
+                  <td>rule</td>
+                  <td>Rate of &#39;start_year&#39; per unit of &#39;runtime_minutes&#39;.</td>
+                </tr>
+                <tr>
+                  <td>end_year_per_start_year</td>
+                  <td>ratio</td>
+                  <td>end_year, start_year</td>
+                  <td>rule</td>
+                  <td>Rate of &#39;end_year&#39; per unit of &#39;start_year&#39;.</td>
+                </tr>
+                <tr>
+                  <td>end_year_per_runtime_minutes</td>
+                  <td>ratio</td>
+                  <td>end_year, runtime_minutes</td>
+                  <td>rule</td>
+                  <td>Rate of &#39;end_year&#39; per unit of &#39;runtime_minutes&#39;.</td>
+                </tr>
+                <tr>
+                  <td>start_year_x_runtime_minutes</td>
+                  <td>product</td>
+                  <td>start_year, runtime_minutes</td>
+                  <td>rule</td>
+                  <td>Interaction: lets a model see &#39;start_year&#39; and &#39;runtime_minutes&#39; acting together.</td>
+                </tr>
+                <tr>
+                  <td>start_year_x_end_year</td>
+                  <td>product</td>
+                  <td>start_year, end_year</td>
+                  <td>rule</td>
+                  <td>Interaction: lets a model see &#39;start_year&#39; and &#39;end_year&#39; acting together.</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes_x_end_year</td>
+                  <td>product</td>
+                  <td>runtime_minutes, end_year</td>
+                  <td>rule</td>
+                  <td>Interaction: lets a model see &#39;runtime_minutes&#39; and &#39;end_year&#39; acting together.</td>
+                </tr>
+                <tr>
+                  <td>start_year_squared</td>
+                  <td>square</td>
+                  <td>start_year</td>
+                  <td>rule</td>
+                  <td>Curvature term for &#39;start_year&#39;.</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes_squared</td>
+                  <td>square</td>
+                  <td>runtime_minutes</td>
+                  <td>rule</td>
+                  <td>Curvature term for &#39;runtime_minutes&#39;.</td>
+                </tr>
+                <tr>
+                  <td>title_type_frequency</td>
+                  <td>frequency</td>
+                  <td>title_type</td>
+                  <td>rule</td>
+                  <td>How common each &#39;title_type&#39; value is.</td>
+                </tr>
+                <tr>
+                  <td>is_adult_frequency</td>
+                  <td>frequency</td>
+                  <td>is_adult</td>
+                  <td>rule</td>
+                  <td>How common each &#39;is_adult&#39; value is.</td>
+                </tr>
+                <tr>
+                  <td>start_year_mean_by_title_type</td>
+                  <td>group mean</td>
+                  <td>start_year, title_type</td>
+                  <td>rule</td>
+                  <td>Typical &#39;start_year&#39; within each &#39;title_type&#39;.</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes_mean_by_title_type</td>
+                  <td>group mean</td>
+                  <td>runtime_minutes, title_type</td>
+                  <td>rule</td>
+                  <td>Typical &#39;runtime_minutes&#39; within each &#39;title_type&#39;.</td>
+                </tr>
+                <tr>
+                  <td>start_year_was_missing</td>
+                  <td>missing flag</td>
+                  <td>start_year</td>
+                  <td>rule</td>
+                  <td>12% of &#39;start_year&#39; is missing; whether it is missing can itself be informative.</td>
+                </tr>
+                <tr>
+                  <td>runtime_minutes_was_missing</td>
+                  <td>missing flag</td>
+                  <td>runtime_minutes</td>
+                  <td>rule</td>
+                  <td>62% of &#39;runtime_minutes&#39; is missing; whether it is missing can itself be informative.</td>
+                </tr>
+                <tr>
+                  <td>genres_was_missing</td>
+                  <td>missing flag</td>
+                  <td>genres</td>
+                  <td>rule</td>
+                  <td>4% of &#39;genres&#39; is missing; whether it is missing can itself be informative.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="table-block">
+          <h3>Feature ranking</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th class="num">Rank</th>
+                <th>Feature</th>
+                <th>Origin</th>
+                <th class="num">Mutual information</th>
+                <th class="num">|Correlation|</th>
+                <th class="num">Importance</th>
+                <th>Status</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td class="num">1</td>
+                  <td>start_year_squared</td>
+                  <td>engineered</td>
+                  <td class="num">0.860</td>
+                  <td class="num">0.258</td>
+                  <td class="num">0.447</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">2</td>
+                  <td>start_year</td>
+                  <td>original</td>
+                  <td class="num">0.859</td>
+                  <td class="num">0.256</td>
+                  <td class="num">0.408</td>
+                  <td>redundant with start_year_squared</td>
+                </tr>
+                <tr>
+                  <td class="num">3</td>
+                  <td>title_type=tvEpisode</td>
+                  <td>encoded</td>
+                  <td class="num">0.073</td>
+                  <td class="num">0.114</td>
+                  <td class="num">0.021</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">4</td>
+                  <td>title_type_frequency</td>
+                  <td>engineered</td>
+                  <td class="num">0.067</td>
+                  <td class="num">0.115</td>
+                  <td class="num">0.017</td>
+                  <td>redundant with title_type=tvEpisode</td>
+                </tr>
+                <tr>
+                  <td class="num">5</td>
+                  <td>start_year_mean_by_title_type</td>
+                  <td>engineered</td>
+                  <td class="num">0.067</td>
+                  <td class="num">0.117</td>
+                  <td class="num">0.017</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">6</td>
+                  <td>runtime_minutes_was_missing</td>
+                  <td>engineered</td>
+                  <td class="num">0.025</td>
+                  <td class="num">0.099</td>
+                  <td class="num">0.031</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">7</td>
+                  <td>start_year_was_missing</td>
+                  <td>engineered</td>
+                  <td class="num">0.062</td>
+                  <td class="num">0.029</td>
+                  <td class="num">0.026</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">8</td>
+                  <td>title_type=movie</td>
+                  <td>encoded</td>
+                  <td class="num">0.030</td>
+                  <td class="num">0.098</td>
+                  <td class="num">0.004</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">9</td>
+                  <td>runtime_minutes_mean_by_title_type</td>
+                  <td>engineered</td>
+                  <td class="num">0.063</td>
+                  <td class="num">0.033</td>
+                  <td class="num">0.007</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">10</td>
+                  <td>title_type=short</td>
+                  <td>encoded</td>
+                  <td class="num">0.010</td>
+                  <td class="num">0.034</td>
+                  <td class="num">0.003</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">11</td>
+                  <td>is_adult=1</td>
+                  <td>encoded</td>
+                  <td class="num">0.005</td>
+                  <td class="num">0.010</td>
+                  <td class="num">0.003</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">12</td>
+                  <td>genres_was_missing</td>
+                  <td>engineered</td>
+                  <td class="num">0.004</td>
+                  <td class="num">0.010</td>
+                  <td class="num">0.010</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">13</td>
+                  <td>title_type=tvMovie</td>
+                  <td>encoded</td>
+                  <td class="num">0.001</td>
+                  <td class="num">0.053</td>
+                  <td class="num">0.001</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">14</td>
+                  <td>is_adult=0</td>
+                  <td>encoded</td>
+                  <td class="num">0.005</td>
+                  <td class="num">0.010</td>
+                  <td class="num">0.002</td>
+                  <td>redundant with is_adult=1</td>
+                </tr>
+                <tr>
+                  <td class="num">15</td>
+                  <td>is_adult_frequency</td>
+                  <td>engineered</td>
+                  <td class="num">0.005</td>
+                  <td class="num">0.010</td>
+                  <td class="num">0.003</td>
+                  <td>redundant with is_adult=1</td>
+                </tr>
+                <tr>
+                  <td class="num">16</td>
+                  <td>title_type=video</td>
+                  <td>encoded</td>
+                  <td class="num">0.000</td>
+                  <td class="num">0.046</td>
+                  <td class="num">0.001</td>
+                  <td>selected</td>
+                </tr>
+                <tr>
+                  <td class="num">17</td>
+                  <td>title_type=tvSeries</td>
+                  <td>encoded</td>
+                  <td class="num">0.003</td>
+                  <td class="num">0.014</td>
+                  <td class="num">0.001</td>
+                  <td>redundant with runtime_minutes_mean_by_title_type</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>title_type=tvMiniSeries</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>title_type=tvShort</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>title_type=tvSpecial</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>title_type=videoGame</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>is_adult=2022</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>is_adult=2023</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+                <tr>
+                  <td class="num">-</td>
+                  <td>is_adult=2025</td>
+                  <td>encoded</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td class="num">-</td>
+                  <td>near-constant</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-meta">
+<span>Source: <code>feature_scores.csv</code></span>          </div>
+        </div>
+        <div class="table-block">
+          <h3>Cross-validation (5 folds, RandomForestRegressor (80 trees))</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Feature set</th>
+                <th class="num">Features</th>
+                <th class="num">Mean r2</th>
+                <th class="num">Std dev</th>
+              </tr></thead>
+              <tbody>
+                <tr>
+                  <td>All candidates</td>
+                  <td class="num">24</td>
+                  <td class="num">0.411</td>
+                  <td class="num">0.033</td>
+                </tr>
+                <tr>
+                  <td>Selected</td>
+                  <td class="num">12</td>
+                  <td class="num">0.412</td>
+                  <td class="num">0.032</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Feature ranking for predicting tconst</h3>
+            <img src="/artifacts/feature_importance.png" alt="Feature ranking for predicting tconst" loading="lazy">
+<figcaption>The 17 highest-ranked candidates ([x] = selected, darker label). Cells show each method&#39;s raw score, shaded relative to the best feature for that method. Scores describe association with the target in this data, not that a feature affects it.</figcaption>          </figure>
+          <figure class="chart">
+            <h3>Cross-validated score: all candidates vs selected</h3>
+            <img src="/artifacts/feature_cv_comparison.png" alt="Cross-validated score: all candidates vs selected" loading="lazy">
+<figcaption>Mean R² over 5 folds; bars show one standard deviation. Higher is better.</figcaption>          </figure>
+        </div>
+
+        <div class="section-footer"><p><strong>Methods:</strong> variance filter (a column whose most common value covers 99% or more of rows); mutual information (scikit-learn mutual_info_regression / mutual_info_classif); absolute Pearson correlation with the target (regression and two-class targets); random-forest impurity importance (80 trees, seeded); redundancy pruning (|r| &gt; 0.95 with a higher-ranked feature); 5-fold cross-validation of all candidates against the selected set.</p></div>
+      </section>
+      <section id="key_findings" class="report-section">
+        <h2><span class="n">10</span>Key findings</h2>
+
+
+        <div class="section-body"><h4>worst missing column (missingness_profile)</h4>
+<p>The least complete column in this dataset is end_year.</p>
+<p><strong>Evidence</strong> (tbl_1ab0b334611611ee)</p>
+<ul><li><code>worst_missing_column</code> = end_year</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> medium</p>
+<h4>worst missing share (missingness_profile)</h4>
+<p>That column has no usable values in 98.7% of rows.</p>
+<p><strong>Evidence</strong> (tbl_1ab0b334611611ee)</p>
+<ul><li><code>worst_missing_share</code> = 98.73 %</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> medium</p>
+<h4>title_type: top share (rank_categories)</h4>
+<p>The leading group value accounts for 74.0% of the total.</p>
+<p><strong>Evidence</strong> (tbl_a916252d83744816)</p>
+<ul><li><code>title_type__top_share</code> = 73.98 %</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> medium</p>
+<h4>top3 share (share_of_total)</h4>
+<p>The top groups account for 100.0% of the total.</p>
+<p><strong>Evidence</strong> (tbl_cb74a3c71a0ca83d)</p>
+<ul><li><code>top3_share</code> = 100 %</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> medium</p>
+<h4>contribution concentration (share_of_total)</h4>
+<p>Contribution is concentrated: the leading groups hold 100.0% of the total.</p>
+<p><strong>Evidence</strong> (tbl_cb74a3c71a0ca83d)</p>
+<ul><li><code>contribution_concentration</code> = 100 %</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> medium</p>
+<h4>group gap mean (compare_groups)</h4>
+<p>The gap between the highest and lowest group mean is 1,997.</p>
+<p><strong>Evidence</strong> (tbl_c23bb46cd984cb5c)</p>
+<ul><li><code>group_gap_mean</code> = 1,997</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Values deviate strongly from normality (Shapiro p=1.4e-55 &lt; 0.01), so a rank-based test was used instead of a t-test.</li></ul>
+<h4>end_year: anomaly rate pct (detect_outliers, anomalies)</h4>
+<p>0.1% of evaluated rows were flagged as unusual.</p>
+<p><strong>Evidence</strong> (tbl_c1cb6ccb3d4c5484)</p>
+<ul><li><code>end_year__anomaly_rate_pct</code> = 0.05 %</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>end_year: anomaly rate pct (detect_group_outliers, anomalies_by_group)</h4>
+<p>0.1% of evaluated rows were flagged as unusual.</p>
+<p><strong>Evidence</strong> (tbl_7267062e85c742fe)</p>
+<ul><li><code>end_year__anomaly_rate_pct</code> = 0.05 %</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.</li></ul>
+<h4>500 of 1,000,000 rows flagged by iqr_fence</h4>
+<p>iqr_fence flagged 500 of 1,000,000 evaluated rows in 'end_year' as unusual relative to the stated baseline. 0.1% of the evaluated rows, flagged for review.</p>
+<p><strong>Evidence</strong> (anomaly:318b71a863640cfb34b1d3a02ad81d3d)</p>
+<ul><li><code>end_year__anomalies_flagged</code> = 500 records</li><li><code>end_year__anomaly_rate_pct</code> = 0.05 %</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>500 of 1,000,000 rows flagged by group_percentile</h4>
+<p>group_percentile flagged 500 of 1,000,000 evaluated rows in 'end_year' as unusual relative to the stated baseline. 0.1% of the evaluated rows, flagged for review.</p>
+<p><strong>Evidence</strong> (anomaly:19d471457c9d9eafda892e8e2e0c6c62)</p>
+<ul><li><code>end_year__anomalies_flagged</code> = 500 records</li><li><code>end_year__anomaly_rate_pct</code> = 0.05 %</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.</li></ul>
+<h4>Most extreme iqr_fence flag: row 969</h4>
+<p>'end_year' is below the expected range for interquartile fence: 1,960 against 1,975 to 2,047, derived from 12,701 value(s).</p>
+<p><strong>Evidence</strong> (anomaly:318b71a863640cfb34b1d3a02ad81d3d)</p>
+<ul><li><code>end_year__observed_value</code> = 1,960 end_year</li></ul>
+<p><strong>Confidence:</strong> low</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li><li>Flagged for review by iqr_fence, not evidence of an error or wrongdoing. Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<h4>Most extreme group_percentile flag: title_type=tvSeries</h4>
+<p>'end_year' is above the range typical for this group: 1,960 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</p>
+<p><strong>Evidence</strong> (anomaly:19d471457c9d9eafda892e8e2e0c6c62)</p>
+<ul><li><code>end_year__observed_value</code> = 1,960 end_year</li></ul>
+<p><strong>Confidence:</strong> low</p>
+<p><strong>Severity:</strong> medium</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.</li><li>Flagged for review by group_percentile, not evidence of an error or wrongdoing. Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.</li></ul>
+<h4>end_year: skewness (describe_measures, overview_measures)</h4>
+<p>The distribution is skewed (-44.20), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>end_year__skewness</code> = -44.2</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> low</p>
+<h4>runtime_minutes: skewness (describe_measures)</h4>
+<p>The distribution is skewed (612.60), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>runtime_minutes__skewness</code> = 612.6</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> low</p>
+<h4>start_year: skewness (describe_measures)</h4>
+<p>The distribution is skewed (-2.11), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>start_year__skewness</code> = -2.108</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> low</p>
+<h4>tconst: skewness (describe_measures)</h4>
+<p>The distribution is skewed (0.70), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>tconst__skewness</code> = 0.7026</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> low</p>
+<h4>end_year: skewness (value_distribution, primary_distribution)</h4>
+<p>The distribution is skewed (-44.20), so averages understate the spread.</p>
+<p><strong>Evidence</strong> (tbl_025264c30c6c1e4f)</p>
+<ul><li><code>end_year__skewness</code> = -44.2</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> low</p>
+<h4>group difference p value (compare_groups)</h4>
+<p>The difference between the two highest-mean groups has a p-value of 0.00.</p>
+<p><strong>Evidence</strong> (tbl_adab9b287f1fbbda)</p>
+<ul><li><code>group_difference_p_value</code> = 3.253e-127</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> low</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Values deviate strongly from normality (Shapiro p=1.4e-55 &lt; 0.01), so a rank-based test was used instead of a t-test.</li></ul>
+<h4>group difference cohens d (compare_groups)</h4>
+<p>The standardised difference between the two highest-mean groups is 0.41.</p>
+<p><strong>Evidence</strong> (tbl_adab9b287f1fbbda)</p>
+<ul><li><code>group_difference_cohens_d</code> = 0.4106</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> low</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Values deviate strongly from normality (Shapiro p=1.4e-55 &lt; 0.01), so a rank-based test was used instead of a t-test.</li></ul>
+<h4>strongest correlation (correlation_matrix)</h4>
+<p>The strongest measured association in the data is 0.98.</p>
+<p><strong>Evidence</strong> (tbl_a384d3885a7a40b3)</p>
+<ul><li><code>strongest_correlation</code> = 0.9795</li></ul>
+<p><strong>Confidence:</strong> medium</p>
+<p><strong>Severity:</strong> low</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Correlation measures association only. It does not establish that either variable causes the other, and a high correlation can arise from a shared third factor.</li></ul>
+<h4>end_year: mean (describe_measures)</h4>
+<p>The 2,008 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>end_year__mean</code> = 2,008</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>end_year: median (describe_measures)</h4>
+<p>The 2,015 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>end_year__median</code> = 2,015</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>end_year: total (describe_measures)</h4>
+<p>The 25,509,191 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>end_year__total</code> = 2.551e+07</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>runtime_minutes: mean (describe_measures)</h4>
+<p>The 53.44 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>runtime_minutes__mean</code> = 53.44</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>runtime_minutes: median (describe_measures)</h4>
+<p>The 30.00 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>runtime_minutes__median</code> = 30</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>runtime_minutes: total (describe_measures)</h4>
+<p>The 20,070,588 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>runtime_minutes__total</code> = 2.007e+07</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>start_year: mean (describe_measures)</h4>
+<p>The 2,007 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>start_year__mean</code> = 2,007</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>start_year: median (describe_measures)</h4>
+<p>The 2,014 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>start_year__median</code> = 2,014</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>start_year: total (describe_measures)</h4>
+<p>The 1,774,619,196 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>start_year__total</code> = 1.775e+09</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>tconst: mean (describe_measures)</h4>
+<p>The 15,452,339 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>tconst__mean</code> = 1.545e+07</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>tconst: median (describe_measures)</h4>
+<p>The 11,711,801 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>tconst__median</code> = 1.171e+07</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>tconst: total (describe_measures)</h4>
+<p>The 15,452,339,012,046 value of this measure was computed.</p>
+<p><strong>Evidence</strong> (tbl_3bcbc39635b641d1)</p>
+<ul><li><code>tconst__total</code> = 1.545e+13</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<h4>largest group mean (compare_groups)</h4>
+<p>The highest group mean is 2,013.</p>
+<p><strong>Evidence</strong> (tbl_c23bb46cd984cb5c)</p>
+<ul><li><code>largest_group_mean</code> = 2,013</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p>
+<p><strong>Limitations</strong></p>
+<ul><li>Values deviate strongly from normality (Shapiro p=1.4e-55 &lt; 0.01), so a rank-based test was used instead of a t-test.</li></ul>
+<h4>end_year: observed total (rank_categories)</h4>
+<p>The measure totals 25,509,191 across the analysed rows.</p>
+<p><strong>Evidence</strong> (tbl_a916252d83744816)</p>
+<ul><li><code>end_year__observed_total</code> = 2.551e+07</li></ul>
+<p><strong>Confidence:</strong> high</p>
+<p><strong>Severity:</strong> info</p></div>
+
+
+
+
+      </section>
+      <section id="anomalies" class="report-section">
+        <h2><span class="n">11</span>Anomalies</h2>
+
+        <div class="callout">
+          <strong>Read this before acting on anything below</strong>
+          A flagged record is unusual relative to a stated baseline. It is not evidence of an
+          error or of wrongdoing, and it may be entirely legitimate.
+        </div>
+
+        <div class="section-body"><p><strong>A flagged record is unusual relative to a stated baseline. It is not evidence of an error, mistake or wrongdoing, and it may be entirely legitimate.</strong></p>
+<h3><code>end_year</code> - iqr_fence</h3>
+<ul><li>Flagged: <strong>500</strong> of 1,000,000 evaluated rows (0.1%)</li><li>Baseline: First and third quartiles of 'end_year', extended by 1.5 times the interquartile range on each side.</li><li>Limitation: Univariate fences miss anomalies that only look unusual in context, and assume a roughly symmetric distribution.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>Flagged value</th><th>Compared against</th><th>Severity</th><th>Why flagged</th></tr></thead><tbody><tr><td>1,960</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,960 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,972</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,972 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,961</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,961 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,971</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,971 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,967</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,967 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,963</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,963 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,967</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,967 against 1,975 to 2,047, derived from 12,701 value(</td></tr><tr><td>1,962</td><td>1,975 to 2,047</td><td>medium</td><td>'end_year' is below the expected range for interquartile fence: 1,962 against 1,975 to 2,047, derived from 12,701 value(</td></tr></tbody></table></div>
+<h3><code>end_year</code> - group_percentile</h3>
+<ul><li>Flagged: <strong>500</strong> of 1,000,000 evaluated rows (0.1%)</li><li>Baseline: Within-group quartiles of 'end_year', extended by 1.5 times the within-group interquartile range. Groups with fewer than 8 rows, or with no variation, are skipped.</li><li>Limitation: Needs adequate group size; small groups are unreliable and are usually excluded rather than silently scored.</li></ul>
+<div class="table-wrap"><table><thead><tr><th>Flagged value</th><th>Compared against</th><th>Severity</th><th>Why flagged</th></tr></thead><tbody><tr><td>1,960</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,960 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr><tr><td>1,961</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,961 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr><tr><td>1,982</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,982 against 1,993 to 2,041 (group quartiles 2,011 to 2,023).</td></tr><tr><td>1,967</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,967 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr><tr><td>1,963</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,963 against 1,993 to 2,041 (group quartiles 2,011 to 2,023).</td></tr><tr><td>1,967</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,967 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr><tr><td>1,962</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,962 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr><tr><td>1,959</td><td>group_interquartile_fence</td><td>medium</td><td>'end_year' is above the range typical for this group: 1,959 against 1,969 to 2,049 (group quartiles 1,999 to 2,019).</td></tr></tbody></table></div>
+<p><strong>Suggested review order:</strong> start with high-severity flags, then check whether the surrounding periods and groups corroborate them.</p></div>
+
+
+
+        <div class="charts">
+          <figure class="chart wide">
+            <h3>Values flagged by iqr_fence</h3>
+            <img src="/artifacts/chart_920bdf70e7a420cf.png" alt="Values flagged by iqr_fence" loading="lazy">
+<figcaption>500 flagged record(s) from end_year. Shown: 15. Detected by iqr_fence. A flagged record is unusual relative to the stated baseline. It is not evidence of an error, and it may be entirely legitimate.</figcaption>          </figure>
+          <figure class="chart wide">
+            <h3>Values flagged by group_percentile</h3>
+            <img src="/artifacts/chart_c6d11fbc20d04c38.png" alt="Values flagged by group_percentile" loading="lazy">
+<figcaption>500 flagged record(s) from end_year. Shown: 15. Detected by group_percentile. A flagged record is unusual relative to the stated baseline. It is not evidence of an error, and it may be entirely legitimate.</figcaption>          </figure>
+        </div>
+
+      </section>
+      <section id="methodology" class="report-section">
+        <h2><span class="n">12</span>Methodology</h2>
+
+
+        <div class="section-body"><p>Every figure in this report was computed by a registered analysis tool and stored as an artifact before the report was written. No number was produced by a language model.</p>
+<p><strong>Tools used</strong></p>
+<ul><li><code>describe_measures</code> v1 on dataset version 2 - 20 metric(s), 1 table(s)</li><li><code>missingness_profile</code> v1 on dataset version 2 - 2 metric(s), 1 table(s)</li><li><code>compare_groups</code> v1 on dataset version 2 - 7 metric(s), 2 table(s)</li><li><code>rank_categories</code> v1 on dataset version 2 - 3 metric(s), 1 table(s)</li><li><code>share_of_total</code> v1 on dataset version 2 - 3 metric(s), 1 table(s)</li><li><code>correlation_matrix</code> v1 on dataset version 2 - 7 metric(s), 1 table(s)</li><li><code>value_distribution</code> v1 on dataset version 2 - 3 metric(s), 1 table(s)</li><li><code>detect_outliers</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)</li><li><code>detect_group_outliers</code> v1 on dataset version 2 - 4 metric(s), 1 table(s)</li></ul>
+<p><strong>Exploratory analysis:</strong> descriptive statistics, distributions, correlations, segment and trend views were computed with pandas and NumPy and drawn with seaborn and matplotlib. Charts over many rows use a fixed random sample, stated in each caption; tables use every row.</p>
+<p>This report includes <strong>17 chart(s)</strong> and <strong>17 evidence table(s)</strong>. Each table cites the stored CSV that holds its unrounded values; the full list is in the appendix.</p></div>
+
+
+
+
+      </section>
+      <section id="limitations" class="report-section">
+        <h2><span class="n">13</span>Limitations</h2>
+
+
+        <div class="section-body"><p><strong>Missing fields:</strong> <code>end_year</code> (99%), <code>runtime_minutes</code> (62%). Aggregates over these columns exclude missing rows, which can bias totals downward.</p>
+<p><strong>No causal claims:</strong> where this report describes relationships, they are associations observed in the data. Establishing cause would require a different study design.</p>
+<p><strong>Questions this dataset cannot answer</strong></p>
+<ul><li>Questions about change over time: no date column was identified in this dataset.</li></ul></div>
+
+
+
+
+      </section>
+      <section id="next_steps" class="report-section">
+        <h2><span class="n">14</span>Suggested next questions</h2>
+
+
+        <div class="section-body"><p>Suggested next questions, based on what this dataset can answer:</p>
+<ol><li>Drill into the flagged periods and check whether an operational event (campaign, outage, pricing change) lines up with them.</li><li>Establish whether the missing values in <code>start_year</code> are random or systematic, because that changes how the results should be read.</li><li>Add a target or prior-period column so the numbers can be judged against a goal rather than only against each other.</li></ol></div>
+
+
+
+
+      </section>
+      <section id="reproducibility" class="report-section">
+        <h2><span class="n">15</span>Reproducibility</h2>
+
+
+        <div class="section-body"><ul><li><strong>Job:</strong> <code>job_39a697d6417c4f05</code></li><li><strong>Dataset:</strong> <code>ds_bd7d63297da395d0</code></li><li><strong>Source file hash:</strong> <code>f074d50b1769f8bb34d7af5f8b183e295184e0e14484bf738385a0a83ffd551e</code></li><li><strong>Rows x columns:</strong> 1,000,000 x 9</li><li><strong>Profiler version:</strong> 1</li><li><strong>Report generated:</strong> 2026-10-01T12:42:53.494770+00:00</li></ul>
+<p>Re-running the same file produces the same profile and the same computed metrics. Every table and chart in this report is stored as an artifact and can be downloaded alongside it.</p></div>
+
+
+
+
+      </section>
+
+
+      <section id="appendix" class="report-section">
+        <h2><span class="n">A</span>Appendix: evidence</h2>
+        <p class="muted">Every figure in this report comes from one of these stored artifacts.
+          17 chart(s) and 17 table(s) were produced.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Evidence table</th><th class="num">Rows</th><th>Format</th></tr></thead>
+            <tbody>
+              <tr><td><code>feature_scores</code></td>
+                  <td class="num">24</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_3bcbc39635b641d1</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_1ab0b334611611ee</code></td>
+                  <td class="num">9</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_c23bb46cd984cb5c</code></td>
+                  <td class="num">3</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_adab9b287f1fbbda</code></td>
+                  <td class="num">2</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_a916252d83744816</code></td>
+                  <td class="num">10</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_cb74a3c71a0ca83d</code></td>
+                  <td class="num">3</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_a384d3885a7a40b3</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_025264c30c6c1e4f</code></td>
+                  <td class="num">3</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_c1cb6ccb3d4c5484</code></td>
+                  <td class="num">500</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>tbl_7267062e85c742fe</code></td>
+                  <td class="num">500</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_column_overview</code></td>
+                  <td class="num">9</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_missing_values</code></td>
+                  <td class="num">6</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_numeric_summary</code></td>
+                  <td class="num">4</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_categorical_summary</code></td>
+                  <td class="num">2</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_top_correlations</code></td>
+                  <td class="num">6</td>
+                  <td>text/csv</td></tr>
+              <tr><td><code>eda_segments_title_type</code></td>
+                  <td class="num">10</td>
+                  <td>text/csv</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="report-footer">
+        <p>
+          Every figure in this report was computed by a registered analysis tool or the
+          exploratory analysis module and stored as an artifact before the report was written.
+          No number here was produced by a language model. Claims that could not be verified
+          against a computed value were excluded.
+        </p>
+        <p>Composer <code>deterministic</code> &middot;
+           report version <code>2</code></p>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

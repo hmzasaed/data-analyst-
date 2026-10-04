@@ -1,0 +1,7 @@
+column,type,role,missing,missing_pct,unique,pii_risk
+nconst,integer,measure,0,0.0,1000000,none
+primary_name,text,free_text,8,0.0,927763,none
+birth_year,integer,measure,956529,95.65,257,none
+death_year,integer,measure,983331,98.33,194,none
+primary_profession,text,free_text,201474,20.15,11611,none
+known_for_titles,integer,measure,120295,12.03,666574,none

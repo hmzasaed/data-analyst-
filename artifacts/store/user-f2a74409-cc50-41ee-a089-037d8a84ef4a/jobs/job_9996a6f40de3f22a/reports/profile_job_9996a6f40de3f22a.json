@@ -1,0 +1,432 @@
+{
+  "dataset_id": "ds_0d956819221a3004",
+  "source_file_hash": "6fd1f702a187bbeb757f4fb574da08423d7a770f670e907f4e92231e8bc03950",
+  "sheet_name": null,
+  "row_count": 1000000,
+  "column_count": 6,
+  "estimated_memory_bytes": 51426080,
+  "columns": [
+    {
+      "name": "nconst",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 0,
+      "null_fraction": 0.0,
+      "unique_count": 1000000,
+      "distinct_fraction": 1.0,
+      "sample_values": [
+        "nm6857666",
+        "nm4942998",
+        "nm5713724",
+        "nm11070264",
+        "nm12190515",
+        "nm15723267",
+        "nm1318392",
+        "nm4375066",
+        "nm1743406",
+        "nm0888644"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 1000000,
+        "null_count": 0,
+        "mean": 9289369.27577,
+        "std": 5524574.77468034,
+        "min": 7.0,
+        "p05": 826770.0500000003,
+        "p25": 4407447.75,
+        "median": 9320211.0,
+        "p75": 13993857.75,
+        "p95": 17988728.45,
+        "max": 18963961.0,
+        "sum": 9289369275770.0,
+        "skewness": 0.03288100487484214,
+        "kurtosis": -1.2131872763918188,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 9464041,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "primary_name",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 8,
+      "null_fraction": 0.0,
+      "unique_count": 927763,
+      "distinct_fraction": 0.9278,
+      "sample_values": [
+        "Patrick Mccafferty",
+        "Frank Colucci",
+        "Chris Boulter",
+        "Kiran Dev",
+        "Xavier",
+        "Ennis Sagniez",
+        "Natasha Bernasek",
+        "Kyndra Bowens",
+        "Nikki Corda",
+        "Lyn Vandeman"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "Michael",
+            43
+          ],
+          [
+            "Alex",
+            41
+          ],
+          [
+            "Chris Jones",
+            38
+          ],
+          [
+            "Chris",
+            36
+          ],
+          [
+            "David",
+            35
+          ],
+          [
+            "Michael Johnson",
+            35
+          ],
+          [
+            "John Williams",
+            33
+          ],
+          [
+            "David Smith",
+            32
+          ],
+          [
+            "David Brown",
+            31
+          ],
+          [
+            "Mark Smith",
+            30
+          ]
+        ],
+        "distinct_count": 927762,
+        "normalised_forms": 927517,
+        "case_variants": 0,
+        "whitespace_variants": 245
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 13596511,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "birth_year",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 956529,
+      "null_fraction": 0.9565,
+      "unique_count": 257,
+      "distinct_fraction": 0.0003,
+      "sample_values": [
+        "1975.0",
+        "1979.0",
+        "1996.0",
+        "1980.0",
+        "1976.0",
+        "1912.0",
+        "1988.0",
+        "1944.0",
+        "1997.0",
+        "1969.0"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 43471,
+        "null_count": 956529,
+        "mean": 1955.0393135653653,
+        "std": 33.96339922731867,
+        "min": 1150.0,
+        "p05": 1895.0,
+        "p25": 1934.0,
+        "median": 1961.0,
+        "p75": 1981.0,
+        "p95": 1997.0,
+        "max": 2025.0,
+        "sum": 84987514.0,
+        "skewness": -1.9887673059508053,
+        "kurtosis": 21.990500572990687,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 260826,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "death_year",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 983331,
+      "null_fraction": 0.9833,
+      "unique_count": 194,
+      "distinct_fraction": 0.0002,
+      "sample_values": [
+        "2020.0",
+        "1956.0",
+        "2021.0",
+        "1976.0",
+        "2001.0",
+        "2023.0",
+        "1946.0",
+        "1944.0",
+        "1981.0",
+        "2008.0"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 16669,
+        "null_count": 983331,
+        "mean": 1995.7261383406324,
+        "std": 31.20198141464678,
+        "min": 1220.0,
+        "p05": 1943.0,
+        "p25": 1982.0,
+        "median": 2004.0,
+        "p75": 2017.0,
+        "p95": 2024.0,
+        "max": 2026.0,
+        "sum": 33266759.0,
+        "skewness": -5.319984263821837,
+        "kurtosis": 78.34477122761523,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 100014,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "primary_profession",
+      "original_name": null,
+      "inferred_type": "text",
+      "semantic_role": "free_text",
+      "null_count": 201474,
+      "null_fraction": 0.2015,
+      "unique_count": 11611,
+      "distinct_fraction": 0.0116,
+      "sample_values": [
+        "writer,editor",
+        "producer,soundtrack",
+        "producer,director,writer",
+        "actor",
+        "actress",
+        "make_up_department,sound_department",
+        "camera_department,producer,writer",
+        "transportation_department",
+        "costume_department,make_up_department",
+        "miscellaneous"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": null,
+      "temporal": null,
+      "category": {
+        "top_values": [
+          [
+            "actor",
+            173627
+          ],
+          [
+            "actress",
+            111784
+          ],
+          [
+            "miscellaneous",
+            42446
+          ],
+          [
+            "producer",
+            34008
+          ],
+          [
+            "camera_department",
+            31009
+          ],
+          [
+            "production_department",
+            17243
+          ],
+          [
+            "writer",
+            15910
+          ],
+          [
+            "art_department",
+            15722
+          ],
+          [
+            "sound_department",
+            15368
+          ],
+          [
+            "composer",
+            12156
+          ]
+        ],
+        "distinct_count": 11610,
+        "normalised_forms": 11610,
+        "case_variants": 0,
+        "whitespace_variants": 0
+      },
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 12126188,
+      "parse_failure_fraction": 0.0
+    },
+    {
+      "name": "known_for_titles",
+      "original_name": null,
+      "inferred_type": "integer",
+      "semantic_role": "measure",
+      "null_count": 120295,
+      "null_fraction": 0.1203,
+      "unique_count": 666574,
+      "distinct_fraction": 0.6666,
+      "sample_values": [
+        "tt4135742",
+        "tt1808192",
+        "tt2964026",
+        "tt8411144,tt15354848,tt28704074,tt35291795",
+        "tt36375434,tt13722016",
+        "tt0326148,tt7557512,tt0352724",
+        "tt1866183",
+        "tt0429210,tt1490751,tt1496794,tt9358084",
+        "tt0107302,tt0114697,tt1229413,tt0109936",
+        "tt0949677"
+      ],
+      "pii_risk": "none",
+      "pii_signals": [],
+      "numeric": {
+        "count": 879705,
+        "null_count": 120295,
+        "mean": 7.265089738710497e+29,
+        "std": 4.3932502707480355e+30,
+        "min": 32.0,
+        "p05": 185819.0,
+        "p25": 3458542.0,
+        "median": 25244380.0,
+        "p75": 3.324520365485032e+19,
+        "p95": 5.515860611629294e+29,
+        "max": 4.765666637429997e+31,
+        "sum": 6.3911357685923175e+35,
+        "skewness": 7.046611264174504,
+        "kurtosis": 51.52223413049447,
+        "zero_count": 0,
+        "negative_count": 0,
+        "non_finite_count": 0
+      },
+      "temporal": null,
+      "category": null,
+      "avg_length": null,
+      "max_length": null,
+      "storage_bytes": 15878500,
+      "parse_failure_fraction": 0.0
+    }
+  ],
+  "quality_issues": [
+    {
+      "kind": "inconsistent_categories",
+      "severity": "medium",
+      "column": "primary_name",
+      "description": "927517 normalised forms cover 927763 raw values: casing and whitespace differ between otherwise identical labels.",
+      "affected_rows": 72237,
+      "affected_fraction": 0.0722,
+      "evidence": {
+        "case_variants": 0,
+        "whitespace_variants": 245
+      },
+      "recommended_action": "Trim and case-normalise, keeping the original column for reference."
+    },
+    {
+      "kind": "high_cardinality",
+      "severity": "medium",
+      "column": "primary_name",
+      "description": "927,762 distinct values across 1,000,000 rows; unlikely to be a usable grouping key.",
+      "affected_rows": 1000000,
+      "affected_fraction": 1.0,
+      "evidence": {},
+      "recommended_action": "Group only by this column if the value list is short enough to read."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "high",
+      "column": "birth_year",
+      "description": "956,529 of 1,000,000 rows (95.7%) have no value.",
+      "affected_rows": 956529,
+      "affected_fraction": 0.9565,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "high",
+      "column": "death_year",
+      "description": "983,331 of 1,000,000 rows (98.3%) have no value.",
+      "affected_rows": 983331,
+      "affected_fraction": 0.9833,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "medium",
+      "column": "primary_profession",
+      "description": "201,474 of 1,000,000 rows (20.2%) have no value.",
+      "affected_rows": 201474,
+      "affected_fraction": 0.2015,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    },
+    {
+      "kind": "missing_values",
+      "severity": "medium",
+      "column": "known_for_titles",
+      "description": "120,295 of 1,000,000 rows (12.0%) have no value.",
+      "affected_rows": 120295,
+      "affected_fraction": 0.1203,
+      "evidence": {},
+      "recommended_action": "Leave missing values untouched and exclude them from aggregates, or choose an explicit imputation."
+    }
+  ],
+  "duplicate_row_count": 0,
+  "time_coverage": null,
+  "warnings": [],
+  "is_exploratory": true,
+  "profiler_version": "1"
+}

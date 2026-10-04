@@ -1,0 +1,13 @@
+column,type,role,missing,missing_pct,unique,pii_risk
+tconst,integer,measure,0,0.0,2716,none
+primary_title,text,free_text,0,0.0,2654,none
+start_year,integer,measure,0,0.0,71,none
+end_year,number,measure,0,0.0,68,none
+rank,integer,measure,0,0.0,2716,none
+average_rating,number,measure,0,0.0,68,none
+num_votes,integer,measure,0,0.0,2642,none
+directors,text,free_text,0,0.0,2644,none
+writers,text,free_text,0,0.0,2612,none
+genres,text,free_text,0,0.0,279,none
+imdb_link,text,free_text,0,0.0,2716,none
+title_imdb_link,text,free_text,0,0.0,2716,none

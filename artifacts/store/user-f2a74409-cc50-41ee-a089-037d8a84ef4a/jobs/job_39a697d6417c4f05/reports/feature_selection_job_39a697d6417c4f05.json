@@ -1,0 +1,288 @@
+{
+  "skipped_reason": null,
+  "target_column": "tconst",
+  "task": "regression",
+  "rows_used": 3000,
+  "candidate_count": 24,
+  "selected": [
+    "start_year_squared",
+    "title_type=tvEpisode",
+    "start_year_mean_by_title_type",
+    "runtime_minutes_was_missing",
+    "start_year_was_missing",
+    "title_type=movie",
+    "runtime_minutes_mean_by_title_type",
+    "title_type=short",
+    "is_adult=1",
+    "genres_was_missing",
+    "title_type=tvMovie",
+    "title_type=video"
+  ],
+  "scores": [
+    {
+      "feature": "start_year_squared",
+      "origin": "engineered",
+      "mutual_information": 0.860035,
+      "correlation": 0.257962,
+      "importance": 0.447006,
+      "combined_rank": 1,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "start_year",
+      "origin": "original",
+      "mutual_information": 0.858929,
+      "correlation": 0.255832,
+      "importance": 0.407573,
+      "combined_rank": 2,
+      "selected": false,
+      "status": "redundant with start_year_squared"
+    },
+    {
+      "feature": "title_type=tvEpisode",
+      "origin": "encoded",
+      "mutual_information": 0.072951,
+      "correlation": 0.114346,
+      "importance": 0.020544,
+      "combined_rank": 3,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "title_type_frequency",
+      "origin": "engineered",
+      "mutual_information": 0.067402,
+      "correlation": 0.114791,
+      "importance": 0.017005,
+      "combined_rank": 4,
+      "selected": false,
+      "status": "redundant with title_type=tvEpisode"
+    },
+    {
+      "feature": "start_year_mean_by_title_type",
+      "origin": "engineered",
+      "mutual_information": 0.067223,
+      "correlation": 0.116623,
+      "importance": 0.016737,
+      "combined_rank": 5,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "runtime_minutes_was_missing",
+      "origin": "engineered",
+      "mutual_information": 0.024541,
+      "correlation": 0.099459,
+      "importance": 0.030653,
+      "combined_rank": 6,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "start_year_was_missing",
+      "origin": "engineered",
+      "mutual_information": 0.062331,
+      "correlation": 0.029464,
+      "importance": 0.025892,
+      "combined_rank": 7,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "title_type=movie",
+      "origin": "encoded",
+      "mutual_information": 0.030092,
+      "correlation": 0.097967,
+      "importance": 0.003715,
+      "combined_rank": 8,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "runtime_minutes_mean_by_title_type",
+      "origin": "engineered",
+      "mutual_information": 0.062711,
+      "correlation": 0.032688,
+      "importance": 0.007152,
+      "combined_rank": 9,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "title_type=short",
+      "origin": "encoded",
+      "mutual_information": 0.009597,
+      "correlation": 0.034367,
+      "importance": 0.002866,
+      "combined_rank": 10,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "is_adult=1",
+      "origin": "encoded",
+      "mutual_information": 0.004522,
+      "correlation": 0.010176,
+      "importance": 0.003008,
+      "combined_rank": 11,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "genres_was_missing",
+      "origin": "engineered",
+      "mutual_information": 0.003642,
+      "correlation": 0.009817,
+      "importance": 0.010192,
+      "combined_rank": 12,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "title_type=tvMovie",
+      "origin": "encoded",
+      "mutual_information": 0.001009,
+      "correlation": 0.05291,
+      "importance": 0.00074,
+      "combined_rank": 13,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "is_adult=0",
+      "origin": "encoded",
+      "mutual_information": 0.004522,
+      "correlation": 0.010176,
+      "importance": 0.002477,
+      "combined_rank": 14,
+      "selected": false,
+      "status": "redundant with is_adult=1"
+    },
+    {
+      "feature": "is_adult_frequency",
+      "origin": "engineered",
+      "mutual_information": 0.004522,
+      "correlation": 0.010176,
+      "importance": 0.00271,
+      "combined_rank": 15,
+      "selected": false,
+      "status": "redundant with is_adult=1"
+    },
+    {
+      "feature": "title_type=video",
+      "origin": "encoded",
+      "mutual_information": 0.0,
+      "correlation": 0.045619,
+      "importance": 0.001102,
+      "combined_rank": 16,
+      "selected": true,
+      "status": "selected"
+    },
+    {
+      "feature": "title_type=tvSeries",
+      "origin": "encoded",
+      "mutual_information": 0.003137,
+      "correlation": 0.013552,
+      "importance": 0.00063,
+      "combined_rank": 17,
+      "selected": false,
+      "status": "redundant with runtime_minutes_mean_by_title_type"
+    },
+    {
+      "feature": "title_type=tvMiniSeries",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "title_type=tvShort",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "title_type=tvSpecial",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "title_type=videoGame",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "is_adult=2022",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "is_adult=2023",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    },
+    {
+      "feature": "is_adult=2025",
+      "origin": "encoded",
+      "mutual_information": null,
+      "correlation": null,
+      "importance": null,
+      "combined_rank": null,
+      "selected": false,
+      "status": "near-constant"
+    }
+  ],
+  "cross_validation": {
+    "metric": "r2",
+    "folds": 5,
+    "all_features_mean": 0.411137,
+    "all_features_std": 0.032821,
+    "selected_mean": 0.411695,
+    "selected_std": 0.032055,
+    "all_feature_count": 24,
+    "selected_feature_count": 12,
+    "model": "RandomForestRegressor (80 trees)"
+  },
+  "artifact_id": "feature_set",
+  "methods": [
+    "variance filter (a column whose most common value covers 99% or more of rows)",
+    "mutual information (scikit-learn mutual_info_regression / mutual_info_classif)",
+    "absolute Pearson correlation with the target (regression and two-class targets)",
+    "random-forest impurity importance (80 trees, seeded)",
+    "redundancy pruning (|r| > 0.95 with a higher-ranked feature)",
+    "5-fold cross-validation of all candidates against the selected set"
+  ],
+  "explanation": "The agent treated this as a regression problem: predicting `tconst`. Of 24 candidate features, 12 were kept. The strongest were `start_year_squared`, `title_type=tvEpisode`, `start_year_mean_by_title_type`, `runtime_minutes_was_missing`, `start_year_was_missing`. Not kept: 7 near-constant, 5 redundant. Cross-validated r2 was 0.412 with the selected set and 0.411 with every candidate. Rankings describe association with the target in this data, not cause and effect.",
+  "explanation_source": "deterministic",
+  "warnings": [
+    "Ranking and cross-validation used a fixed random sample of 3,000 rows."
+  ]
+}

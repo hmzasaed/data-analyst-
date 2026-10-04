@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>{{ document.title }}</title>
+<style>{{ style }}</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="eyebrow">InsightFlow analysis report</div>
+    <h1>{{ document.title }}</h1>
+    <div class="meta">
+      {% if document.source_filename %}<span>File <code>{{ document.source_filename }}</code></span>{% endif %}
+      <span>Dataset <code>{{ document.dataset_id }}</code></span>
+      <span>Job <code>{{ document.job_id }}</code></span>
+      {% if document.generated_at %}<span>Generated {{ document.generated_at[:19] | replace("T", " ") }} UTC</span>{% endif %}
+    </div>
+    {% if document.objective %}
+    <div class="question"><strong>Question:</strong> {{ document.objective }}</div>
+    {% endif %}
+    {% if document.is_exploratory %}
+    <div class="callout">
+      <strong>Exploratory report</strong>
+      No specific question was asked, so this is a general overview of the dataset rather
+      than an answer to a targeted business question.
+    </div>
+    {% endif %}
+  </header>
+
+  {% if document.kpis %}
+  <div class="kpis">
+    {% for kpi in document.kpis %}
+    <div class="kpi">
+      <div class="label">{{ kpi.label }}</div>
+      <div class="value">{{ kpi.value }}</div>
+      {% if kpi.note %}<div class="note">{{ kpi.note }}</div>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        {% for section in sections %}
+        <li><a href="#{{ section.kind }}"><span class="n">{{ loop.index }}</span>{{ section.heading }}</a></li>
+        {% endfor %}
+        {% if loose_charts %}<li><a href="#more-charts"><span class="n">+</span>Additional charts</a></li>{% endif %}
+        <li><a href="#appendix"><span class="n">A</span>Appendix: evidence</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      {% for section in sections %}
+      <section id="{{ section.kind }}" class="report-section">
+        <h2><span class="n">{{ loop.index }}</span>{{ section.heading }}</h2>
+
+        {% if section.kind == anomaly_kind %}
+        <div class="callout">
+          <strong>Read this before acting on anything below</strong>
+          A flagged record is unusual relative to a stated baseline. It is not evidence of an
+          error or of wrongdoing, and it may be entirely legitimate.
+        </div>
+        {% endif %}
+
+        {% if section.body_markdown %}
+        <div class="section-body">{{ section.body_markdown | markdown }}</div>
+        {% endif %}
+
+        {% if section.warnings %}
+        <div class="callout">
+          <strong>Warnings</strong>
+          <ul>{% for warning in section.warnings %}<li>{{ warning }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+
+        {% for table in section.tables %}
+        <div class="table-block">
+          <h3>{{ table.title }}</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                {% for column in table.columns %}
+                <th{% if loop.index0 in table.numeric_columns %} class="num"{% endif %}>{{ column }}</th>
+                {% endfor %}
+              </tr></thead>
+              <tbody>
+                {% for row in table.rows %}
+                <tr>
+                  {% for cell in row %}
+                  <td{% if loop.index0 in table.numeric_columns %} class="num"{% endif %}>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% if table.note or table.source_artifact_id %}
+          <div class="table-meta">
+            {% if table.note %}<span>{{ table.note }}</span>{% endif %}
+            {% if table.source_artifact_id %}<span>Source: <code>{{ table.source_artifact_id }}.csv</code></span>{% endif %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        {% set shown = section.charts | selectattr("artifact_id", "in", sources) | list %}
+        {% if shown %}
+        <div class="charts">
+          {% for chart in shown %}
+          <figure class="chart{% if chart.wide %} wide{% endif %}">
+            <h3>{{ chart.title }}</h3>
+            <img src="{{ sources[chart.artifact_id] }}" alt="{{ chart.title }}" loading="lazy">
+            {% if chart.caption %}<figcaption>{{ chart.caption }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.footer_markdown %}
+        <div class="section-footer">{{ section.footer_markdown | markdown }}</div>
+        {% endif %}
+      </section>
+      {% endfor %}
+
+      {% if loose_charts %}
+      <section id="more-charts" class="report-section">
+        <h2><span class="n">+</span>Additional charts</h2>
+        <div class="charts">
+          {% for chart in loose_charts %}
+          <figure class="chart">
+            <img src="{{ chart.src }}" alt="Chart {{ chart.artifact_id }}" loading="lazy">
+            <figcaption><code>{{ chart.artifact_id }}</code></figcaption>
+          </figure>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <section id="appendix" class="report-section">
+        <h2><span class="n">A</span>Appendix: evidence</h2>
+        <p class="muted">Every figure in this report comes from one of these stored artifacts.
+          {{ chart_count }} chart(s) and {{ tables | length }} table(s) were produced.</p>
+        {% if tables %}
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Evidence table</th><th class="num">Rows</th><th>Format</th></tr></thead>
+            <tbody>
+            {% for table in tables %}
+              <tr><td><code>{{ table.artifact_id }}</code></td>
+                  <td class="num">{{ table.row_count or 0 }}</td>
+                  <td>{{ table.mime_type or "text/csv" }}</td></tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% endif %}
+      </section>
+
+      <footer class="report-footer">
+        <p>
+          Every figure in this report was computed by a registered analysis tool or the
+          exploratory analysis module and stored as an artifact before the report was written.
+          No number here was produced by a language model. Claims that could not be verified
+          against a computed value were excluded.
+        </p>
+        <p>Composer <code>{{ document.composer_model }}</code> &middot;
+           report version <code>{{ document.report_version }}</code></p>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

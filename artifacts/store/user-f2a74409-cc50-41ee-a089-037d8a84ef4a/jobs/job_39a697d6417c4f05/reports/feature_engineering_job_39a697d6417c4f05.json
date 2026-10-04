@@ -1,0 +1,244 @@
+{
+  "skipped_reason": null,
+  "target_column": "tconst",
+  "target_reason": "the dataset's headline measure",
+  "task": "regression",
+  "source": "deterministic",
+  "model_used": null,
+  "created": [
+    {
+      "spec": {
+        "name": "log1p_runtime_minutes",
+        "kind": "log1p",
+        "inputs": [
+          "runtime_minutes"
+        ],
+        "rationale": "'runtime_minutes' is right-skewed (skew 612.60); a log scale tames large values."
+      },
+      "source": "rule",
+      "non_missing": 375561,
+      "mean": 3.452758037361867,
+      "std": 0.8846144867909959
+    },
+    {
+      "spec": {
+        "name": "start_year_per_runtime_minutes",
+        "kind": "ratio",
+        "inputs": [
+          "start_year",
+          "runtime_minutes"
+        ],
+        "rationale": "Rate of 'start_year' per unit of 'runtime_minutes'."
+      },
+      "source": "rule",
+      "non_missing": 355110,
+      "mean": 122.68566707581844,
+      "std": 223.0880118229902
+    },
+    {
+      "spec": {
+        "name": "end_year_per_start_year",
+        "kind": "ratio",
+        "inputs": [
+          "end_year",
+          "start_year"
+        ],
+        "rationale": "Rate of 'end_year' per unit of 'start_year'."
+      },
+      "source": "rule",
+      "non_missing": 12700,
+      "mean": 1.0007556601047343,
+      "std": 0.001877994699292051
+    },
+    {
+      "spec": {
+        "name": "end_year_per_runtime_minutes",
+        "kind": "ratio",
+        "inputs": [
+          "end_year",
+          "runtime_minutes"
+        ],
+        "rationale": "Rate of 'end_year' per unit of 'runtime_minutes'."
+      },
+      "source": "rule",
+      "non_missing": 5944,
+      "mean": 101.98240717364052,
+      "std": 207.33686209903038
+    },
+    {
+      "spec": {
+        "name": "start_year_x_runtime_minutes",
+        "kind": "product",
+        "inputs": [
+          "start_year",
+          "runtime_minutes"
+        ],
+        "rationale": "Interaction: lets a model see 'start_year' and 'runtime_minutes' acting together."
+      },
+      "source": "rule",
+      "non_missing": 355110,
+      "mean": 108674.53254766129,
+      "std": 12436145.07884294
+    },
+    {
+      "spec": {
+        "name": "start_year_x_end_year",
+        "kind": "product",
+        "inputs": [
+          "start_year",
+          "end_year"
+        ],
+        "rationale": "Interaction: lets a model see 'start_year' and 'end_year' acting together."
+      },
+      "source": "rule",
+      "non_missing": 12700,
+      "mean": 4031711.324488189,
+      "std": 67131.70774267471
+    },
+    {
+      "spec": {
+        "name": "runtime_minutes_x_end_year",
+        "kind": "product",
+        "inputs": [
+          "runtime_minutes",
+          "end_year"
+        ],
+        "rationale": "Interaction: lets a model see 'runtime_minutes' and 'end_year' acting together."
+      },
+      "source": "rule",
+      "non_missing": 5944,
+      "mean": 1372231.410666218,
+      "std": 96594822.03479488
+    },
+    {
+      "spec": {
+        "name": "start_year_squared",
+        "kind": "square",
+        "inputs": [
+          "start_year"
+        ],
+        "rationale": "Curvature term for 'start_year'."
+      },
+      "source": "rule",
+      "non_missing": 884215,
+      "mean": 4028453.7224996183,
+      "std": 80039.18163204336
+    },
+    {
+      "spec": {
+        "name": "runtime_minutes_squared",
+        "kind": "square",
+        "inputs": [
+          "runtime_minutes"
+        ],
+        "rationale": "Curvature term for 'runtime_minutes'."
+      },
+      "source": "rule",
+      "non_missing": 375561,
+      "mean": 36307133.153288014,
+      "std": 22243440676.99797
+    },
+    {
+      "spec": {
+        "name": "title_type_frequency",
+        "kind": "frequency",
+        "inputs": [
+          "title_type"
+        ],
+        "rationale": "How common each 'title_type' value is."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 0.609597848156,
+      "std": 0.29979844053069105
+    },
+    {
+      "spec": {
+        "name": "is_adult_frequency",
+        "kind": "frequency",
+        "inputs": [
+          "is_adult"
+        ],
+        "rationale": "How common each 'is_adult' value is."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 0.9370449873879999,
+      "std": 0.16587490312600997
+    },
+    {
+      "spec": {
+        "name": "start_year_mean_by_title_type",
+        "kind": "group_mean",
+        "inputs": [
+          "start_year",
+          "title_type"
+        ],
+        "rationale": "Typical 'start_year' within each 'title_type'."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 2007.0284967232017,
+      "std": 3.7253501308967842
+    },
+    {
+      "spec": {
+        "name": "runtime_minutes_mean_by_title_type",
+        "kind": "group_mean",
+        "inputs": [
+          "runtime_minutes",
+          "title_type"
+        ],
+        "rationale": "Typical 'runtime_minutes' within each 'title_type'."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 52.38789526132168,
+      "std": 66.1284073126081
+    },
+    {
+      "spec": {
+        "name": "start_year_was_missing",
+        "kind": "missing_flag",
+        "inputs": [
+          "start_year"
+        ],
+        "rationale": "12% of 'start_year' is missing; whether it is missing can itself be informative."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 0.115785,
+      "std": 0.3199670860478243
+    },
+    {
+      "spec": {
+        "name": "runtime_minutes_was_missing",
+        "kind": "missing_flag",
+        "inputs": [
+          "runtime_minutes"
+        ],
+        "rationale": "62% of 'runtime_minutes' is missing; whether it is missing can itself be informative."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 0.624439,
+      "std": 0.48426766337860017
+    },
+    {
+      "spec": {
+        "name": "genres_was_missing",
+        "kind": "missing_flag",
+        "inputs": [
+          "genres"
+        ],
+        "rationale": "4% of 'genres' is missing; whether it is missing can itself be informative."
+      },
+      "source": "rule",
+      "non_missing": 1000000,
+      "mean": 0.042268,
+      "std": 0.20120004139526562
+    }
+  ],
+  "rejected": [],
+  "warnings": []
+}

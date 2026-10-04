@@ -1,0 +1,10 @@
+column,type,role,missing,missing_pct,unique,pii_risk
+tconst,integer,measure,0,0.0,1000000,none
+title_type,category,category,0,0.0,10,none
+primary_title,text,free_text,9,0.0,560663,none
+original_title,text,free_text,9,0.0,562406,none
+is_adult,boolean,flag,0,0.0,5,none
+start_year,integer,measure,115785,11.58,145,none
+end_year,integer,measure,987299,98.73,87,none
+runtime_minutes,integer,measure,624436,62.44,523,none
+genres,text,free_text,42268,4.23,1794,none
